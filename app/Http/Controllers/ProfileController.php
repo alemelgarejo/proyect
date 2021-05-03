@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ImageProfileRequest;
 use Gate;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -9,6 +10,7 @@ use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 use Cloudinary\Cloudinary;
 use Cloudinary\Api\Upload\UploadApi;
+use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
@@ -37,7 +39,27 @@ class ProfileController extends Controller
                 'height' => 571,
             ]
         ])->getSecurePath(); */
-        auth()->user()->update($request->all()/*  + ['photo' => $request->file('photo')->store('inmodata/profile', 'cloudinary')] */);
+        //dd($request->file('photo')->storeOnCloudinary()->getSecurePath());
+        //$photo = $request->file('photo')->storeOnCloudinary()->getSecurePath();
+
+        auth()->user()->update($request->all());
+
+        return back()->withStatus(__('Profile successfully updated.'));
+    }
+
+    public function updateProfileImage(ImageProfileRequest $request)
+    {
+        $photo = cloudinary()->upload($request->file('photo')->getRealPath(), [
+            'folder' => 'inmodata/profile',
+            'transformation' => [
+                'width' => 510,
+                'height' => 571,
+                'crop' => 'fill'
+            ]
+        ])->getSecurePath();
+
+        //dd(photo);
+        auth()->user()->update(array('photo' => $photo));
 
         return back()->withStatus(__('Profile successfully updated.'));
     }

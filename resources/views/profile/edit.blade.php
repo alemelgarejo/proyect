@@ -82,16 +82,31 @@
                                         @include('alerts.feedback', ['field' => 'comertial'])
                                     </div>
                                 </div>
-                            </div>{{-- <br>
+                            </div>
+                            <div class="card-footer ">
+                                <button type="submit" class="btn btn-primary btn-round"
+                                    style="background: #2CA8FF;">{{ __('Save') }}</button>
+                            </div>
+                            <hr class="half-rule" />
+                        </form>
+                    </div>
+                    <div class="card-header">
+                        <h5 class="title">{{ __('Profile Image') }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="{{ route('profile.updateProfileImage') }}" autocomplete="off"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('put')
                             <div class="row" style="margin: 0 auto">
                                 <div class="col-md-12">
                                     <div class="form-control-file">
                                         <input type="file" name="photo" class="form-control-file" id="photo"
-                                            accept="image/*">
+                                            accept="image/*" required>
                                         @include('alerts.feedback', ['field' => 'photo'])
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
                             <br>
                             <div class="card-footer ">
                                 <button type="submit" class="btn btn-primary btn-round"
@@ -99,6 +114,7 @@
                             </div>
                             <hr class="half-rule" />
                         </form>
+                        <br>
                     </div>
                     <div class="card-header">
                         <h5 class="title">{{ __('Password') }}</h5>
@@ -154,8 +170,8 @@
                     </div>
                     <div class="card-body">
                         <div class="author">
-                            <a href="#">
-                                <img class="avatar border-gray" src="{{ asset('img\author-2.jpg') }}" alt="...">
+                            <a href="{{ route('profile.edit') }}">
+                                <img class="avatar" src="{{ asset(auth()->user()->photo) }}" alt="...">
                                 <h5 class="title">{{ auth()->user()->name }}</h5>
                             </a>
                             <p class="description">

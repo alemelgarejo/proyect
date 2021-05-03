@@ -34,7 +34,7 @@ Route::get('/property', [WebController::class, 'estate'])->name('web.estate');
 Route::get('/blogs', [WebController::class, 'blogs'])->name('web.blogs');
 Route::get('/blog', [WebController::class, 'blog'])->name('web.blog');
 Route::get('/agents', [WebController::class, 'agents'])->name('web.agents');
-Route::get('/agent', [WebController::class, 'agent'])->name('web.agent');
+Route::get('/agent/{agent}', [WebController::class, 'agent'])->name('web.agent');
 Route::get('/contact', [WebController::class, 'contact'])->name('web.contact');
 Route::get('/search', [WebController::class, 'search'])->name('web.search');
 Route::get('/about', [WebController::class, 'about'])->name('web.about');
@@ -89,6 +89,7 @@ Route::group(['middleware' => 'auth'], function () {
     //Profile
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+    Route::put('profile/profile-image', ['as' => 'profile.updateProfileImage', 'uses' => 'App\Http\Controllers\ProfileController@updateProfileImage']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
     //System

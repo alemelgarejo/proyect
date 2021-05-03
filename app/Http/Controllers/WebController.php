@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estate;
+use App\Models\User;
 use App\Models\Web;
 use Illuminate\Http\Request;
 
@@ -30,12 +32,23 @@ class WebController extends Controller
 
     public function agents()
     {
-        return view('web.agents-grid');
+        return view('web.agents-grid', [
+            'agents' => User::where('users.role_id', 1)
+                ->orWhere('users.role_id', 2)
+                ->orWhere('users.role_id', 3)
+                ->paginate(6),
+        ]);
     }
 
-    public function agent()
+    public function agent(User $agent)
     {
-        return view('web.agent-single');
+        if ($agent->role_id == 1 or $agent->role_id == 2 or $agent->role_id == 3) {
+            return view('web.agent-single', [
+                'agent' => $agent,
+                /* 'estates' => , */
+            ]);
+        }
+        return back();
     }
 
     public function blogs()
