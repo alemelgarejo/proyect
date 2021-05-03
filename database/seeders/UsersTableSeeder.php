@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Support\Facades\DB;
@@ -22,6 +23,7 @@ class UsersTableSeeder extends Seeder
             'comertial' => 'A1S2D3',
             'email' => 'melgarejoale1@gmail.com',
             'phone' => '655664782',
+            'description' => 'Inmodata developer. Higher Degree in Web Application Development since 2021.',
             'birthdate' => now(),
             'password' => Hash::make('Csas1234'),
             'created_at' => now(),

@@ -64,12 +64,21 @@ class ImageController extends Controller
                     'height' => 720,
                 ]
             ])->getSecurePath();
+            $urlWeb = cloudinary()->upload($request->file('url')->getRealPath(), [
+                'folder' => 'inmodata/web',
+                'transformation' => [
+                    'width' => 600,
+                    'height' => 800,
+                    'crop' => 'fill'
+                ]
+            ])->getSecurePath();
             //dd($resizedImage);
 
             //$request->file('url')->store('inmodata', 'cloudinary');
 
             Image::create([
                 'url' => $url,
+                'urlWeb' => $urlWeb,
                 'estate_id' => $estate->id
             ]);
 

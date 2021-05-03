@@ -102,6 +102,16 @@
                                 </div>
                             </div>
                             <hr class="pr-4">
+                            <div class="row">
+                                <div class="col-md-12 pr-4">
+                                    <div class="form-group">
+                                        <label>{{ __('Description') }}</label>
+                                        <textarea name="description" id="description" class="form-control"
+                                            value="">{{ old('description', $user->description) }}</textarea>
+                                        @include('alerts.feedback', ['field' => 'description'])
+                                    </div>
+                                </div>
+                            </div>
                             <button class="btn btn-info pull-right btn-round" type="button" data-toggle="collapse"
                                 data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="now-ui-icons arrows-1_minimal-down"></i>

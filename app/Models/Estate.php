@@ -11,7 +11,12 @@ class Estate extends Model
     protected $guarded = [];
 
     //Una propiedad tiene un propietarios
-    public function owner() {
+    public function owner()
+    {
         return $this->belongsTo(Owner::class);
+    }
+    public function images()
+    {
+        return $this->hasMany(Image::class);
     }
 }

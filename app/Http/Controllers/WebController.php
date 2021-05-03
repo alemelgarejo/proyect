@@ -21,12 +21,19 @@ class WebController extends Controller
 
     public function estates()
     {
-        return view('web.property-grid');
+        return view('web.property-grid', [
+            'properties' => Estate::where('estates.status', 1)->paginate(6)
+        ]);
     }
 
-    public function estate()
+    public function estate(Estate $property)
     {
-        return view('web.property-single');
+        if ($property->status == 1) {
+            return view('web.property-single', [
+                'property' => $property
+            ]);
+        }
+        return back();
     }
 
 

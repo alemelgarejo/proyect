@@ -30,7 +30,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Web
 Route::get('/', [WebController::class, 'index'])->name('web.index');
 Route::get('/properties', [WebController::class, 'estates'])->name('web.estates');
-Route::get('/property', [WebController::class, 'estate'])->name('web.estate');
+Route::get('/property/{property}', [WebController::class, 'estate'])->name('web.estate');
 Route::get('/blogs', [WebController::class, 'blogs'])->name('web.blogs');
 Route::get('/blog', [WebController::class, 'blog'])->name('web.blog');
 Route::get('/agents', [WebController::class, 'agents'])->name('web.agents');

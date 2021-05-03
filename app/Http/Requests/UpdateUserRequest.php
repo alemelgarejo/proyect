@@ -32,6 +32,7 @@ class UpdateUserRequest extends FormRequest
             'comertial' => 'nullable|string|max:6',
             'phone' => 'required|string|max:9|unique:users,phone,' . $this->route('user')->id,
             'birthdate' => ['required'],
+            'description' => ['required'],
             'facebook_link' => ['nullable'],
             'twitter_link' => ['nullable'],
             'instagram_link' => ['nullable'],

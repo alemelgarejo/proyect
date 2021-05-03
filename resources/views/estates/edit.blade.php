@@ -48,12 +48,12 @@
                                     <div class="form-group">
                                         <label>{{ __('Type') }}</label>
                                         <select name="type" id="type" class="form-control">
-                                            <option value="Traspaso" {{ $estate->type == 'Traspaso' ? 'selected' : '' }}>
-                                                {{ __('Transfer') }}</option>
-                                            <option value="Compra" {{ $estate->type == 'Compra' ? 'selected' : '' }}>
-                                                {{ __('Buy') }}</option>
-                                            <option value="Alquiler" {{ $estate->type == 'Alquiler' ? 'selected' : '' }}>
-                                                {{ __('Rent') }}</option>
+                                            <option value="Casa" {{ $estate->type == 'Casa' ? 'selected' : '' }}>
+                                                {{ __('Casa') }}</option>
+                                            <option value="Piso" {{ $estate->type == 'Piso' ? 'selected' : '' }}>
+                                                {{ __('Piso') }}</option>
+                                            <option value="Edificio" {{ $estate->type == 'Edificio' ? 'selected' : '' }}>
+                                                {{ __('Edificio') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'type'])
                                     </div>
@@ -662,8 +662,18 @@
                                         </div>
                                     </div>
                                 </div>
+                                <hr class="pr-4">
+                                <div class="row">
+                                    <div class="col-md-12 pr-4">
+                                        <div class="form-group">
+                                            <label>{{ __('Description') }}</label>
+                                            <textarea name="description" class="form-control" id="description"
+                                                value="">{{ old('description', $estate->description) }}</textarea>
+                                            @include('alerts.feedback', ['field' => 'description'])
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <hr class="pr-4">
                             <div class="card-footer ">
                                 <button type="submit" class="btn btn-primary btn-round"
                                     style="background: #2CA8FF;">{{ __('Update') }}</button>

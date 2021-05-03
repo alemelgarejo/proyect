@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('pinterest_link')->nullable();
             $table->string('dribble_link')->nullable();
             $table->string('photo')->nullable();
+            $table->text('description')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

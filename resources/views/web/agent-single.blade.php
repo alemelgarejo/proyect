@@ -18,7 +18,7 @@
                                 <a href="{{ route('web.index') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="#">Agents</a>
+                                <a href="#">{{ __('Agents') }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 {{ $agent->first_name }} {{ $agent->last_name }}
@@ -53,11 +53,7 @@
                                 </div>
                                 <div class="agent-content mb-3">
                                     <p class="content-d color-text-a">
-                                        Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec,
-                                        egestas non nisi.
-                                        Vivamus suscipit tortor
-                                        eget felis porttitor volutpat. Vivamus suscipit tortor eget felis porttitor
-                                        volutpat.
+                                        {{ $agent->description }}
                                     </p>
                                     <div class="info-agents color-a">
                                         <p>
