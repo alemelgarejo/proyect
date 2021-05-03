@@ -38,17 +38,25 @@ class User extends Authenticatable
     ];
 
     //Un usuario tiene un rol
-    public function role() {
+    public function role()
+    {
         return $this->belongsTo(Role::class);
     }
 
     //Un usuario puede encargarse de varios clientes
-    public function customers() {
+    public function customers()
+    {
         return $this->hasMany(Customer::class);
     }
 
     //Un usuario puede encargarse de varios propietarios
-    public function owners() {
+    public function owners()
+    {
         return $this->hasMany(Owner::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
     }
 }

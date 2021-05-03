@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Estate;
+use App\Models\Message;
 use App\Models\User;
 use App\Models\Web;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
 {
     public function index()
     {
-        return view('web.index');
+        return view('web.index', [
+            'properties' => Estate::where('estates.status', 1)->orderBy('created_at', 'DESC')->take(6)->get(),
+            'agents' => User::where('users.role_id', 1)->orWhere('users.role_id', 2)->orWhere('users.role_id', 3)->get()
+        ]);
     }
 
     public function about()
@@ -70,7 +75,23 @@ class WebController extends Controller
 
     public function contact()
     {
-        return view('web.contact');
+        return view('web.contact', [
+            'users' => User::where('users.role_id', 2)
+                ->orWhere('users.role_id', 3)
+                ->get()
+        ]);
+    }
+
+    public function storeMessage(Request $request)
+    {
+        Message::create([
+            'user_id' => auth()->user()->id,
+            'to_user_id' => $request['to_user_id'],
+            'message' => $request['message'],
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        return redirect()->route('web.contact')->with('status', 'Mensaje enviado con éxito.');
     }
 
     public function search(Request $request)

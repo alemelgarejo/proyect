@@ -3,10 +3,18 @@
     <!--/ Intro Single star /-->
     <section class="intro-single">
         <div class="container">
+            @if (session($key ?? 'status'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session($key ?? 'status') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">Contact US</h1>
+                        <h1 class="title-single">{{ __('Contact US') }}</h1>
                         <span class="color-text-a">Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus
                             officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae
                             possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis
@@ -17,10 +25,10 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html">Home</a>
+                                <a href="{{ route('web.index') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Contact
+                                {{ __('Contact') }}
                             </li>
                         </ol>
                     </nav>
@@ -47,31 +55,19 @@
                 <div class="col-sm-12 section-t8">
                     <div class="row">
                         <div class="col-md-7">
-                            <form class="form-a contactForm" action="" method="post" role="form">
-                                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                            <form class="form-a contactForm" id="contact-form" action="{{ route('web.storeMessage') }}"
+                                method="post" role="form">
+                                @csrf
                                 <div id="errormessage"></div>
                                 <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <div class="form-group">
-                                            <input type="text" name="name"
-                                                class="form-control form-control-lg form-control-a" placeholder="Your Name"
-                                                data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-                                            <div class="validation"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <div class="form-group">
-                                            <input name="email" type="email"
-                                                class="form-control form-control-lg form-control-a" placeholder="Your Email"
-                                                data-rule="email" data-msg="Please enter a valid email">
-                                            <div class="validation"></div>
-                                        </div>
-                                    </div>
                                     <div class="col-md-12 mb-3">
                                         <div class="form-group">
-                                            <input type="url" name="subject"
-                                                class="form-control form-control-lg form-control-a" placeholder="Subject"
-                                                data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+                                            <select class="form-control" name="to_user_id" placeholder="Message">
+                                                @foreach ($users as $user)
+                                                    <option value="{{ $user->id }}">{{ $user->first_name }}
+                                                        {{ $user->last_name }}</option>
+                                                @endforeach
+                                            </select>
                                             <div class="validation"></div>
                                         </div>
                                     </div>
@@ -84,7 +80,15 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-a">Send Message</button>
+                                        @auth
+                                            <a onclick="event.preventDefault();
+                                                                                                document.getElementById('contact-form').submit();"
+                                                class="btn btn-a" style="color: white">{{ __('Send Message') }}</a>
+                                        @endauth
+                                        @guest
+                                            <a href="{{ route('web.register') }}"
+                                                class="btn btn-a">{{ __('Register to send a Message') }}</a>
+                                        @endguest
                                     </div>
                                 </div>
                             </form>
@@ -96,14 +100,14 @@
                                 </div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">Say Hello</h4>
+                                        <h4 class="icon-title">{{ __('Say Hello') }}</h4>
                                     </div>
                                     <div class="icon-box-content">
-                                        <p class="mb-1">Email.
-                                            <span class="color-a">contact@example.com</span>
+                                        <p class="mb-1">{{ __('Email') }}.
+                                            <span class="color-a">amelgarejocontacto@gmail.com</span>
                                         </p>
-                                        <p class="mb-1">Phone.
-                                            <span class="color-a">+54 356 945234</span>
+                                        <p class="mb-1">{{ __('Phone') }}.
+                                            <span class="color-a">+54 655 664 782</span>
                                         </p>
                                     </div>
                                 </div>
@@ -114,12 +118,12 @@
                                 </div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">Find us in</h4>
+                                        <h4 class="icon-title">{{ __('Find us in') }}</h4>
                                     </div>
                                     <div class="icon-box-content">
                                         <p class="mb-1">
-                                            Manhattan, Nueva York 10036,
-                                            <br> EE. UU.
+                                            {{ __('Calle Dr. Barraquer, 6, 35500 Arrecife') }}
+                                            <br> {{ __('Las Palmas') }}
                                         </p>
                                     </div>
                                 </div>
@@ -130,7 +134,7 @@
                                 </div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">Social networks</h4>
+                                        <h4 class="icon-title">{{ __('Social networks') }}</h4>
                                     </div>
                                     <div class="icon-box-content">
                                         <div class="socials-footer">

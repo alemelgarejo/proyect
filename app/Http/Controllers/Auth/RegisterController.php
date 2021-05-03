@@ -78,7 +78,7 @@ class RegisterController extends Controller
             'comertial' => $data['comertial'],
             'email' => $data['email'],
             'phone' => $data['phone'],
-            'photo' => 'https://res.cloudinary.com/alemelgarejo/image/upload/c_fill,h_571,w_510/v1620050588/inmodata/profile/unnamed_ben90h.png',
+            'photo' => 'https://res.cloudinary.com/alemelgarejo/image/upload/c_fit,h_571,w_510/v1620081980/inmodata/profile/descarga_kzjycx.jpg',
             'birthdate' => $data['birthdate'],
             'password' => Hash::make($data['password']),
             'created_at' => Carbon::now(),

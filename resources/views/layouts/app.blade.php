@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets') }}/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="{{ asset('assets') }}/img/favicon.png">
+    <!-- Favicons -->
+    <link href="{{ asset('img/favicon2.png') }}" rel="icon">
+    <link href="{{ asset('img/apple-touch-icon2.png') }}" rel="apple-touch-icon">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <!-- Extra details for Live View on GitHub Pages -->
     <title>

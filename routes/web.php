@@ -36,6 +36,7 @@ Route::get('/blog', [WebController::class, 'blog'])->name('web.blog');
 Route::get('/agents', [WebController::class, 'agents'])->name('web.agents');
 Route::get('/agent/{agent}', [WebController::class, 'agent'])->name('web.agent');
 Route::get('/contact', [WebController::class, 'contact'])->name('web.contact');
+Route::post('/contact', [WebController::class, 'storeMessage'])->name('web.storeMessage');
 Route::get('/search', [WebController::class, 'search'])->name('web.search');
 Route::get('/about', [WebController::class, 'about'])->name('web.about');
 Route::get('/login/web', [WebController::class, 'login'])->name('web.login');

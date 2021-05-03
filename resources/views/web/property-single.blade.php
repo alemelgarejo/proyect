@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="title-box-d section-t4">
-                                            <h3 class="title-d">Quick Summary</h3>
+                                            <h3 class="title-d">{{ __('Quick Summary') }}</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -232,7 +232,7 @@
                     <div class="row section-t3">
                         <div class="col-sm-12">
                             <div class="title-box-d">
-                                <h3 class="title-d">Contact Agent</h3>
+                                <h3 class="title-d">{{ __('Contact Agent') }}</h3>
                             </div>
                         </div>
                     </div>
@@ -321,7 +321,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <button type="submit" class="btn btn-a">Send Message</button>
+                                            <button type="submit" class="btn btn-a">{{ __('Send Message') }}</button>
                                         </div>
                                     </div>
                                 </form>
