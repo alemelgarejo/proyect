@@ -55,9 +55,18 @@ class ImageController extends Controller
         if (Image::where('images.estate_id', '=', $estate->id)->count() >= 10) {
             return redirect()->route('images.index2', $estate->id)->with('status', 'No pueden añadirse más de 10 imágenes.');
         } elseif (Image::where('images.estate_id', '=', $estate->id)->count() < 10) {
-            $url = $request->file('url')->storeOnCloudinary()->getSecurePath();
+            //$url = $request->file('url')->storeOnCloudinary()->getSecurePath();
 
-            $request->file('url')->store('inmodata', 'cloudinary');
+            $url = cloudinary()->upload($request->file('url')->getRealPath(), [
+                'folder' => 'inmodata',
+                'transformation' => [
+                    'width' => 1280,
+                    'height' => 720,
+                ]
+            ])->getSecurePath();
+            //dd($resizedImage);
+
+            //$request->file('url')->store('inmodata', 'cloudinary');
 
             Image::create([
                 'url' => $url,
