@@ -24,7 +24,7 @@
                     <i class="now-ui-icons ui-1_settings-gear-63"></i>
                     <h6 style="margin-top: 5%">
                         {{ __('Admin Section') }}
-                        <b class="caret"></b>
+                        <b class="caret mt-2"></b>
                     </h6>
                 </a>
                 <div class="collapse @if (auth()->user()->role_id == 1 or auth()->user()->role_id

@@ -3,6 +3,14 @@
     <!--/ Intro Single star /-->
     <section class="intro-single">
         <div class="container">
+            @if (session($key ?? 'status'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session($key ?? 'status') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
@@ -70,7 +78,8 @@
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>{{ __('Location') }}:</strong>
-                                            <span>{{ $property->address }}, {{ $property->city }}</span>
+                                            <span>{{ $property->city }}, <br>{{ $property->address }}</span>
+
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>{{ __('Property Type') }}:</strong>
@@ -242,56 +251,41 @@
                         </div>
                         <div class="col-md-6 col-lg-4">
                             <div class="property-agent">
-                                <h4 class="title-agent">Anabella Geller</h4>
+                                <h4 class="title-agent">{{ $owner->user->first_name }} {{ $owner->user->last_name }}
+                                </h4>
                                 <p class="color-text-a">
-                                    Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum
-                                    sed sit amet
-                                    dui. Quisque velit nisi,
-                                    pretium ut lacinia in, elementum id enim.
+                                    {{ $owner->user->description }}
                                 </p>
                                 <ul class="list-unstyled">
                                     <li class="d-flex justify-content-between">
-                                        <strong>Phone:</strong>
-                                        <span class="color-text-a">(222) 4568932</span>
+                                        <strong>{{ __('Phone') }}:</strong>
+                                        <span class="color-text-a">(+34) {{ $owner->user->phone }}</span>
                                     </li>
                                     <li class="d-flex justify-content-between">
-                                        <strong>Mobile:</strong>
-                                        <span class="color-text-a">777 287 378 737</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Email:</strong>
-                                        <span class="color-text-a">annabella@example.com</span>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <strong>Skype:</strong>
-                                        <span class="color-text-a">Annabela.ge</span>
+                                        <strong>{{ __('Email') }}:</strong>
+                                        <span class="color-text-a">{{ $owner->user->email }}</span>
                                     </li>
                                 </ul>
                                 <div class="socials-a">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            <a href="#">
+                                            <a href="{{ $owner->user->facebook_link }}">
                                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="#">
+                                            <a href="{{ $owner->user->twitter_link }}">
                                                 <i class="fa fa-twitter" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="#">
+                                            <a href="{{ $owner->user->instagram_link }}">
                                                 <i class="fa fa-instagram" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="#">
+                                            <a href="{{ $owner->user->printerest_link }}">
                                                 <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                <i class="fa fa-dribbble" aria-hidden="true"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -300,28 +294,31 @@
                         </div>
                         <div class="col-md-12 col-lg-4">
                             <div class="property-contact">
-                                <form class="form-a">
+                                <form id="contact-estate-form" class="form-a"
+                                    action="{{ route('web.storeMessageEstate', $property->id) }}" method="POST">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-md-12 mb-1">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-lg form-control-a"
-                                                    id="inputName" placeholder="Name *" required>
+                                                <select class="form-control" name="to_user_id" placeholder="Message">
+                                                    <option value="{{ $owner->user->id }}">
+                                                        {{ $owner->user->first_name }}
+                                                        {{ $owner->user->last_name }}</option>
+                                                </select>
+                                                <div class="validation"></div>
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-1">
                                             <div class="form-group">
-                                                <input type="email" class="form-control form-control-lg form-control-a"
-                                                    id="inputEmail1" placeholder="Email *" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12 mb-1">
-                                            <div class="form-group">
-                                                <textarea id="textMessage" class="form-control" placeholder="Comment *"
-                                                    name="message" cols="45" rows="8" required></textarea>
+                                                <textarea id="textMessage" class="form-control"
+                                                    placeholder="{{ __('Message') }}" name="message" cols="45" rows="8"
+                                                    required></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
-                                            <button type="submit" class="btn btn-a">{{ __('Send Message') }}</button>
+                                            <a onclick="event.preventDefault();
+                                                                                            document.getElementById('contact-estate-form').submit();"
+                                                class="btn btn-a">{{ __('Send Message') }}</a>
                                         </div>
                                     </div>
                                 </form>

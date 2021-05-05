@@ -31,6 +31,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [WebController::class, 'index'])->name('web.index');
 Route::get('/properties', [WebController::class, 'estates'])->name('web.estates');
 Route::get('/property/{property}', [WebController::class, 'estate'])->name('web.estate');
+Route::post('/contact/property/{estate}', [WebController::class, 'storeMessageEstate'])->name('web.storeMessageEstate');
 Route::get('/blogs', [WebController::class, 'blogs'])->name('web.blogs');
 Route::get('/blog', [WebController::class, 'blog'])->name('web.blog');
 Route::get('/agents', [WebController::class, 'agents'])->name('web.agents');
@@ -82,6 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('estates/{estate}/images/', [ImageController::class, 'store2'])->name('images.store2');
     Route::delete('estates/{image}/images/{estate}/', [ImageController::class, 'destroy'])->name('images.destroy');
     Route::get('my-owners-estates', [EstateController::class, 'index2'])->name('estates.index2');
+    Route::put('estates/{estate}/publish/', [EstateController::class, 'publish'])->name('estates.publish');
     Route::get('estates/create2/{owner}', [EstateController::class, 'create2'])->name('estates.create2');
     Route::get('estates/estates-pdf', [EstateController::class, 'pdfEstates'])->name('estates.pdfEstates');
     Route::get('estates/my-estates-pdf', [EstateController::class, 'pdfMyEstates'])->name('estates.pdfMyEstates');

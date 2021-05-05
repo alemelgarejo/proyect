@@ -17,6 +17,7 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->integer('user_id', false, true, 5)->nullable();
             $table->integer('to_user_id', false, true, 5)->nullable();
+            $table->integer('estate_id', false, true, 5)->nullable();
             $table->text('message')->nullable();
             $table->timestamps();
         });

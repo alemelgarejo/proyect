@@ -58,21 +58,21 @@
                                         @include('alerts.feedback', ['field' => 'type'])
                                     </div>
                                 </div>
-                                <div class="col-md-2 pr-1">
+                                <div class="col-md-2 pl-5">
                                     <div class="form-group">
-                                        <label>{{ __('Interest Type') }}</label>
-                                        <select name="interest_type" id="interest_type" class="form-control">
-                                            <option value="Traspaso"
-                                                {{ $estate->interest_type == 'Traspaso' ? 'selected' : '' }}>
-                                                {{ __('Transfer') }}</option>
-                                            <option value="Compra"
-                                                {{ $estate->interest_type == 'Compra' ? 'selected' : '' }}>
-                                                {{ __('Buy') }}</option>
-                                            <option value="Alquiler"
-                                                {{ $estate->interest_type == 'Alquiler' ? 'selected' : '' }}>
-                                                {{ __('Rent') }}</option>
-                                        </select>
-                                        @include('alerts.feedback', ['field' => 'interest_type'])
+                                        <label>{{ __('Published') }}</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="published" id="published" type="radio"
+                                                value="yes" @if ($estate->published == 'yes') checked @else @endif>
+                                            <label class="form-check-label">{{ __('Yes') }}</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="published" id="published" type="radio"
+                                                value="no" @if ($estate->published == 'no') checked @else @endif>
+                                            <label class="form-check-label">{{ __('No') }}</label>
+                                        </div>
+
+                                        @include('alerts.feedback', ['field' => 'furnished'])
                                     </div>
                                 </div>
                                 <div class="col-md-2 ">
@@ -112,6 +112,23 @@
                             <div class="collapse" id="collapseExample">
                                 <hr class="pr-4">
                                 <div class="row">
+                                    <div class="col-md-2 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Interest Type') }}</label>
+                                            <select name="interest_type" id="interest_type" class="form-control">
+                                                <option value="Traspaso"
+                                                    {{ $estate->interest_type == 'Traspaso' ? 'selected' : '' }}>
+                                                    {{ __('Transfer') }}</option>
+                                                <option value="Compra"
+                                                    {{ $estate->interest_type == 'Compra' ? 'selected' : '' }}>
+                                                    {{ __('Buy') }}</option>
+                                                <option value="Alquiler"
+                                                    {{ $estate->interest_type == 'Alquiler' ? 'selected' : '' }}>
+                                                    {{ __('Rent') }}</option>
+                                            </select>
+                                            @include('alerts.feedback', ['field' => 'interest_type'])
+                                        </div>
+                                    </div>
                                     <div class="col-md-2 pr-2 pl-3">
                                         <div class="form-group">
                                             <label>{{ __('Value') }} (€)</label>
@@ -153,6 +170,8 @@
                                             @include('alerts.feedback', ['field' => 'baths'])
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-md-2 pr-4">
                                         <div class="form-group">
                                             <label>{{ __('Lobbies') }}</label>
@@ -161,8 +180,6 @@
                                             @include('alerts.feedback', ['field' => 'lobbies'])
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-2 pr-2">
                                         <div class="form-group">
                                             <label>{{ __('Lobbies Surface') }} m<sup>2</sup></label>

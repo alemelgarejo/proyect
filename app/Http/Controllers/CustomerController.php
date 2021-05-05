@@ -23,7 +23,7 @@ class CustomerController extends Controller
     public function index(Customer $customers, Request $request)
     {
         if ($request['search'] == null) {
-            return view('customers.index', ['customers' => $customers->paginate(5)]);
+            return view('customers.index', ['customers' => $customers->orderBy('status', 'DESC')->paginate(5)]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
             return view('customers.index', [
@@ -43,6 +43,7 @@ class CustomerController extends Controller
             return view('my-customers.index', [
                 'customers' => Customer::where('customers.user_id', '=', auth()->user()->id)
                     ->select('customers.*')
+                    ->orderBy('status', 'DESC')
                     ->paginate(5),
             ]);
         } elseif ($request['search'] != null) {

@@ -83,6 +83,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12 pr-4">
+                                    <div class="form-group">
+                                        <label>{{ __(' Description') }}</label>
+                                        <textarea type="text" name="description" class="form-control"
+                                            value="">{{ old('description', auth()->user()->description) }}</textarea>
+                                        @include('alerts.feedback', ['field' => 'description'])
+                                    </div>
+                                </div>
+                            </div>
                             <div class="card-footer ">
                                 <button type="submit" class="btn btn-primary btn-round"
                                     style="background: #2CA8FF;">{{ __('Save') }}</button>

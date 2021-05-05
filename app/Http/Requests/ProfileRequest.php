@@ -33,6 +33,7 @@ class ProfileRequest extends FormRequest
             'comertial' => ['required',  Rule::unique((new User)->getTable())->ignore(auth()->id())],
             'phone' => ['required',  Rule::unique((new User)->getTable())->ignore(auth()->id())],
             'birthdate' => ['required'],
+            'description' => ['required', 'max:70'],
             //'photo' => ['nullable', 'image'],
         ];
     }

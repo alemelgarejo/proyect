@@ -8,37 +8,57 @@ use App\Models\User;
 use App\Models\Web;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Null_;
 
 class WebController extends Controller
 {
     public function index()
     {
         return view('web.index', [
-            'properties' => Estate::where('estates.status', 1)->orderBy('created_at', 'DESC')->take(6)->get(),
+            'properties' => Estate::where('estates.published', 'yes')->orderBy('created_at', 'DESC')->take(6)->get(),
             'agents' => User::where('users.role_id', 1)->orWhere('users.role_id', 2)->orWhere('users.role_id', 3)->get()
         ]);
     }
 
     public function about()
     {
-        return view('web.about');
+        return view('web.about', [
+            'agents' => User::where('users.role_id', 1)
+                ->orWhere('users.role_id', 2)
+                ->orWhere('users.role_id', 3)
+                ->get()
+        ]);
     }
 
     public function estates()
     {
         return view('web.property-grid', [
-            'properties' => Estate::where('estates.status', 1)->paginate(6)
+            'properties' => Estate::where('estates.published', 'yes')->paginate(6)
         ]);
     }
 
     public function estate(Estate $property)
     {
-        if ($property->status == 1) {
+        if ($property->published == 'yes') {
             return view('web.property-single', [
-                'property' => $property
+                'property' => $property,
+                'owner' => $property->owner
             ]);
         }
         return back();
+    }
+
+    public function storeMessageEstate(Request $request, Estate $estate)
+    {
+        Message::create([
+            'user_id' => auth()->user()->id,
+            'to_user_id' => $request['to_user_id'],
+            'estate_id' => $estate->id,
+            'message' => $request['message'],
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+        return redirect()->route('web.estate', $estate->id)->with('status', 'Mensaje enviado con éxito.');
     }
 
 
@@ -57,7 +77,8 @@ class WebController extends Controller
         if ($agent->role_id == 1 or $agent->role_id == 2 or $agent->role_id == 3) {
             return view('web.agent-single', [
                 'agent' => $agent,
-                /* 'estates' => , */
+                'estates' => Estate::join('owners', 'estates.owner_id', '=', 'owners.id')
+                    ->where('owners.user_id', '=', auth()->user()->id)->where('estates.published', 'yes')->select('estates.*')->get(),
             ]);
         }
         return back();
@@ -87,6 +108,7 @@ class WebController extends Controller
         Message::create([
             'user_id' => auth()->user()->id,
             'to_user_id' => $request['to_user_id'],
+            'estate_id' => Null,
             'message' => $request['message'],
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

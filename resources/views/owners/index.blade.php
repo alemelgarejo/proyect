@@ -30,7 +30,7 @@
                         </div>
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
-                                <tr>
+                                <tr style="font-size: smaller">
                                     <th>Name</th>
                                     <th>Surname</th>
                                     <th>Email</th>
@@ -50,6 +50,13 @@
                                         <td>{{ $owner->phone }}</td>
                                         <td>{{ $owner->user->first_name }} {{ $owner->user->last_name }}</td>
                                         <td class="text-right">
+                                            @if ($owner->status == 1)
+                                                <span
+                                                    class="badge badge-success pull-left mt-2">{{ __('Active') }}</span>
+                                            @elseif($owner->status == 0)
+                                                <span
+                                                    class="badge badge-danger pull-left mt-2">{{ __('Inactive') }}</span>
+                                            @endif
                                             <a type="button" href="{{ route('owners.pdfOwner', $owner->id) }}"
                                                 rel="tooltip" class="btn btn-danger btn-icon btn-sm " data-original-title=""
                                                 title="PDF">

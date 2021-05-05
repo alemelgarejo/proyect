@@ -27,6 +27,7 @@ class StoreEstateRequest extends FormRequest
             'owner_id' => ['required'],
             'status' => ['required'],
             'value' => ['required', 'numeric'],
+            'interest_type' => ['required'],
             'type' => ['required'],
             'city' => ['required', 'string', 'min:2', 'max:150'],
             'address' => ['required', 'string', 'min:2', 'max:150'],

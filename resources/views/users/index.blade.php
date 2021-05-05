@@ -32,7 +32,7 @@
                         </div>
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
-                                <tr>
+                                <tr style="font-size: smaller">
                                     <th>{{ __('Name') }}</th>
                                     <th>{{ __('Surname') }}</th>
                                     <th>{{ __('Email') }}</th>
@@ -50,7 +50,17 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->dni }}</td>
                                         <td>{{ $user->phone }}</td>
-                                        <td>{{ $user->role->name }}</td>
+                                        <td>
+                                            @if ($user->role->id == 1)
+                                                <span class="badge badge-danger">{{ $user->role->name }}</span>
+                                            @elseif ($user->role->id == 2)
+                                                <span class="badge badge-primary">{{ $user->role->name }}</span>
+                                            @elseif ($user->role->id == 3)
+                                                <span class="badge badge-warning">{{ $user->role->name }}</span>
+                                            @elseif ($user->role->id == 4)
+                                                <span class="badge badge-secondary">{{ $user->role->name }}</span>
+                                            @endif
+                                        </td>
                                         <td class="text-right">
                                             <a type="button" href="{{ route('user.pdfUser', $user->id) }}" rel="tooltip"
                                                 class="btn btn-danger btn-icon btn-sm " data-original-title="" title="PDF">

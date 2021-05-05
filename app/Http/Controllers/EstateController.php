@@ -22,7 +22,7 @@ class EstateController extends Controller
     public function index(Estate $estates, Request $request)
     {
         if ($request['search'] == null) {
-            return view('estates.index', ['estates' => $estates->paginate(5)]);
+            return view('estates.index', ['estates' => $estates->orderBy('status', 'DESC')->paginate(5)]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
             return view('estates.index', [
@@ -43,6 +43,7 @@ class EstateController extends Controller
             return view('my-estates.index', [
                 'estates' => Estate::join('owners', 'estates.owner_id', '=', 'owners.id')
                     ->where('owners.user_id', '=', auth()->user()->id)
+                    ->orderBy('status', 'DESC')
                     ->select('estates.*')
                     ->paginate(5),
             ]);
@@ -79,10 +80,9 @@ class EstateController extends Controller
     //Generar PDF con los clientes del usuario
     public function pdfMyEstates(Estate $estates)
     {
-        view()->share(['estates', Estate::join('owners', 'estates.owner_id', '=', 'owners.id')
-            ->where('owners.user_id', '=', auth()->user()->id)]);
-        $pdf = PDF::loadView('estates.pdf-grid', Estate::join('owners', 'estates.owner_id', '=', 'owners.id')
-            ->where('owners.user_id', '=', auth()->user()->id));
+        $estates = Estate::join('owners', 'estates.owner_id', '=', 'owners.id')->where('owners.user_id', '=', auth()->user()->id)->get();
+        view()->share('estates', $estates);
+        $pdf = PDF::loadView('estates.pdf-grid', $estates);
         return $pdf->download('My-Estates.pdf');
     }
     //Generar PDF con los datos del clientes
@@ -117,6 +117,7 @@ class EstateController extends Controller
             'status' => $request['status'],
             'value' => $request['value'],
             'type' => $request['type'],
+            'interest_type' => $request['interest_type'],
             'city' => $request['city'],
             'address' => $request['address'],
             'surface' => $request['surface'],
@@ -127,6 +128,17 @@ class EstateController extends Controller
             'updated_at' => Carbon::now(),
         ]);
         return redirect()->route('estates.index')->with('status', 'Propiedad creada con éxito.');
+    }
+
+    public function publish(Request $request, Estate $estate)
+    {
+        if ($estate->published == 'yes') {
+            $estate->update($request->all() + ['published' => 'no'] + ['updated_at' => Carbon::now()]);
+            return redirect()->back()->with('status', 'Propiedad eliminada de cara al público.');
+        } elseif ($estate->published == 'no') {
+            $estate->update($request->all() + ['published' => 'yes'] + ['updated_at' => Carbon::now()]);
+            return redirect()->back()->with('status', 'Propiedad públicada con éxito.');
+        }
     }
 
     public function edit(Estate $estate, Owner $owner)

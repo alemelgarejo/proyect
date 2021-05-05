@@ -31,7 +31,7 @@
                         </div>
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
-                                <tr>
+                                <tr style="font-size: smaller">
                                     <th>{{ __('Name') }}</th>
                                     <th>{{ __('Surname') }}</th>
                                     <th>{{ __('Email') }}</th>
@@ -51,6 +51,13 @@
                                         <td>{{ $customer->phone }}</td>
                                         <td>{{ $customer->user->first_name }} {{ $customer->user->last_name }}</td>
                                         <td class="text-right">
+                                            @if ($customer->status == 1)
+                                                <span
+                                                    class="badge badge-success pull-left mt-2">{{ __('Active') }}</span>
+                                            @elseif($customer->status == 0)
+                                                <span
+                                                    class="badge badge-danger pull-left mt-2">{{ __('Inactive') }}</span>
+                                            @endif
                                             <a type="button" href="{{ route('customers.pdfCustomer', $customer->id) }}"
                                                 rel="tooltip" class="btn btn-danger btn-icon btn-sm " data-original-title=""
                                                 title="PDF">

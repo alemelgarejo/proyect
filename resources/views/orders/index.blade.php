@@ -30,7 +30,7 @@
                         </div>
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
-                                <tr>
+                                <tr style="font-size: smaller">
                                     <th>{{ __('Customer') }}</th>
                                     <th>{{ __('Type') }}</th>
                                     <th>{{ __('City') }}</th>

@@ -23,7 +23,7 @@ class OwnerController extends Controller
     public function index(Owner $owners, Request $request)
     {
         if ($request['search'] == null) {
-            return view('owners.index', ['owners' => $owners->paginate(5)]);
+            return view('owners.index', ['owners' => $owners->orderBy('status', 'DESC')->paginate(5)]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
             return view('owners.index', [
@@ -42,6 +42,7 @@ class OwnerController extends Controller
         if ($request['search'] == null) {
             return view('my-owners.index', [
                 'owners' => Owner::where('owners.user_id', '=', auth()->user()->id)
+                    ->orderBy('status', 'DESC')
                     ->select('owners.*')
                     ->paginate(5),
             ]);

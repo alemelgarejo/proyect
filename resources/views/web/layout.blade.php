@@ -169,7 +169,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                                                                                            document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         </li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -213,10 +213,10 @@
                                 <a href="{{ route('web.estates') }}">{{ __('Estates') }}</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="{{ route('web.estates') }}">{{ __('Agents') }}</a>
+                                <a href="{{ route('web.agents') }}">{{ __('Agents') }}</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">{{ __('Contact') }}</a>
+                                <a href="{{ route('web.contact') }}">{{ __('Contact') }}</a>
                             </li>
                         </ul>
                     </nav>

@@ -17,6 +17,7 @@ class CreateEstatesTable extends Migration
             $table->id();
             $table->integer('owner_id', false, true, 5)->nullable();
             $table->boolean('status')->default(false);
+            $table->enum('published', ['yes', 'no'])->default('no');
             $table->string('value', 255)->nullable();
             $table->string('type', 255)->nullable();
             $table->string('interest_type', 255)->nullable();
