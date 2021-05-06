@@ -136,6 +136,11 @@ class OwnerController extends Controller
      */
     public function destroy(Owner $owner)
     {
-        //
+        if ($owner->estates->count() >= 1) {
+            return redirect()->route('owners.edit', $owner->id)->with('status', 'No puedes eliminar un propietario que tengan propiedades en el sistema.');
+        } elseif ($owner->estates->count() == 0) {
+            $owner->delete();
+            return redirect('owners')->with('status', 'Propietario eliminado con éxito.');
+        }
     }
 }

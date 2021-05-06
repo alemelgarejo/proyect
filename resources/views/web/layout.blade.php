@@ -169,7 +169,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                            document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                                                                                                                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         </li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -223,28 +223,23 @@
                     <div class="socials-a">
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.facebook.com/ale.melgarejo.3/" target="__blank">
                                     <i class="fa fa-facebook" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://twitter.com/melgarejoale" target="__blank">
                                     <i class="fa fa-twitter" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.instagram.com/alemelgarejo96/" target="__blank">
                                     <i class="fa fa-instagram" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="{{ route('web.index') }}" target="__blank">
                                     <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fa fa-dribbble" aria-hidden="true"></i>
                                 </a>
                             </li>
                         </ul>
@@ -252,17 +247,8 @@
                     <div class="copyright-footer">
                         <p class="copyright color-text-a">
                             &copy; Copyright
-                            <span class="color-a">EstateAgency</span> All Rights Reserved.
+                            <span class="color-a">Inmodata</span> All Rights Reserved.
                         </p>
-                    </div>
-                    <div class="credits">
-                        <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=EstateAgency
-            -->
-                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
                     </div>
                 </div>
             </div>

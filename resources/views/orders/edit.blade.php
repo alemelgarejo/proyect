@@ -14,12 +14,12 @@
                 <div class="card">
                     <div class="card-header">
 
-                        <button class="btn btn-info pull-right btn-round" type="button" data-toggle="collapse"
+                        <button class="btn btn-info pull-right btn-round btn-sm" type="button" data-toggle="collapse"
                             data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                             <i class="now-ui-icons arrows-1_minimal-down"></i>
                         </button>
                         <a href="{{ route('orders.pdfOrder', $order->id) }}"
-                            class="btn btn-danger btn-round pull-right">{{ __('PDF') }}</a>
+                            class="btn btn-danger btn-round pull-right btn-sm">{{ __('PDF') }}</a>
                         <h5 class="title">{{ __('Edit Order') }} {{ $order->customer->first_name }}
                             {{ $order->customer->last_name }}</h5>
                     </div>
@@ -68,6 +68,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="collapse" id="collapseExample">
                                 <hr class="pr-4">
                                 <div class="row">
@@ -337,64 +338,64 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-footer ">
-                                    <button type="submit" class="btn btn-primary btn-round"
-                                        style="background: #2CA8FF;">{{ __('Update') }}</button>
-                                    {{-- <a href="{{route('orders.searchOrder', $order->id)}}" class="btn btn-primary btn-round" style="background: #2CA8FF;">{{__('Search')}}</a> --}}
-                                    <button id="delete" data-orderid="{{ $order->id }}" type="button"
-                                        class="btn btn-danger btn-round">{{ __('Delete') }}</button>
-                                </div>
+                            </div>
+
+                            <div class="card-footer ">
+                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Update') }}</button>
+                                {{-- <a href="{{route('orders.searchOrder', $order->id)}}" class="btn btn-primary btn-round" style="background: #2CA8FF;">{{__('Search')}}</a> --}}
+                                <button id="delete" data-orderid="{{ $order->id }}" type="button"
+                                    class="btn btn-danger btn-round btn-sm" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('Delete') }}</button>
+                            </div>
                         </form>
                     </div>
                 </div>
-            </div>
-            @foreach ($estates as $estate)
-                <div class="card" style="width: 20rem;">
-                    <div class="card-body">
-                        <a href="{{ route('estates.edit', $estate->id) }}" style="background: #2CA8FF"
-                            class="list-group-item list-group-item-action active">
-                            {{ __('Owner') }}: {{ $estate->owner->first_name }} {{ $estate->owner->last_name }}
-                        </a>
-                        <p class="card-text">
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge badge-info badge-pill">{{ __('Type') }}</span>
-                                {{ $estate->type }}
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge badge-info badge-pill">{{ __('Address') }}</span>
-                                {{ $estate->address }}
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge badge-info badge-pill">{{ __('City') }}</span>
-                                {{ $estate->city }}
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge badge-info badge-pill">{{ __('Value') }}</span>
-                                {{ $estate->value }} €
-                            </li>
-                            <li class="list-group-item d-flex align-items-center">
-                                <span class="badge badge-info badge-pill">{{ __('Surface') }}</span>
-                                <div style="margin-left: 60%">{{ $estate->surface }} m<sup>2</sup></div>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge badge-info badge-pill">{{ __('Rooms') }}</span>
-                                {{ $estate->rooms }}
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge badge-info badge-pill">{{ __('Actions') }}</span>
-                                <a type="button" href="{{ route('estates.edit', $estate->id) }}" rel="tooltip"
-                                    class="btn btn-success btn-icon btn-sm " data-original-title="" title="Edit">
-                                    <i class="now-ui-icons ui-2_settings-90"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        </p>
+                @foreach ($estates as $estate)
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-body">
+                            <a href="{{ route('estates.edit', $estate->id) }}" style="background: #2CA8FF"
+                                class="list-group-item list-group-item-action active">
+                                {{ __('Owner') }}: {{ $estate->owner->first_name }} {{ $estate->owner->last_name }}
+                            </a>
+                            <p class="card-text">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-info badge-pill">{{ __('Type') }}</span>
+                                    {{ $estate->type }}
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-info badge-pill">{{ __('Address') }}</span>
+                                    {{ $estate->address }}
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-info badge-pill">{{ __('City') }}</span>
+                                    {{ $estate->city }}
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-info badge-pill">{{ __('Value') }}</span>
+                                    {{ $estate->value }} €
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <span class="badge badge-info badge-pill">{{ __('Surface') }}</span>
+                                    <div style="margin-left: 60%">{{ $estate->surface }} m<sup>2</sup></div>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-info badge-pill">{{ __('Rooms') }}</span>
+                                    {{ $estate->rooms }}
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-info badge-pill">{{ __('Actions') }}</span>
+                                    <a type="button" href="{{ route('estates.edit', $estate->id) }}" rel="tooltip"
+                                        class="btn btn-success btn-icon btn-sm " data-original-title="" title="Edit">
+                                        <i class="now-ui-icons ui-2_settings-90"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
     </div>
 
     <div id="applicantDeleteModal" class="modal modal-danger fade" tabindex="-1" role="dialog"

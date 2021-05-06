@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEstateRequest;
 use App\Http\Requests\UpdateEstateRequest;
 use App\Models\Estate;
+use App\Models\Image;
 use App\Models\Owner;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -127,6 +128,16 @@ class EstateController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
+        $id = Estate::all()->count() + 1;
+        Image::create([
+            'url' => 'https://res.cloudinary.com/alemelgarejo/image/upload/c_fill,h_600,w_800/v1620328393/inmodata/imagen-default_tbtmwg.png',
+            'urlWeb' => 'https://res.cloudinary.com/alemelgarejo/image/upload/c_scale,h_720,w_1280/v1620328393/inmodata/imagen-default_tbtmwg.png',
+            'estate_id' => $id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
         return redirect()->route('estates.index')->with('status', 'Propiedad creada con éxito.');
     }
 

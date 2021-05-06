@@ -14,9 +14,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-info btn-round text-white pull-right"
+                        <a class="btn btn-info btn-round text-white pull-right btn-sm"
                             href="{{ route('owners.create') }}">{{ __('Add owner') }}</a>
-                        <a class="btn btn-danger btn-round text-white pull-right"
+                        <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('owners.pdfOwners') }}">{{ __('PDF') }}</a>
                         <h4 class="card-title">{{ __('Owners') }}</h4>
 

@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-danger btn-round text-white pull-right"
+                        <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('user.pdfUser', $user->id) }}">{{ __('PDF') }}</a>
                         <h5 class="title">{{ __('Edit User') }} {{ $user->first_name }} {{ $user->last_name }}</h5>
                     </div>
@@ -112,7 +112,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-info pull-right btn-round" type="button" data-toggle="collapse"
+                            <button class="btn btn-info pull-right btn-round btn-sm" type="button" data-toggle="collapse"
                                 data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="now-ui-icons arrows-1_minimal-down"></i>
                             </button>
@@ -168,9 +168,9 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-info btn-round">{{ __('Update') }}</button>
+                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Update') }}</button>
                                 <button id="delete" data-userid="{{ $user->id }}" type="button"
-                                    class="btn btn-danger btn-round pull-right mr-4">{{ __('Delete') }}</button>
+                                    class="btn btn-danger btn-round pull-right mr-4  btn-sm" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('Delete') }}</button>
                             </div>
                         </form>
                     </div>
@@ -277,10 +277,10 @@
                         <input type="hidden" , name="id" id="user_id">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default waves-effect btn-round"
+                        <button type="button" class="btn btn-default waves-effect btn-round btn-sm"
                             data-dismiss="modal">Close</button>
                         <button type="submit"
-                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round">Delete</button>
+                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round btn-sm">Delete</button>
                     </div>
 
                 </form>

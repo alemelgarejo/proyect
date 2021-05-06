@@ -14,10 +14,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-info btn-round text-white pull-right"
+                        <a class="btn btn-info btn-round text-white pull-right btn-sm"
                             href="{{ route('customers.create') }}">{{ __('Add
                             customer') }}</a>
-                        <a class="btn btn-danger btn-round text-white pull-right"
+                        <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('customers.pdfCustomers') }}">{{ __('PDF') }}</a>
                         <h4 class="card-title">{{ __('Customers') }}</h4>
 

@@ -133,7 +133,11 @@ class CustomerController extends Controller
     //Eliminar cliente
     public function destroy(Customer $customer)
     {
-        $customer->delete();
-        return redirect('customers')->with('status', 'Cliente eliminado con éxito.');
+        if ($customer->orders->count() >= 1) {
+            return redirect()->route('customers.edit', $customer->id)->with('status', 'No puedes eliminar un cliente que tenga ordenes en el sistema.');
+        } elseif ($customer->orders->count() == 0) {
+            $customer->delete();
+            return redirect('customers')->with('status', 'Cliente eliminado con éxito.');
+        }
     }
 }

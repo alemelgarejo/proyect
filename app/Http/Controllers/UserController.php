@@ -93,5 +93,12 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect('user')->with('status', 'Usuario eliminado con éxito.');
+
+        if ($user->customers->count() >= 1 or $user->owners->count() >= 1) {
+            return redirect()->route('users.edit', $user->id)->with('status', 'No puedes eliminar un usuario que tenga clientes y propieitarios en el sistema.');
+        } elseif ($user->owners->count() == 0 and $user->customers->count() == 0) {
+            $user->delete();
+            return redirect('users')->with('status', 'Usuario eliminado con éxito.');
+        }
     }
 }

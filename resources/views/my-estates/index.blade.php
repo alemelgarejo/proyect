@@ -14,9 +14,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-primary btn-round text-white pull-right" style="background: #2CA8FF;"
+                        <a class="btn btn-info btn-round text-white pull-right btn-sm"
                             href="{{ route('estates.create') }}">{{ __('Add estate') }}</a>
-                        <a class="btn btn-danger btn-round text-white pull-right"
+                        <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('estates.pdfMyEstates') }}">{{ __('PDF') }}</a>
                         <h4 class="card-title">{{ __('My Estates') }}</h4>
 
@@ -90,7 +90,7 @@
 
 
 
-                                                                    @if (auth()->user()->id !=$estate->owner->user_id)
+                                                                         @if (auth()->user()->id !=$estate->owner->user_id)
                                                 disabled @endif
                                 @endif>
                                 <i class="now-ui-icons files_single-copy-04"></i>
@@ -100,7 +100,7 @@
 
 
 
-                                                                            @if (auth()->user()->id !=$estate->owner->user_id)
+                                                                                 @if (auth()->user()->id !=$estate->owner->user_id)
                                     disabled @endif
                                     @endif>
                                     <i class="now-ui-icons design_image"></i>

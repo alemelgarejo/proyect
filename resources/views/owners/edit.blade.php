@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="card-header">
                         <a href="{{ route('owners.pdfOwner', $owner->id) }}"
-                            class="btn btn-danger btn-round pull-right">{{ __('PDF') }}</a>
+                            class="btn btn-danger btn-round pull-right btn-sm">{{ __('PDF') }}</a>
                         <h5 class="title">{{ __('Edit Owner') }} {{ $owner->first_name }} {{ $owner->last_name }}</h5>
                     </div>
                     <div class="card-body">
@@ -117,11 +117,11 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-info btn-round">{{ __('Update') }}</button>
+                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Update') }}</button>
                                 <a href="{{ route('estates.create2', $owner->id) }}"
-                                    class="btn btn-info btn-round">{{ __('Add estate') }}</a>
-                                <button id=" delete" data-ownerid="{{ $owner->id }}" type="button"
-                                    class="btn btn-danger btn-round pull-right">{{ __('Delete') }}</button>
+                                    class="btn btn-info btn-round btn-sm">{{ __('Add estate') }}</a>
+                                <button id="delete" data-ownerid="{{ $owner->id }}" type="button"
+                                    class="btn btn-danger btn-round pull-right btn-sm" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('Delete') }}</button>
                             </div>
                         </form>
                     </div>

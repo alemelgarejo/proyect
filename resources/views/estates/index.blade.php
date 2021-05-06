@@ -14,9 +14,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-info btn-round text-white pull-right"
+                        <a class="btn btn-info btn-round text-white pull-right btn-sm"
                             href="{{ route('estates.create') }}">{{ __('Add estate') }}</a>
-                        <a class="btn btn-danger btn-round text-white pull-right"
+                        <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('estates.pdfEstates') }}">{{ __('PDF') }}</a>
                         <h4 class="card-title">{{ __('Estates') }}</h4>
 
@@ -86,7 +86,7 @@
                                             title="PDF" @if (auth()->user()->role_id == 1 or auth()->user()->role_id == 2) @elseif(auth()->user()->role_id != 1 and auth()->user()->role_id != 2)
 
 
-                                                          @if (auth()->user()->id
+                                                               @if (auth()->user()->id
                                                 !=$estate->owner->user_id)
                                                 disabled @endif
                                 @endif>
@@ -96,7 +96,7 @@
                                 class="btn btn-primary btn-icon btn-sm " data-original-title="" title="Images" @if (auth()->user()->role_id == 1 or auth()->user()->role_id == 2) @elseif(auth()->user()->role_id != 1 and auth()->user()->role_id != 2)
 
 
-                                                                                      @if (auth()->user()->id !=$estate->owner->user_id)
+                                                                                           @if (auth()->user()->id !=$estate->owner->user_id)
                                     disabled @endif
                                     @endif>
                                     <i class="now-ui-icons design_image"></i>
@@ -105,7 +105,7 @@
                                 class="btn btn-success btn-icon btn-sm " data-original-title="" title="Edit" @if (auth()->user()->role_id == 1 or auth()->user()->role_id == 2) @elseif(auth()->user()->role_id != 1 and auth()->user()->role_id != 2)
 
 
-                                                        @if (auth()->user()->id
+                                                             @if (auth()->user()->id
                                     !=$estate->owner->user_id)
                                     disabled @endif @endif>
                                     <i class="now-ui-icons ui-2_settings-90"></i>

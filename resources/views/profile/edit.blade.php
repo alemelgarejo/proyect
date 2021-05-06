@@ -94,8 +94,7 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-primary btn-round"
-                                    style="background: #2CA8FF;">{{ __('Save') }}</button>
+                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Save') }}</button>
                             </div>
                             <hr class="half-rule" />
                         </form>
@@ -119,8 +118,7 @@
                             </div>
                             <br>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-primary btn-round"
-                                    style="background: #2CA8FF;">{{ __('Save') }}</button>
+                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Save') }}</button>
                             </div>
                             <hr class="half-rule" />
                         </form>
@@ -166,41 +164,41 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-primary btn-round "
-                                    style="background: #2CA8FF;">{{ __('Change Password') }}</button>
+                                <button type="submit" class="btn btn-info btn-round btn-sm "">{{ __('Change Password') }}</button>
+                                    </div>
+                                </form>
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-user">
-                    <div class="image">
-                        <img src="{{ asset('assets') }}/img/bg5.jpg" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <div class="author">
-                            <a href="{{ route('profile.edit') }}">
-                                <img class="avatar" src="{{ asset(auth()->user()->photo) }}" alt="...">
-                                <h5 class="title">{{ auth()->user()->name }}</h5>
-                            </a>
-                            <p class="description">
-                                {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
-                            </p>
-                            <p class="description">
-                                {{ auth()->user()->email }}
-                            </p>
-                            <p class="description">
-                                {{ auth()->user()->phone }}
-                            </p>
-                            <p class="description">
-                                {{ auth()->user()->dni }}
-                            </p>
-                            <p class="description">
-                                {{ auth()->user()->comertial }}
-                            </p>
                         </div>
-                    </div>{{-- <hr>
+                    </div>
+                    <div class=" col-md-4">
+                                    <div class="card card-user">
+                                        <div class="image">
+                                            <img src="{{ asset('assets') }}/img/bg5.jpg" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="author">
+                                                <a href="{{ route('profile.edit') }}">
+                                                    <img class="avatar" src="{{ asset(auth()->user()->photo) }}"
+                                                        alt="...">
+                                                    <h5 class="title">{{ auth()->user()->name }}</h5>
+                                                </a>
+                                                <p class="description">
+                                                    {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
+                                                </p>
+                                                <p class="description">
+                                                    {{ auth()->user()->email }}
+                                                </p>
+                                                <p class="description">
+                                                    {{ auth()->user()->phone }}
+                                                </p>
+                                                <p class="description">
+                                                    {{ auth()->user()->dni }}
+                                                </p>
+                                                <p class="description">
+                                                    {{ auth()->user()->comertial }}
+                                                </p>
+                                            </div>
+                                        </div>{{-- <hr>
           <div class="button-container">
             <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
               <i class="fab fa-facebook-square"></i>
@@ -212,8 +210,8 @@
               <i class="fab fa-google-plus-square"></i>
             </button>
           </div> --}}
+                                    </div>
+                            </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-@endsection
+            @endsection

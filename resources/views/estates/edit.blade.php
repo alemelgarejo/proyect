@@ -13,12 +13,14 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <button class="btn btn-info pull-right btn-round" type="button" data-toggle="collapse"
+                        <button class="btn btn-info pull-right btn-round btn-sm" type="button" data-toggle="collapse"
                             data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                             <i class="now-ui-icons arrows-1_minimal-down"></i>
                         </button>
                         <a href="{{ route('estates.pdfEstate', $estate->id) }}"
-                            class="btn btn-danger btn-round pull-right">{{ __('PDF') }}</a>
+                            class="btn btn-danger btn-round pull-right btn-sm">{{ __('PDF') }}</a>
+                        <a href="{{ route('images.index2', $estate->id) }}"
+                            class="btn btn-primary btn-round btn-sm pull-right">{{ __('Images') }}</a>
                         <h5 class="title">{{ __('Edit Estate') }} | {{ __('Owner') }}:
                             {{ $estate->owner->first_name }}
                             {{ $estate->owner->last_name }}</h5>
@@ -692,10 +694,9 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-primary btn-round"
-                                    style="background: #2CA8FF;">{{ __('Update') }}</button>
+                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Update') }}</button>
                                 <button id="delete" data-estateid="{{ $estate->id }}" type="button"
-                                    class="btn btn-danger btn-round">{{ __('Delete') }}</button>
+                                    class="btn btn-danger btn-round btn-sm" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('Delete') }}</button>
                             </div>
                         </form>
                     </div>

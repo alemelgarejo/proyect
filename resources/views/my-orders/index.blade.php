@@ -14,9 +14,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-primary btn-round text-white pull-right" style="background: #2CA8FF;"
+                        <a class="btn btn-info btn-round text-white pull-right btn-sm"
                             href="{{ route('orders.create') }}">{{ __('Add order') }}</a>
-                        <a class="btn btn-danger btn-round text-white pull-right"
+                        <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('orders.pdfOrders') }}">{{ __('PDF') }}</a>
                         <h4 class="card-title">{{ __('My Orders') }}</h4>
 

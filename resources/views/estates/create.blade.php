@@ -148,8 +148,7 @@
 
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-primary btn-round"
-                                    style="background: #2CA8FF;">{{ __('Save') }}</button>
+                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Save') }}</button>
                             </div>
                         </form>
                     </div>

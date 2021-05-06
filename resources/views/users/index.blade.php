@@ -15,10 +15,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-info btn-round text-white pull-right"
+                        <a class="btn btn-info btn-round text-white pull-right btn-sm"
                             href="{{ route('user.create') }}">{{ __('Add
                             user') }}</a>
-                        <a class="btn btn-danger btn-round text-white pull-right"
+                        <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('user.pdfUsers') }}">{{ __('PDF') }}</a>
                         <h4 class="card-title">{{ __('Users') }}</h4>
 
@@ -62,15 +62,20 @@
                                             @endif
                                         </td>
                                         <td class="text-right">
-                                            <a type="button" href="{{ route('user.pdfUser', $user->id) }}" rel="tooltip"
-                                                class="btn btn-danger btn-icon btn-sm " data-original-title="" title="PDF">
-                                                <i class="now-ui-icons files_single-copy-04"></i>
-                                            </a>
-                                            <a type="button" href="{{ route('user.edit', $user->id) }}" rel="tooltip"
-                                                class="btn btn-success btn-icon btn-sm " data-original-title=""
-                                                title="Edit">
-                                                <i class="now-ui-icons ui-2_settings-90"></i>
-                                            </a>
+                                            @if (auth()->user()->role_id != 1 and $user->role->id == 1)
+
+                                            @else
+                                                <a type="button" href="{{ route('user.pdfUser', $user->id) }}"
+                                                    rel="tooltip" class="btn btn-danger btn-icon btn-sm "
+                                                    data-original-title="" title="PDF">
+                                                    <i class="now-ui-icons files_single-copy-04"></i>
+                                                </a>
+                                                <a type="button" href="{{ route('user.edit', $user->id) }}" rel="tooltip"
+                                                    class="btn btn-success btn-icon btn-sm " data-original-title=""
+                                                    title="Edit">
+                                                    <i class="now-ui-icons ui-2_settings-90"></i>
+                                                </a>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

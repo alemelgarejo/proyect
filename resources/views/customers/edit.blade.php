@@ -114,7 +114,7 @@
                                 <a type="submit" class="btn btn-info btn-round"
                                     href="{{ route('orders.create2', $customer->id) }}">{{ __('Make Order') }}</a>
                                 <button id="delete" data-customerid="{{ $customer->id }}" type="button"
-                                    class="btn btn-danger btn-round pull-right">{{ __('Delete') }}</button>
+                                    class="btn btn-danger btn-round pull-right" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('Delete') }}</button>
                             </div>
                         </form>
                     </div>

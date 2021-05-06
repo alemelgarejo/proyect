@@ -130,7 +130,11 @@ class ImageController extends Controller
     {
         /* $url = str_replace('storage', 'public', $image->url);
         Storage::delete($url); */
-        $image->delete();
-        return redirect()->back()->with('status', 'Imágen eliminada con éxito.');
+        if ($estate->images->count() == 1) {
+            return redirect()->back()->with('status', 'Las propiedades no pueden quedarse sin imágenes.');
+        } elseif ($estate->images->count() > 1) {
+            $image->delete();
+            return redirect()->back()->with('status', 'Imágen eliminada con éxito.');
+        }
     }
 }

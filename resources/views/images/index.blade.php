@@ -34,7 +34,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a class="btn btn-primary btn-round text-white pull-right" style="background: #2CA8FF;"
+                        <a class="btn btn-info btn-round text-white pull-right  btn-sm"
                             href="{{ route('images.create2', $estate->id) }}">{{ __('Add image') }}</a>
                         <h4 class="title">{{ $estate->address }}, {{ $estate->city }} - {{ __('Images') }}</h4>
 
