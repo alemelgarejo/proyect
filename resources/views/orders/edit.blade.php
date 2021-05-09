@@ -416,10 +416,10 @@
                         <input type="hidden" , name="id" id="order_id">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default waves-effect btn-round"
-                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default waves-effect btn-round btn-sm"
+                            data-dismiss="modal"></button>
                         <button type="submit"
-                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round">Delete</button>
+                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round btn-sm">{{ __('Delete') }}</button>
                     </div>
 
                 </form>

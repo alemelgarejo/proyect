@@ -191,10 +191,10 @@
                         <input type="hidden" , name="id" id="owner_id">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default waves-effect btn-round"
+                        <button type="button" class="btn btn-default waves-effect btn-round btn-sm"
                             data-dismiss="modal">{{ __('Close') }}</button>
                         <button type="submit"
-                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round ">{{ __('Delete') }}</button>
+                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round  btn-sm">{{ __('Delete') }}</button>
                     </div>
 
                 </form>

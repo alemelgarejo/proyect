@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EstateController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OwnerController;
@@ -26,10 +27,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Web
 Route::get('/', [WebController::class, 'index'])->name('web.index');
 Route::get('/properties', [WebController::class, 'estates'])->name('web.estates');
+//Route::get('/properties', [WebController::class, 'estatesNewToOld'])->name('web.estatesNewToOld');
 Route::get('/property/{property}', [WebController::class, 'estate'])->name('web.estate');
 Route::post('/contact/property/{estate}', [WebController::class, 'storeMessageEstate'])->name('web.storeMessageEstate');
 Route::get('/blogs', [WebController::class, 'blogs'])->name('web.blogs');
@@ -44,9 +45,10 @@ Route::get('/login/web', [WebController::class, 'login'])->name('web.login');
 Route::get('/register/web', [WebController::class, 'register'])->name('web.register');
 Auth::routes();
 
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     //Users
     Route::resource('user', UserController::class, ['except' => ['show']]);

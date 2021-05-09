@@ -84,11 +84,12 @@
                                                             src="">
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary float-left btn-round"
+                                                        <button type="button"
+                                                            class="btn btn-secondary float-left btn-round btn-sm"
                                                             id="show-previous-image"><i class="fa fa-arrow-left"></i>
                                                         </button>
                                                         <button type="button" id="show-next-image"
-                                                            class="btn btn-secondary float-right btn-round"><i
+                                                            class="btn btn-secondary float-right btn-round btn-sm"><i
                                                                 class="fa fa-arrow-right"></i>
                                                         </button>
 

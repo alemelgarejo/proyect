@@ -15,6 +15,10 @@
                     <div class="card-header">
                         <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('user.pdfUser', $user->id) }}">{{ __('PDF') }}</a>
+                        @if ($user->role_id == 2 or $user->role_id == 3)
+                            <a class="btn btn-success btn-round text-white pull-right btn-sm"
+                                href="{{ route('web.agent', $user->id) }}" target="__blank">{{ __('Web View') }}</a>
+                        @endif
                         <h5 class="title">{{ __('Edit User') }} {{ $user->first_name }} {{ $user->last_name }}</h5>
                     </div>
                     <div class="card-body">

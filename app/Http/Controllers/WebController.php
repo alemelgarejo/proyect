@@ -33,9 +33,17 @@ class WebController extends Controller
     public function estates()
     {
         return view('web.property-grid', [
-            'properties' => Estate::where('estates.published', 'yes')->paginate(6)
+            'properties' => Estate::where('estates.published', 'yes')->paginate(6),
+            'type' => 'All'
         ]);
     }
+    /*  public function estatesNewToOld()
+    {
+        return view('web.property-grid', [
+            'properties' => Estate::where('estates.published', 'yes')->orderBy('created_at', 'DESC')->paginate(6),
+            'type' => 'New to Old'
+        ]);
+    } */
 
     public function estate(Estate $property)
     {
@@ -118,7 +126,21 @@ class WebController extends Controller
 
     public function search(Request $request)
     {
-        return view('web.search');
+        $interest_type = $request->input('interest_type');
+        $city = $request->input('city');
+        $max_value = $request->input('max_value');
+        $min_surface = $request->input('min_surface');
+        $rooms = $request->input('rooms');
+        $baths = $request->input('baths');
+        return view('web.search', [
+            'properties' => Estate::where('estates.published', 'LIKE', "%yes%")
+                ->where('estates.interest_type', 'LIKE', "%$interest_type%")
+                ->where('estates.city', 'LIKE', "%$city%")
+                ->where('estates.rooms', 'LIKE', "%$rooms%")
+                ->where('estates.baths', 'LIKE', "%$baths%")
+                ->whereBetween('estates.value', [0, $max_value])
+                ->paginate(6)
+        ]);
     }
 
     public function login()

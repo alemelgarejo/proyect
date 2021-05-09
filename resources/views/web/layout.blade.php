@@ -54,42 +54,28 @@
                     </div>
                     <div class="col-md-6 mb-2">
                         <div class="form-group">
-                            <label for="type">{{ __('Type') }}</label>
-                            <select class="form-control form-control-lg form-control-a" name="type" id="type">
+                            <label for="interest_type">{{ __('Interest Type') }}</label>
+                            <select class="form-control form-control-lg form-control-a" name="interest_type"
+                                id="interest_type">
+                                <option value="">{{ 'Sin asignar' }}</option>
                                 <option value="Compra">{{ 'Compra' }}</option>
                                 <option value="Traspaso">{{ 'Traspaso' }}</option>
                                 <option value="Alquiler">{{ 'Alquiler' }}</option>
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-2">
+                    {{-- <div class="col-md-6 mb-2">
                         <div class="form-group">
                             <label for="address">{{ __('Address') }}</label>
                             <input type="text" name="address" class="form-control form-control-lg form-control-a"
                                 placeholder="Address">
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-6 mb-2">
                         <div class="form-group">
                             <label for="rooms">{{ __('Rooms') }}</label>
                             <input type="text" name="rooms" class="form-control form-control-lg form-control-a"
                                 placeholder="Rooms">
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-2">
-                        <div class="form-group">
-                            <label for="max_value">{{ __('Max Value') }}</label>
-                            <select class="form-control form-control-lg form-control-a" name="max_value" id="max_value">
-                                <option value="50000">{{ __('$50,000') }}</option>
-                                <option value="100000">{{ __('$100,000') }}</option>
-                                <option value="150000">{{ __('$150,000') }}</option>
-                                <option value="200000">{{ __('$200,000') }}</option>
-                                <option value="250000">{{ __('$250,000') }}</option>
-                                <option value="300000">{{ __('$300,000') }}</option>
-                                <option value="400000">{{ __('$400,000') }}</option>
-                                <option value="500000">{{ __('$500,000') }}</option>
-                                <option value="10000000000000000000000000000000000000">{{ __('Unlimited') }}</option>
-                            </select>
                         </div>
                     </div>
                     <div class="col-md-6 mb-2">
@@ -101,9 +87,19 @@
                     </div>
                     <div class="col-md-6 mb-2">
                         <div class="form-group">
-                            <label for="surface">{{ __('Surface') }}</label>
-                            <input type="text" name="surface" class="form-control form-control-lg form-control-a"
-                                placeholder="Surface">
+                            <label for="max_value">{{ __('Max Value') }}</label>
+                            <select class="form-control form-control-lg form-control-a" name="max_value" id="max_value">
+                                <option value="10000000000000000000000000000000000000000000">{{ __('Sin asignar') }}
+                                </option>
+                                <option value="50000">{{ __('$50,000') }}</option>
+                                <option value="100000">{{ __('$100,000') }}</option>
+                                <option value="150000">{{ __('$150,000') }}</option>
+                                <option value="200000">{{ __('$200,000') }}</option>
+                                <option value="250000">{{ __('$250,000') }}</option>
+                                <option value="300000">{{ __('$300,000') }}</option>
+                                <option value="400000">{{ __('$400,000') }}</option>
+                                <option value="500000">{{ __('$500,000') }}</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -169,7 +165,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                                                                                                                                                                                                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         </li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf

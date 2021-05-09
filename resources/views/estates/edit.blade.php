@@ -21,6 +21,10 @@
                             class="btn btn-danger btn-round pull-right btn-sm">{{ __('PDF') }}</a>
                         <a href="{{ route('images.index2', $estate->id) }}"
                             class="btn btn-primary btn-round btn-sm pull-right">{{ __('Images') }}</a>
+                        @if ($estate->published == 'yes')
+                            <a class="btn btn-success btn-round text-white pull-right btn-sm"
+                                href="{{ route('web.estate', $estate->id) }}" target="__blank">{{ __('Web View') }}</a>
+                        @endif
                         <h5 class="title">{{ __('Edit Estate') }} | {{ __('Owner') }}:
                             {{ $estate->owner->first_name }}
                             {{ $estate->owner->last_name }}</h5>
@@ -723,10 +727,10 @@
                         <input type="hidden" , name="id" id="estate_id">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default waves-effect btn-round"
+                        <button type="button" class="btn btn-default waves-effect btn-round btn-sm"
                             data-dismiss="modal">Close</button>
                         <button type="submit"
-                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round">Delete</button>
+                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round btn-sm">Delete</button>
                     </div>
 
                 </form>

@@ -62,14 +62,11 @@
                         </div>
                         <div class="card-body-c">
                             <p class="content-c">
-                                Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien
-                                massa,
-                                convallis a pellentesque
-                                nec, egestas non nisi.
+                                {{ __('Find the right property so that you have the lifestyle you want.') }}
                             </p>
                         </div>
                         <div class="card-footer-c">
-                            <a href="{{ route('web.about') }}" class="link-c link-icon">{{ __('Read more') }}
+                            <a href="{{ route('web.estates') }}" class="link-c link-icon">{{ __('Read more') }}
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
@@ -87,14 +84,11 @@
                         </div>
                         <div class="card-body-c">
                             <p class="content-c">
-                                Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris
-                                blandit
-                                aliquet elit, eget tincidunt
-                                nibh pulvinar a.
+                                {{ __('Rent your property to get the most out of it.') }}
                             </p>
                         </div>
                         <div class="card-footer-c">
-                            <a href="{{ route('web.about') }}" class="link-c link-icon">{{ __('Read more') }}
+                            <a href="{{ route('web.estates') }}" class="link-c link-icon">{{ __('Read more') }}
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
@@ -112,14 +106,11 @@
                         </div>
                         <div class="card-body-c">
                             <p class="content-c">
-                                Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien
-                                massa,
-                                convallis a pellentesque
-                                nec, egestas non nisi.
+                                {{ __('Find the property that interests you, we take care of the paperwork.') }}
                             </p>
                         </div>
                         <div class="card-footer-c">
-                            <a href="{{ route('web.about') }}" class="link-c link-icon">{{ __('Read more') }}
+                            <a href="{{ route('web.estates') }}" class="link-c link-icon">{{ __('Read more') }}
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
@@ -231,7 +222,8 @@
                                 <div class="card-header-d">
                                     <div class="card-title-d align-self-center">
                                         <h3 class="title-d">
-                                            <a href="agent-single.html" class="link-two">{{ $agent->first_name }}
+                                            <a href="{{ route('web.agent', $agent->id) }}"
+                                                class="link-two">{{ $agent->first_name }}
                                                 <br> {{ $agent->last_name }}</a>
                                         </h3>
                                     </div>
