@@ -132,7 +132,7 @@
             <div class="card-header">
                 <h5 class="title">{{ $owner->first_name }} {{ $owner->last_name }}´s {{ __('Estates') }} </h5>
             </div>
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <div class="toolbar">
                     <!--        Here you can write extra buttons/actions for the toolbar              -->
                 </div>

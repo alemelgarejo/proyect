@@ -86,6 +86,14 @@ class ImageController extends Controller
         }
     }
 
+    public function setMainImage(Image $image, Estate $estate)
+    {
+        $estate->estate_image = $image->url;
+        $estate->estate_image_url = $image->urlWeb;
+        $estate->save();
+        return redirect()->route('images.index2', $estate->id)->with('status', 'Imagen principal añadida con éxito.');
+    }
+
     /**
      * Display the specified resource.
      *

@@ -374,9 +374,9 @@
                                     <span class="badge badge-info badge-pill">{{ __('Value') }}</span>
                                     {{ $estate->value }} €
                                 </li>
-                                <li class="list-group-item d-flex align-items-center">
-                                    <span class="badge badge-info badge-pill">{{ __('Surface') }}</span>
-                                    <div style="margin-left: 60%">{{ $estate->surface }} m<sup>2</sup></div>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="badge badge-info badge-pill">{{ __('Surface') }} m<sup>2</sup></span>
+                                    {{ $estate->surface }}
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     <span class="badge badge-info badge-pill">{{ __('Rooms') }}</span>

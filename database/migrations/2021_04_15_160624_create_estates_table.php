@@ -68,6 +68,8 @@ class CreateEstatesTable extends Migration
             $table->string('longitude', 255)->nullable();
             $table->text('description')->nullable();
             $table->string('google_maps', 255)->nullable();
+            $table->text('estate_image')->nullable();
+            $table->text('estate_image_web')->nullable();
             $table->timestamps();
         });
     }

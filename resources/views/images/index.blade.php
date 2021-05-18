@@ -49,6 +49,22 @@
                         <div class="photo-gallery">
                             <div class="container">
                                 <div class="container">
+                                    <h4 class="title">
+                                        {{ __('Main Image') }}</h4>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="width: 400px !important;">
+                                            <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                                data-image="{{ asset($estate->estate_image) }}"
+                                                data-target="#image-gallery">
+                                                <img class="img-thumbnail" src="{{ asset($estate->estate_image) }}"
+                                                    alt="Image-{{ $estate->id }}">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <h4 class="title">
+                                        {{ __('All Images') }}</h4>
                                     <div class="row">
                                         @foreach ($images as $image)
                                             <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="width: 400px !important;">
@@ -59,11 +75,18 @@
                                                         alt="Image-{{ $image->id }}">
                                                 </a>
                                                 <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-danger btn-round btn-sm"
+                                                <button type="button" class="btn btn-success btn-round btn-sm"
+                                                    data-toggle="modal"
+                                                    data-target="#modal-setMain-{{ $image->id }}-{{ $estate->id }}">
+                                                    {{ __('Set Main') }}
+                                                </button>
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-danger btn-round btn-sm pull-right"
                                                     data-toggle="modal" data-target="#modal-delete-{{ $image->id }}">
                                                     {{ __('Delete') }}
                                                 </button>
                                             </div>
+                                            @include('images.setMain')
                                             @include('images.delete')
                                         @endforeach
                                         <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog"

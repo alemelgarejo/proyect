@@ -125,18 +125,13 @@ class EstateController extends Controller
             'rooms' => $request['rooms'],
             'baths' => $request['baths'],
             'furnished' => $request['furnished'],
+            'estate_image' => 'https://res.cloudinary.com/alemelgarejo/image/upload/c_fill,h_600,w_800/v1620328393/inmodata/imagen-default_tbtmwg.png',
+            'estate_image_url' => 'https://res.cloudinary.com/alemelgarejo/image/upload/c_scale,h_720,w_1280/v1620328393/inmodata/imagen-default_tbtmwg.png',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
 
         $id = Estate::all()->count() + 1;
-        Image::create([
-            'url' => 'https://res.cloudinary.com/alemelgarejo/image/upload/c_fill,h_600,w_800/v1620328393/inmodata/imagen-default_tbtmwg.png',
-            'urlWeb' => 'https://res.cloudinary.com/alemelgarejo/image/upload/c_scale,h_720,w_1280/v1620328393/inmodata/imagen-default_tbtmwg.png',
-            'estate_id' => $id,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
 
         return redirect()->route('estates.index')->with('status', 'Propiedad creada con éxito.');
     }

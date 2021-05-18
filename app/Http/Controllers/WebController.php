@@ -81,15 +81,15 @@ class WebController extends Controller
     }
 
     public function agent(User $agent)
-    {
-        if ($agent->role_id == 1 or $agent->role_id == 2 or $agent->role_id == 3) {
-            return view('web.agent-single', [
-                'agent' => $agent,
-                'estates' => Estate::join('owners', 'estates.owner_id', '=', 'owners.id')
-                    ->where('owners.user_id', '=', auth()->user()->id)->where('estates.published', 'yes')->select('estates.*')->get(),
-            ]);
+    {/*
+        if ($agent->role_id == 1 or $agent->role_id == 2 or $agent->role_id == 3) { */
+        return view('web.agent-single', [
+            'agent' => $agent,
+            'estates' => Estate::join('owners', 'estates.owner_id', '=', 'owners.id')
+                ->where('owners.user_id', '=', $agent->id)->where('estates.published', 'yes')->select('estates.*')->get(),
+        ]);/*
         }
-        return back();
+        return back(); */
     }
 
     public function blogs()

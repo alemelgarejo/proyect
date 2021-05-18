@@ -225,7 +225,7 @@
                     <div class="card-header">
                         <h5 class="title">{{ $user->first_name }} {{ $user->last_name }}´s {{ __('Owners') }} </h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <div class="toolbar">
                             <!--        Here you can write extra buttons/actions for the toolbar              -->
                         </div>

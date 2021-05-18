@@ -38,7 +38,7 @@
                             <div class="row">
                             </div>
                             <div class="row">
-                                <div class="col-md-2 pr-1">
+                                <div class="col-md-3 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Status') }}</label>
                                         <select name="status" id="status" class="form-control">
@@ -50,7 +50,7 @@
                                         @include('alerts.feedback', ['field' => 'status'])
                                     </div>
                                 </div>
-                                <div class="col-md-2 pr-1">
+                                <div class="col-md-3 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Type') }}</label>
                                         <select name="type" id="type" class="form-control">
@@ -62,6 +62,23 @@
                                                 {{ __('Edificio') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'type'])
+                                    </div>
+                                </div>
+                                <div class="col-md-3 ">
+                                    <div class="form-group">
+                                        <label>{{ __('Situation') }}</label>
+                                        <select name="situation" id="situation" class="form-control">
+                                            <option value="En la playa"
+                                                {{ $estate->situation == 'En la playa' ? 'selected' : '' }}>En la playa
+                                            </option>
+                                            <option value="En el centro"
+                                                {{ $estate->situation == 'En el centro' ? 'selected' : '' }}>En el centro
+                                            </option>
+                                            <option value="En las afueras"
+                                                {{ $estate->situation == 'En las afueras' ? 'selected' : '' }}>En las
+                                                afueras</option>
+                                        </select>
+                                        @include('alerts.feedback', ['field' => 'situation'])
                                     </div>
                                 </div>
                                 <div class="col-md-2 pl-5">
@@ -81,24 +98,9 @@
                                         @include('alerts.feedback', ['field' => 'furnished'])
                                     </div>
                                 </div>
-                                <div class="col-md-2 ">
-                                    <div class="form-group">
-                                        <label>{{ __('Situation') }}</label>
-                                        <select name="situation" id="situation" class="form-control">
-                                            <option value="En la playa"
-                                                {{ $estate->situation == 'En la playa' ? 'selected' : '' }}>En la playa
-                                            </option>
-                                            <option value="En el centro"
-                                                {{ $estate->situation == 'En el centro' ? 'selected' : '' }}>En el centro
-                                            </option>
-                                            <option value="En las afueras"
-                                                {{ $estate->situation == 'En las afueras' ? 'selected' : '' }}>En las
-                                                afueras</option>
-                                        </select>
-                                        @include('alerts.feedback', ['field' => 'situation'])
-                                    </div>
-                                </div>
-                                <div class="col-md-2 pr-1">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 pr-1">
                                     <div class="form-group">
                                         <label>{{ __(' City') }}</label>
                                         <input type="text" name="city" class="form-control" placeholder="City"
@@ -106,7 +108,7 @@
                                         @include('alerts.feedback', ['field' => 'city'])
                                     </div>
                                 </div>
-                                <div class="col-md-2 pr-4">
+                                <div class="col-md-3 pr-1">
                                     <div class="form-group">
                                         <label>{{ __(' Address') }}</label>
                                         <input type="text" name="address" class="form-control" placeholder="Address"
@@ -114,36 +116,36 @@
                                         @include('alerts.feedback', ['field' => 'address'])
                                     </div>
                                 </div>
+                                <div class="col-md-3 pr-1">
+                                    <div class="form-group">
+                                        <label>{{ __('Interest Type') }}</label>
+                                        <select name="interest_type" id="interest_type" class="form-control">
+                                            <option value="Traspaso"
+                                                {{ $estate->interest_type == 'Traspaso' ? 'selected' : '' }}>
+                                                {{ __('Transfer') }}</option>
+                                            <option value="Compra"
+                                                {{ $estate->interest_type == 'Compra' ? 'selected' : '' }}>
+                                                {{ __('Buy') }}</option>
+                                            <option value="Alquiler"
+                                                {{ $estate->interest_type == 'Alquiler' ? 'selected' : '' }}>
+                                                {{ __('Rent') }}</option>
+                                        </select>
+                                        @include('alerts.feedback', ['field' => 'interest_type'])
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pr-3">
+                                    <div class="form-group">
+                                        <label>{{ __('Value') }} (€)</label>
+                                        <input type="text" name="value" class="form-control" placeholder="Value"
+                                            value="{{ old('value', $estate->value) }}">
+                                        @include('alerts.feedback', ['field' => 'value'])
+                                    </div>
+                                </div>
                             </div>
                             <div class="collapse" id="collapseExample">
                                 <hr class="pr-4">
                                 <div class="row">
-                                    <div class="col-md-2 pr-1">
-                                        <div class="form-group">
-                                            <label>{{ __('Interest Type') }}</label>
-                                            <select name="interest_type" id="interest_type" class="form-control">
-                                                <option value="Traspaso"
-                                                    {{ $estate->interest_type == 'Traspaso' ? 'selected' : '' }}>
-                                                    {{ __('Transfer') }}</option>
-                                                <option value="Compra"
-                                                    {{ $estate->interest_type == 'Compra' ? 'selected' : '' }}>
-                                                    {{ __('Buy') }}</option>
-                                                <option value="Alquiler"
-                                                    {{ $estate->interest_type == 'Alquiler' ? 'selected' : '' }}>
-                                                    {{ __('Rent') }}</option>
-                                            </select>
-                                            @include('alerts.feedback', ['field' => 'interest_type'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 pr-2 pl-3">
-                                        <div class="form-group">
-                                            <label>{{ __('Value') }} (€)</label>
-                                            <input type="text" name="value" class="form-control" placeholder="Value"
-                                                value="{{ old('value', $estate->value) }}">
-                                            @include('alerts.feedback', ['field' => 'value'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 pr-2">
+                                    <div class="col-md-3 pr-2">
                                         <div class="form-group">
                                             <label>{{ __('Surface') }} (m<sup>2</sup>)</label>
                                             <input type="text" name="surface" class="form-control" placeholder="Surface"
@@ -151,7 +153,7 @@
                                             @include('alerts.feedback', ['field' => 'surface'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-2">
+                                    <div class="col-md-3 pr-2">
                                         <div class="form-group">
                                             <label>{{ __('Built Surface') }} (m<sup>2</sup>)</label>
                                             <input type="text" name="built_surface" class="form-control"
@@ -160,7 +162,7 @@
                                             @include('alerts.feedback', ['field' => 'built_surface'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-2">
+                                    <div class="col-md-3 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Rooms') }}</label>
                                             <input type="text" name="rooms" class="form-control" placeholder="Rooms"
@@ -168,7 +170,7 @@
                                             @include('alerts.feedback', ['field' => 'rooms'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-2">
+                                    <div class="col-md-3 pr-3">
                                         <div class="form-group">
                                             <label>{{ __('Baths') }}</label>
                                             <input type="text" name="baths" class="form-control" placeholder="Baths"
@@ -178,7 +180,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-2 pr-4">
+                                    <div class="col-md-3 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Lobbies') }}</label>
                                             <input type="text" name="lobbies" class="form-control" placeholder="Lobbies"
@@ -186,7 +188,7 @@
                                             @include('alerts.feedback', ['field' => 'lobbies'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-2">
+                                    <div class="col-md-3 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Lobbies Surface') }} m<sup>2</sup></label>
                                             <input type="text" name="lobbies_surface" class="form-control"
@@ -195,7 +197,7 @@
                                             @include('alerts.feedback', ['field' => 'lobbies_surface'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-2">
+                                    <div class="col-md-3 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('D. Room Surface') }} m<sup>2</sup></label>
                                             <input type="text" name="dining_room_surface" class="form-control"
@@ -204,7 +206,7 @@
                                             @include('alerts.feedback', ['field' => 'dining_room_surface'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-1">
+                                    <div class="col-md-3 pr-3">
                                         <div class="form-group">
                                             <label>{{ __('Kitchen Type') }}</label>
                                             <select name="kitchen_type" id="kitchen_type" class="form-control">
@@ -221,7 +223,7 @@
                                 </div>
                                 <hr class="pr-4">
                                 <div class="row">
-                                    <div class="col-md-1 pr-2 pl-4">
+                                    <div class="col-md-2 pr-1 pl-4">
                                         <div class="form-group">
                                             <label>{{ __('Wardrobe') }}</label>
                                             <div class="form-check">
@@ -238,7 +240,7 @@
                                             @include('alerts.feedback', ['field' => 'wardrobe'])
                                         </div>
                                     </div>
-                                    <div class="col-md-1 pr-2">
+                                    <div class="col-md-2 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Furnished') }}</label>
                                             <div class="form-check">
@@ -255,7 +257,7 @@
                                             @include('alerts.feedback', ['field' => 'furnished'])
                                         </div>
                                     </div>
-                                    <div class="col-md-1 pr-2">
+                                    <div class="col-md-2 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Separate D. Room') }}</label>
                                             <div class="form-check">
@@ -272,7 +274,7 @@
                                             @include('alerts.feedback', ['field' => 'separate_dining_room'])
                                         </div>
                                     </div>
-                                    <div class="col-md-1 pr-2">
+                                    <div class="col-md-2 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Furnished Kitchen') }}</label>
                                             <div class="form-check">
@@ -289,7 +291,7 @@
                                             @include('alerts.feedback', ['field' => 'furnished'])
                                         </div>
                                     </div>
-                                    <div class="col-md-1 pr-2">
+                                    <div class="col-md-2 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Balcony') }}</label>
                                             <div class="form-check">
@@ -306,16 +308,7 @@
                                             @include('alerts.feedback', ['field' => 'balcony'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-2">
-                                        <div class="form-group">
-                                            <label>{{ __('Balcony Surface') }} m<sup>2</sup></label>
-                                            <input type="text" name="balcony_surface" class="form-control"
-                                                placeholder="Balcony Surface"
-                                                value="{{ old('balcony_surface', $estate->balcony_surface) }}">
-                                            @include('alerts.feedback', ['field' => 'balcony_surface'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 pr-2">
+                                    <div class="col-md-2 pr-1 pl-4">
                                         <div class="form-group">
                                             <label>{{ __('Courtyard') }}</label>
                                             <div class="form-check">
@@ -332,7 +325,19 @@
                                             @include('alerts.feedback', ['field' => 'courtyard'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-2">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Balcony Surface') }} m<sup>2</sup></label>
+                                            <input type="text" name="balcony_surface" class="form-control"
+                                                placeholder="Balcony Surface"
+                                                value="{{ old('balcony_surface', $estate->balcony_surface) }}">
+                                            @include('alerts.feedback', ['field' => 'balcony_surface'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Courtyard Sur.') }} m<sup>2</sup></label>
                                             <input type="text" name="courtyard_surface" class="form-control"
@@ -341,7 +346,7 @@
                                             @include('alerts.feedback', ['field' => 'courtyard_surface'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
+                                    <div class="col-md-3 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Courtyard Location') }}</label>
                                             <input type="text" name="courtyard_location" class="form-control"
@@ -350,10 +355,8 @@
                                             @include('alerts.feedback', ['field' => 'courtyard_location'])
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
 
-                                    <div class="col-md-2 pr-3">
+                                    <div class="col-md-3 pr-3">
                                         <div class="form-group">
                                             <label>{{ __('Ceiling Height') }}</label>
                                             <select name="ceiling_height" id="ceiling_height" class="form-control">
@@ -371,10 +374,13 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="row">
+                                </div>
                                 <hr class="pr-4">
                                 <div class="row">
 
-                                    <div class="col-md-1 ">
+                                    <div class="col-md-2 pr-1 pl-4">
                                         <div class="form-group">
                                             <label>{{ __('Storage Room') }}</label>
                                             <div class="form-check">
@@ -391,16 +397,7 @@
                                             @include('alerts.feedback', ['field' => 'storage_room'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
-                                        <div class="form-group">
-                                            <label>{{ __('Storage R. Sur.') }} m<sup>2</sup></label>
-                                            <input type="text" name="storage_room_surface" class="form-control"
-                                                placeholder="Storage Room Surface"
-                                                value="{{ old('storage_room_surface', $estate->storage_room_surface) }}">
-                                            @include('alerts.feedback', ['field' => 'storage_room_surface'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 ">
+                                    <div class="col-md-2 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Basement') }}</label>
                                             <div class="form-check">
@@ -417,16 +414,7 @@
                                             @include('alerts.feedback', ['field' => 'basement'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
-                                        <div class="form-group">
-                                            <label>{{ __('Basement Sur.') }} m<sup>2</sup></label>
-                                            <input type="text" name="basement_surface" class="form-control"
-                                                placeholder="Basement Surface"
-                                                value="{{ old('basement_surface', $estate->basement_surface) }}">
-                                            @include('alerts.feedback', ['field' => 'basement_surface'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 ">
+                                    <div class="col-md-2 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Heating') }}</label>
                                             <div class="form-check">
@@ -443,36 +431,7 @@
                                             @include('alerts.feedback', ['field' => 'heating'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
-                                        <div class="form-group">
-                                            <label>{{ __('Heating Type') }} m<sup>2</sup></label>
-                                            <input type="text" name="heating_type" class="form-control"
-                                                placeholder="Basement Surface"
-                                                value="{{ old('heating_type', $estate->heating_type) }}">
-                                            @include('alerts.feedback', ['field' => 'heating_type'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 pr-2">
-                                        <div class="form-group">
-                                            <label>{{ __('Terraces') }}</label>
-                                            <input type="text" name="terraces" class="form-control" placeholder="Terraces"
-                                                value="{{ old('terraces', $estate->terraces) }}">
-                                            @include('alerts.feedback', ['field' => 'terraces'])
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-
-                                    <div class="col-md-2 pr-2">
-                                        <div class="form-group">
-                                            <label>{{ __('Terraces Surface') }} m<sup>2</sup></label>
-                                            <input type="text" name="terraces_surface" class="form-control"
-                                                placeholder="Terraces Surface"
-                                                value="{{ old('terraces_surface', $estate->terraces_surface) }}">
-                                            @include('alerts.feedback', ['field' => 'terraces_surface'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 ">
+                                    <div class="col-md-2 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Garage') }}</label>
                                             <div class="form-check">
@@ -489,16 +448,7 @@
                                             @include('alerts.feedback', ['field' => 'garage'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
-                                        <div class="form-group">
-                                            <label>{{ __('Garage Sur.') }} m<sup>2</sup></label>
-                                            <input type="text" name="garage_surface" class="form-control"
-                                                placeholder="Garage Surface"
-                                                value="{{ old('garage_surface', $estate->garage_surface) }}">
-                                            @include('alerts.feedback', ['field' => 'garage_surface'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 ">
+                                    <div class="col-md-2 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Air Conditioning') }}</label>
                                             <div class="form-check">
@@ -515,95 +465,7 @@
                                             @include('alerts.feedback', ['field' => 'air_conditioning'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
-                                        <div class="form-group">
-                                            <label>{{ __('Air Conditioning Type') }} </label>
-                                            <input type="text" name="air_conditioning_type" class="form-control"
-                                                placeholder="Air Conditioning Type"
-                                                value="{{ old('air_conditioning_type', $estate->air_conditioning_type) }}">
-                                            @include('alerts.feedback', ['field' => 'air_conditioning_type'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 pr-4">
-                                        <div class="form-group">
-                                            <label>{{ __('Building Type') }}</label>
-                                            <input type="text" name="air_conditioning_type" class="form-control"
-                                                placeholder="Building Type"
-                                                value="{{ old('air_conditioning_type', $estate->air_conditioning_type) }}">
-                                            @include('alerts.feedback', ['field' => 'air_conditioning_type'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 pr-4">
-                                        <div class="form-group">
-                                            <label>{{ __('Floors') }}</label>
-                                            <input type="text" name="floors" class="form-control" placeholder="Floors"
-                                                value="{{ old('floors', $estate->floors) }}">
-                                            @include('alerts.feedback', ['field' => 'floors'])
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-
-                                    <div class="col-md-1 pr-4">
-                                        <div class="form-group">
-                                            <label>{{ __('Floor') }}</label>
-                                            <input type="text" name="floor" class="form-control" placeholder="Floor"
-                                                value="{{ old('floor', $estate->floor) }}">
-                                            @include('alerts.feedback', ['field' => 'floor'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 ">
-                                        <div class="form-group">
-                                            <label>{{ __('Pool') }}</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" name="pool" id="pool" type="radio"
-                                                    value="yes" @if ($estate->pool == 'yes') checked @else @endif>
-                                                <label class="form-check-label">{{ __('Yes') }}</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" name="pool" id="pool" type="radio"
-                                                    value="no" @if ($estate->pool == 'no') checked @else @endif>
-                                                <label class="form-check-label">{{ __('No') }}</label>
-                                            </div>
-
-                                            @include('alerts.feedback', ['field' => 'pool'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 ">
-                                        <div class="form-group">
-                                            <label>{{ __('Elevator') }}</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" name="elevator" id="elevator" type="radio"
-                                                    value="yes" @if ($estate->elevator == 'yes') checked @else @endif>
-                                                <label class="form-check-label">{{ __('Yes') }}</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" name="elevator" id="elevator" type="radio"
-                                                    value="no" @if ($estate->elevator == 'no') checked @else @endif>
-                                                <label class="form-check-label">{{ __('No') }}</label>
-                                            </div>
-
-                                            @include('alerts.feedback', ['field' => 'elevator'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 ">
-                                        <div class="form-group">
-                                            <label>{{ __('Urbanization') }}</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" name="urbanization" id="urbanization"
-                                                    type="radio" value="yes" @if ($estate->urbanization == 'yes') checked @else @endif>
-                                                <label class="form-check-label">{{ __('Yes') }}</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" name="urbanization" id="urbanization"
-                                                    type="radio" value="no" @if ($estate->urbanization == 'no') checked @else @endif>
-                                                <label class="form-check-label">{{ __('No') }}</label>
-                                            </div>
-
-                                            @include('alerts.feedback', ['field' => 'urbanization'])
-                                        </div>
-                                    </div>
-                                    <div class="col-md-1 ">
+                                    <div class="col-md-2 pr-3">
                                         <div class="form-group">
                                             <label>{{ __('Garden') }}</label>
                                             <div class="form-check">
@@ -620,7 +482,76 @@
                                             @include('alerts.feedback', ['field' => 'garden'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Storage R. Sur.') }} m<sup>2</sup></label>
+                                            <input type="text" name="storage_room_surface" class="form-control"
+                                                placeholder="Storage Room Surface"
+                                                value="{{ old('storage_room_surface', $estate->storage_room_surface) }}">
+                                            @include('alerts.feedback', ['field' => 'storage_room_surface'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Basement Sur.') }} m<sup>2</sup></label>
+                                            <input type="text" name="basement_surface" class="form-control"
+                                                placeholder="Basement Surface"
+                                                value="{{ old('basement_surface', $estate->basement_surface) }}">
+                                            @include('alerts.feedback', ['field' => 'basement_surface'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Heating Type') }} m<sup>2</sup></label>
+                                            <input type="text" name="heating_type" class="form-control"
+                                                placeholder="Heating Type"
+                                                value="{{ old('heating_type', $estate->heating_type) }}">
+                                            @include('alerts.feedback', ['field' => 'heating_type'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 pr-3">
+                                        <div class="form-group">
+                                            <label>{{ __('Terraces') }}</label>
+                                            <input type="text" name="terraces" class="form-control" placeholder="Terraces"
+                                                value="{{ old('terraces', $estate->terraces) }}">
+                                            @include('alerts.feedback', ['field' => 'terraces'])
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-3 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Terraces Surface') }} m<sup>2</sup></label>
+                                            <input type="text" name="terraces_surface" class="form-control"
+                                                placeholder="Terraces Surface"
+                                                value="{{ old('terraces_surface', $estate->terraces_surface) }}">
+                                            @include('alerts.feedback', ['field' => 'terraces_surface'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Garage Sur.') }} m<sup>2</sup></label>
+                                            <input type="text" name="garage_surface" class="form-control"
+                                                placeholder="Garage Surface"
+                                                value="{{ old('garage_surface', $estate->garage_surface) }}">
+                                            @include('alerts.feedback', ['field' => 'garage_surface'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Air Conditioning Type') }} </label>
+                                            <input type="text" name="air_conditioning_type" class="form-control"
+                                                placeholder="Air Conditioning Type"
+                                                value="{{ old('air_conditioning_type', $estate->air_conditioning_type) }}">
+                                            @include('alerts.feedback', ['field' => 'air_conditioning_type'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pr-3">
                                         <div class="form-group">
                                             <label>{{ __('Garden Sur.') }} m<sup>2</sup></label>
                                             <input type="text" name="garden_surface" class="form-control"
@@ -629,7 +560,89 @@
                                             @include('alerts.feedback', ['field' => 'garden_surface'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
+                                </div>
+                                <hr class="pr-4">
+                                <div class="row">
+                                    <div class="col-md-3 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Floors') }}</label>
+                                            <input type="text" name="floors" class="form-control" placeholder="Floors"
+                                                value="{{ old('floors', $estate->floors) }}">
+                                            @include('alerts.feedback', ['field' => 'floors'])
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Floor') }}</label>
+                                            <input type="text" name="floor" class="form-control" placeholder="Floor"
+                                                value="{{ old('floor', $estate->floor) }}">
+                                            @include('alerts.feedback', ['field' => 'floor'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pr-1 pl-4">
+                                        <div class="form-group">
+                                            <label>{{ __('Pool') }}</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="pool" id="pool" type="radio"
+                                                    value="yes" @if ($estate->pool == 'yes') checked @else @endif>
+                                                <label class="form-check-label">{{ __('Yes') }}</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="pool" id="pool" type="radio"
+                                                    value="no" @if ($estate->pool == 'no') checked @else @endif>
+                                                <label class="form-check-label">{{ __('No') }}</label>
+                                            </div>
+
+                                            @include('alerts.feedback', ['field' => 'pool'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Elevator') }}</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="elevator" id="elevator" type="radio"
+                                                    value="yes" @if ($estate->elevator == 'yes') checked @else @endif>
+                                                <label class="form-check-label">{{ __('Yes') }}</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="elevator" id="elevator" type="radio"
+                                                    value="no" @if ($estate->elevator == 'no') checked @else @endif>
+                                                <label class="form-check-label">{{ __('No') }}</label>
+                                            </div>
+
+                                            @include('alerts.feedback', ['field' => 'elevator'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Urbanization') }}</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="urbanization" id="urbanization"
+                                                    type="radio" value="yes" @if ($estate->urbanization == 'yes') checked @else @endif>
+                                                <label class="form-check-label">{{ __('Yes') }}</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="urbanization" id="urbanization"
+                                                    type="radio" value="no" @if ($estate->urbanization == 'no') checked @else @endif>
+                                                <label class="form-check-label">{{ __('No') }}</label>
+                                            </div>
+
+                                            @include('alerts.feedback', ['field' => 'urbanization'])
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 pr-1">
+                                        <div class="form-group">
+                                            <label>{{ __('Building Type') }}</label>
+                                            <input type="text" name="air_conditioning_type" class="form-control"
+                                                placeholder="Building Type"
+                                                value="{{ old('air_conditioning_type', $estate->air_conditioning_type) }}">
+                                            @include('alerts.feedback', ['field' => 'air_conditioning_type'])
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Building Date') }}</label>
                                             <input type="date" name="building_date" class="form-control"
@@ -638,7 +651,7 @@
                                             @include('alerts.feedback', ['field' => 'building_date'])
                                         </div>
                                     </div>
-                                    <div class="col-md-3 pr-4">
+                                    <div class="col-md-4 pr-3">
                                         <div class="form-group">
                                             <label>{{ __('Conservation') }}</label>
                                             <select name="conservation_state" id="conservation_state" class="form-control">
@@ -659,7 +672,7 @@
                                 <hr class="pr-4">
                                 <div class="row">
 
-                                    <div class="col-md-2 pr-4">
+                                    <div class="col-md-3 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Latitude') }}</label>
                                             <input type="text" name="latitude" class="form-control" placeholder="Latitude"
@@ -667,7 +680,7 @@
                                             @include('alerts.feedback', ['field' => 'latitude'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
+                                    <div class="col-md-3 pr-1">
                                         <div class="form-group">
                                             <label>{{ __('Longitude') }}</label>
                                             <input type="text" name="longitude" class="form-control" placeholder="Longitude"
@@ -675,7 +688,7 @@
                                             @include('alerts.feedback', ['field' => 'longitude'])
                                         </div>
                                     </div>
-                                    <div class="col-md-2 pr-4">
+                                    <div class="col-md-6 pr-3">
                                         <div class="form-group">
                                             <label>{{ __('Google Maps') }}</label>
                                             <input type="text" name="google_maps" class="form-control"

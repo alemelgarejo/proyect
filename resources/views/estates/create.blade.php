@@ -69,7 +69,7 @@
                                         @include('alerts.feedback', ['field' => 'city'])
                                     </div>
                                 </div>
-                                <div class="col-md-4 pr-4">
+                                <div class="col-md-4 pr-3">
                                     <div class="form-group">
                                         <label>{{ __(' Address') }}</label>
                                         <input type="text" name="address" class="form-control" placeholder="Address"
@@ -94,7 +94,7 @@
                                         @include('alerts.feedback', ['field' => 'interest_type'])
                                     </div>
                                 </div>
-                                <div class="col-md-2 pr-2 pl-5">
+                                <div class="col-md-2 pr-2 pl-2">
                                     <div class="form-group">
                                         <label>{{ __('Value') }} (€)</label>
                                         <input type="text" name="value" class="form-control" placeholder="Value"
@@ -126,7 +126,7 @@
                                         @include('alerts.feedback', ['field' => 'baths'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+                                <div class="col-md-1 pr-3">
                                     <div class="form-group">
                                         <label>{{ __('Furnished') }}</label>
                                         <div class="form-check">

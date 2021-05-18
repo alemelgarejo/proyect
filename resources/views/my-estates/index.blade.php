@@ -24,7 +24,7 @@
                         <div class="col-12 mt-2">
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <div class="toolbar">
                             <!--        Here you can write extra buttons/actions for the toolbar              -->
                         </div>
@@ -94,7 +94,7 @@
 
 
 
-                                                                                   @if (auth()->user()->id !=$estate->owner->user_id)
+                                                                                        @if (auth()->user()->id !=$estate->owner->user_id)
                                                 disabled @endif
                                 @endif>
                                 <i class="now-ui-icons files_single-copy-04"></i>
@@ -104,7 +104,8 @@
 
 
 
-                                                                                           @if (auth()->user()->id !=$estate->owner->user_id)
+
+                                    @if (auth()->user()->id !=$estate->owner->user_id)
                                     disabled @endif
                                     @endif>
                                     <i class="now-ui-icons design_image"></i>

@@ -44,7 +44,7 @@
                                         @include('alerts.feedback', ['field' => 'last_name'])
                                     </div>
                                 </div>
-                                <div class="col-md-4 pr-1">
+                                <div class="col-md-4 pr-3">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">{{ __(' Email address') }}</label>
                                         <input type="email" name="email" class="form-control" placeholder="Email"
@@ -74,7 +74,7 @@
                                         @include('alerts.feedback', ['field' => 'dni'])
                                     </div>
                                 </div>
-                                <div class="col-md-4 pr-1">
+                                <div class="col-md-4 pr-3">
                                     <div class="form-group">
                                         <label>{{ __('Phone') }}</label>
                                         <input type="text" name="phone" class="form-control" placeholder="Phone"
@@ -100,7 +100,7 @@
                                         @include('alerts.feedback', ['field' => 'address'])
                                     </div>
                                 </div>
-                                <div class="col-md-4 pr-1">
+                                <div class="col-md-4 pr-3">
                                     <div class="form-group">
                                         <label>{{ __('City') }}</label>
                                         <input type="text" name="city" class="form-control" placeholder="City"
@@ -125,7 +125,7 @@
             <div class="card-header">
                 <h5 class="title">{{ $customer->first_name }} {{ $customer->last_name }}´s {{ __('Orders') }} </h5>
             </div>
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <div class="toolbar">
                     <!--        Here you can write extra buttons/actions for the toolbar              -->
                 </div>

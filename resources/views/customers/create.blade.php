@@ -39,7 +39,7 @@
                                         @include('alerts.feedback', ['field' => 'last_name'])
                                     </div>
                                 </div>
-                                <div class="col-md-4 pr-1">
+                                <div class="col-md-4 pr-3">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">{{ __(' Email address') }}</label>
                                         <input type="email" name="email" class="form-control" placeholder="Email"
@@ -67,7 +67,7 @@
                                         @include('alerts.feedback', ['field' => 'dni'])
                                     </div>
                                 </div>
-                                <div class="col-md-4 pr-1">
+                                <div class="col-md-4 pr-3">
                                     <div class="form-group">
                                         <label>{{ __('Phone') }}</label>
                                         <input type="text" name="phone" class="form-control" placeholder="Phone"
@@ -93,7 +93,7 @@
                                         @include('alerts.feedback', ['field' => 'address'])
                                     </div>
                                 </div>
-                                <div class="col-md-4 pr-1">
+                                <div class="col-md-4 pr-3">
                                     <div class="form-group">
                                         <label>{{ __('City') }}</label>
                                         <input type="text" name="city" class="form-control" placeholder="City"

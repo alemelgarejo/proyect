@@ -134,7 +134,7 @@
                                         @include('alerts.feedback', ['field' => 'situation'])
                                     </div>
                                 </div>
-                                <div class="col-md-3 pr-2">
+                                <div class="col-md-3 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Conservation') }}</label>
                                         <select name="conservation_state" id="conservation_state" class="form-control">
@@ -145,7 +145,7 @@
                                         @include('alerts.feedback', ['field' => 'conservation_state'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+                                <div class="col-md-2 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Furnished') }}</label>
                                         <div class="form-check">
@@ -162,7 +162,7 @@
                                         @include('alerts.feedback', ['field' => 'furnished'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+                                <div class="col-md-2 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Elevator') }}</label>
                                         <div class="form-check">
@@ -179,7 +179,7 @@
                                         @include('alerts.feedback', ['field' => 'elevator'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+                                <div class="col-md-2 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Garage') }}</label>
                                         <div class="form-check">
@@ -196,7 +196,9 @@
                                         @include('alerts.feedback', ['field' => 'garage'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 pr-1 pl-4">
                                     <div class="form-group">
                                         <label>{{ __('Terraces') }}</label>
                                         <div class="form-check">
@@ -213,7 +215,7 @@
                                         @include('alerts.feedback', ['field' => 'terraces'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+                                <div class="col-md-2 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Courtyard') }}</label>
                                         <div class="form-check">
@@ -230,7 +232,7 @@
                                         @include('alerts.feedback', ['field' => 'courtyard'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+                                <div class="col-md-2 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Heating') }}</label>
                                         <div class="form-check">
@@ -247,7 +249,7 @@
                                         @include('alerts.feedback', ['field' => 'heating'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2 pl-4">
+                                <div class="col-md-2 pr-1 ">
                                     <div class="form-group">
                                         <label>{{ __('Air Conditioning') }}</label>
                                         <div class="form-check">
@@ -264,7 +266,7 @@
                                         @include('alerts.feedback', ['field' => 'air_conditioning'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+                                <div class="col-md-2 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Garden') }}</label>
                                         <div class="form-check">
@@ -281,7 +283,7 @@
                                         @include('alerts.feedback', ['field' => 'garden'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+                                <div class="col-md-2 pr-1">
                                     <div class="form-group">
                                         <label>{{ __('Pool') }}</label>
                                         <div class="form-check">
@@ -297,7 +299,10 @@
                                         @include('alerts.feedback', ['field' => 'pool'])
                                     </div>
                                 </div>
-                                <div class="col-md-1 pr-2">
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 pr-1 pl-4">
                                     <div class="form-group">
                                         <label>{{ __('Need Loan') }}</label>
                                         <div class="form-check">
@@ -314,7 +319,7 @@
                                         @include('alerts.feedback', ['field' => 'need_loan'])
                                     </div>
                                 </div>
-                                <div class="col-md-8 pr-4">
+                                <div class="col-md-9 pr-3">
                                     <div class="form-group">
                                         <label>{{ __('Observations') }}</label>
                                         <textarea name="observations" class="form-control"
@@ -322,6 +327,7 @@
                                         @include('alerts.feedback', ['field' => 'observations'])
                                     </div>
                                 </div>
+
                             </div>
                             <div class="card-footer ">
                                 <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Save') }}</button>

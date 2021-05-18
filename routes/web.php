@@ -84,6 +84,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('estates/{estate}/images/create', [ImageController::class, 'create2'])->name('images.create2');
     Route::post('estates/{estate}/images/', [ImageController::class, 'store2'])->name('images.store2');
     Route::delete('estates/{image}/images/{estate}/', [ImageController::class, 'destroy'])->name('images.destroy');
+    Route::get('estates/{image}/images/{estate}/main', [ImageController::class, 'setMainImage'])->name('images.setMainImage');
     Route::get('my-owners-estates', [EstateController::class, 'index2'])->name('estates.index2');
     Route::put('estates/{estate}/publish/', [EstateController::class, 'publish'])->name('estates.publish');
     Route::get('estates/create2/{owner}', [EstateController::class, 'create2'])->name('estates.create2');

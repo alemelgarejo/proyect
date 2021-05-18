@@ -113,10 +113,10 @@
                         </div>
                     </div>
                     @foreach ($estates as $estate)
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="card-box-a card-shadow">
                                 <div class="img-box-a">
-                                    <img src="{{ $estate->images[0]->urlWeb }}" alt="" class="img-a img-fluid">
+                                    <img src="{{ $estate->estate_image_url }}" alt="" class="img-a img-fluid">
                                 </div>
                                 <div class="card-overlay">
                                     <div class="card-overlay-a-content">

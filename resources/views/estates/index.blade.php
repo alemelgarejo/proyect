@@ -24,7 +24,7 @@
                         <div class="col-12 mt-2">
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <div class="toolbar">
                             <!--        Here you can write extra buttons/actions for the toolbar              -->
                         </div>
@@ -61,7 +61,7 @@
                                                     <!-- Button trigger modal -->
                                                     <button type="button" class="btn btn-info btn-icon btn-sm ml-2"
                                                         rel="tooltip" title="Unpublish" data-toggle="modal"
-                                                        data-target="#modal-publish-{{ $estate->id }}" @if (auth()->user()->id != $estate->owner->user_id) disabled @endif >
+                                                        data-target="#modal-publish-{{ $estate->id }}" @if (auth()->user()->id != $estate->owner->user_id) disabled @endif>
                                                         <i class="now-ui-icons arrows-1_share-66"></i>
                                                     </button>
                                                 @elseif($estate->published == 'no')
@@ -71,7 +71,7 @@
                                                     <!-- Button trigger modal -->
                                                     <button type="button" class="btn btn-info btn-icon btn-sm ml-2"
                                                         rel="tooltip" title="Publish" data-toggle="modal"
-                                                        data-target="#modal-publish-{{ $estate->id }}" @if (auth()->user()->id != $estate->owner->user_id) disabled @endif >
+                                                        data-target="#modal-publish-{{ $estate->id }}" @if (auth()->user()->id != $estate->owner->user_id) disabled @endif>
                                                         <i class="now-ui-icons arrows-1_share-66"></i>
                                                     </button>
                                                 @endif
@@ -92,8 +92,7 @@
 
 
 
-                                                          @if (auth()->user()->id
-                                                !=$estate->owner->user_id)
+                                                                         @if (auth()->user()->id !=$estate->owner->user_id)
                                                 disabled @endif
                                 @endif>
                                 <i class="now-ui-icons files_single-copy-04"></i>
@@ -104,8 +103,7 @@
 
 
 
-                                                        @if (auth()->user()->id
-                                    !=$estate->owner->user_id)
+                                                                       @if (auth()->user()->id !=$estate->owner->user_id)
                                     disabled @endif
                                     @endif>
                                     <i class="now-ui-icons design_image"></i>
@@ -115,7 +113,9 @@
 
 
 
-                                                                                      @if (auth()->user()->id !=$estate->owner->user_id)
+
+                                         @if (auth()->user()->id
+                                    !=$estate->owner->user_id)
                                     disabled @endif @endif>
                                     <i class="now-ui-icons ui-2_settings-90"></i>
                                 </a>
