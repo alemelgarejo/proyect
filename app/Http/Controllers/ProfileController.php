@@ -22,8 +22,8 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        return view('profile.edit', [,
-            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        return view('profile.edit', [
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get()
         ]);
     }
 

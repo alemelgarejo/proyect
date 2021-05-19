@@ -51,14 +51,10 @@
                         <i class="now-ui-icons ui-1_bell-53"></i>
 
                         @if (empty($messages))
-                            <span class="badge" style="background-color: #0AC700; width:20px; height:20px;">
-                                <p style="color:white; font-size:9px;">
-                                    0
-                                </p>
-                            </span>
+
                         @elseif(!empty(($messages)))
                             <span class="badge" style="background-color: #FF3636; width:20px; height:20px;">
-                                <p style="color:white; font-size:9px;">
+                                <p style="color:white; font-size:9px;font-weight: bold;">
                                     {{ count($messages) }}
                                 </p>
                             </span>
@@ -71,7 +67,13 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink"
                         style="min-width:300px; max-width:300px;">
+                        <div class="card-title" style="margin-left: 15px; margin-top: 2.5px; margin-bottom: -5px">
+                            {{ __('Notifications') }}
+                            <a class="btn btn-info  btn-sm " style="margin-left:22px; font-size:10px;margin-top: 8px"
+                                href="{{ route('messages.index') }}">{{ __('All Notifications') }}</a>
+                        </div>
                         @foreach ($messages as $message)
+                            <hr>
                             <div style=" margin-left:15px; ">
                                 <a href="" style="color: black;font-size:12px;">{{ $message->message }}
                                 </a>
@@ -81,12 +83,13 @@
                                 style="margin-top: -8.5px">{{ __($message->user->first_name) }}
                                 {{ __($message->user->last_name) }}</a>
                             <a class="dropdown-item" href=""
+                                style="margin-top: -8.5px">{{ __($message->user->phone) }}&nbsp;|&nbsp;{{ __($message->user->email) }}
+                            </a>
+                            <a class="dropdown-item" href=""
                                 style="margin-top: -8.5px">{{ __($message->created_at->diffForHumans()) }}</a>
-                            <a class="dropdown-item" href=""
-                                style="margin-top: -8.5px">{{ __($message->user->email) }}</a>
-                            <a class="dropdown-item" href=""
-                                style="margin-top: -8.5px">{{ __($message->user->phone) }}</a>
-                            <hr>
+                            <a class="btn btn-warning  btn-sm "
+                                style="margin-left:22px; font-size:10px;margin-top: -4px"
+                                href="{{ route('messages.update2', $message->id) }}">{{ __('Mark as read') }}</a>
                         @endforeach
                     </div>
                 </li>

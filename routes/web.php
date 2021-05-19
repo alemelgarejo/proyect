@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EstateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\UserController;
@@ -49,6 +50,8 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/messages/{message}', [MessageController::class, 'update2'])->name('messages.update2');
+    Route::resource('/messages', MessageController::class)->except(['show', 'update']);
 
     //Users
     Route::resource('user', UserController::class, ['except' => ['show']]);

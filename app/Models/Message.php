@@ -14,4 +14,8 @@ class Message extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function estate()
+    {
+        return $this->belongsTo(Estate::class);
+    }
 }

@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
+
+    //Middleware para los roles
+    public function __construct()
+    {
+        $this->middleware('CheckNormalRole');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,11 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        return view('messages.index', [
+            'readed' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'yes')->orderBy('created_at', 'DESC')->paginate(5),
+            'not_readed' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->paginate(5),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get()
+        ]);
     }
 
     /**
@@ -67,9 +77,11 @@ class MessageController extends Controller
      * @param  \App\Models\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Message $message)
+    public function update2(Request $request, Message $message)
     {
-        //
+        $message->readed = 'yes';
+        $message->save();
+        return redirect()->back();
     }
 
     /**
