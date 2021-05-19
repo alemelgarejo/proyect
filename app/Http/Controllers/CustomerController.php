@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use App\Models\Customer;
+use App\Models\Message;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -23,7 +24,10 @@ class CustomerController extends Controller
     public function index(Customer $customers, Request $request)
     {
         if ($request['search'] == null) {
-            return view('customers.index', ['customers' => $customers->orderBy('status', 'DESC')->paginate(5)]);
+            return view('customers.index', [
+                'customers' => $customers->orderBy('status', 'DESC')->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+            ]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
             return view('customers.index', [
@@ -32,7 +36,8 @@ class CustomerController extends Controller
                     ->orWhere('customers.email', 'LIKE', "%$search%")
                     ->orWhere('customers.dni', 'LIKE', "%$search%")
                     ->orWhere('customers.phone', 'LIKE', "%$search%")
-                    ->paginate(5)
+                    ->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         }
     }
@@ -45,6 +50,7 @@ class CustomerController extends Controller
                     ->select('customers.*')
                     ->orderBy('status', 'DESC')
                     ->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
@@ -65,7 +71,8 @@ class CustomerController extends Controller
 
 
             return view('my-customers.index', [
-                'customers' => $customers
+                'customers' => $customers,
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         }
     }
@@ -95,7 +102,11 @@ class CustomerController extends Controller
     //Mostrar vista crear cliente
     public function create()
     {
-        return view('customers.create', ['customer' => new Customer(), 'users' => User::all()]);
+        return view('customers.create', [
+            'customer' => new Customer(),
+            'users' => User::all(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
     //Crear cliente
     public function store(StoreCustomerRequest $request)
@@ -120,7 +131,11 @@ class CustomerController extends Controller
     //Mostrar vista editar cliente
     public function edit(Customer $customer)
     {
-        return view('customers.edit', ['customer' => $customer, 'users' => User::all()]);
+        return view('customers.edit', [
+            'customer' => $customer,
+            'users' => User::all(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
 
     //Editar cliente

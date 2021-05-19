@@ -6,6 +6,7 @@ use App\Http\Requests\StoreEstateRequest;
 use App\Http\Requests\UpdateEstateRequest;
 use App\Models\Estate;
 use App\Models\Image;
+use App\Models\Message;
 use App\Models\Owner;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -23,7 +24,10 @@ class EstateController extends Controller
     public function index(Estate $estates, Request $request)
     {
         if ($request['search'] == null) {
-            return view('estates.index', ['estates' => $estates->orderBy('status', 'DESC')->paginate(5)]);
+            return view('estates.index', [
+                'estates' => $estates->orderBy('status', 'DESC')->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+            ]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
             return view('estates.index', [
@@ -33,7 +37,8 @@ class EstateController extends Controller
                     ->orWhere('estates.surface', 'LIKE', "%$search%")
                     ->orWhere('estates.rooms', 'LIKE', "%$search%")
                     ->orWhere('estates.baths', 'LIKE', "%$search%")
-                    ->paginate(5)
+                    ->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         }
     }
@@ -47,6 +52,7 @@ class EstateController extends Controller
                     ->orderBy('status', 'DESC')
                     ->select('estates.*')
                     ->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
@@ -66,7 +72,8 @@ class EstateController extends Controller
             }
 
             return view('my-estates.index', [
-                'estates' => $estates
+                'estates' => $estates,
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         }
     }
@@ -98,11 +105,19 @@ class EstateController extends Controller
     //Mostrar vista crear porpiedad
     public function create()
     {
-        return view('estates.create', ['estate' => new Estate(), 'owners' => Owner::all()]);
+        return view('estates.create', [
+            'estate' => new Estate(),
+            'owners' => Owner::all(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
     public function create2(Owner $owner)
     {
-        return view('estates.create', ['estate' => new Estate(), 'owner' => $owner]);
+        return view('estates.create', [
+            'estate' => new Estate(),
+            'owner' => $owner,
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
 
     /**
@@ -149,7 +164,11 @@ class EstateController extends Controller
 
     public function edit(Estate $estate, Owner $owner)
     {
-        return view('estates.edit', ['estate' => $estate, 'owner' => $owner]);
+        return view('estates.edit', [
+            'estate' => $estate,
+            'owner' => $owner,
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
 
     /**

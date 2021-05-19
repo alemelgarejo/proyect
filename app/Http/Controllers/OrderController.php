@@ -6,6 +6,7 @@ use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Customer;
 use App\Models\Estate;
+use App\Models\Message;
 use App\Models\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -24,7 +25,10 @@ class OrderController extends Controller
     public function index(Order $orders, Request $request)
     {
         if ($request['search'] == null) {
-            return view('orders.index', ['orders' => $orders->paginate(5)]);
+            return view('orders.index', [
+                'orders' => $orders->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+            ]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
             return view('orders.index', [
@@ -33,7 +37,8 @@ class OrderController extends Controller
                     ->orWhere('orders.max_value', 'LIKE', "%$search%")
                     ->orWhere('orders.min_surface', 'LIKE', "%$search%")
                     ->orWhere('orders.min_rooms', 'LIKE', "%$search%")
-                    ->paginate(5)
+                    ->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         }
     }
@@ -47,6 +52,7 @@ class OrderController extends Controller
                     ->where('customers.user_id', '=', auth()->user()->id)
                     ->select('orders.*')
                     ->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
@@ -65,7 +71,8 @@ class OrderController extends Controller
             }
 
             return view('my-orders.index', [
-                'orders' => $orders
+                'orders' => $orders,
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         }
     }
@@ -101,6 +108,7 @@ class OrderController extends Controller
                 ->orWhere('estates.rooms', 'LIKE', "%$order->min_rooms%")
                 ->orWhere('estates.furnished', 'LIKE', "%$order->furnished%")
                 ->paginate(5),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
         ]);
         $pdf = PDF::loadView('orders.pdf-single', $order);
         return $pdf->download($order->id . '-' . $order->customer->first_name . '-' . str_replace(' ', '-', $order->customer->last_name) . '-Order' . '.pdf');
@@ -115,11 +123,19 @@ class OrderController extends Controller
     public function create()
     {
         //dd(Customer::all());
-        return view('orders.create', ['order' => new Order(), 'customers' => Customer::all()]);
+        return view('orders.create', [
+            'order' => new Order(),
+            'customers' => Customer::all(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
     public function create2(Customer $customer)
     {
-        return view('orders.create', ['order' => new Order(), 'customer' => $customer]);
+        return view('orders.create', [
+            'order' => new Order(),
+            'customer' => $customer,
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
 
     /* public function searchOrder(Order $order, Estate $estates) {
@@ -190,6 +206,7 @@ class OrderController extends Controller
                 ->orWhere('estates.rooms', 'LIKE', "%$order->min_rooms%")
                 ->orWhere('estates.furnished', 'LIKE', "%$order->furnished%")
                 ->paginate(5),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
         ]);
     }
 

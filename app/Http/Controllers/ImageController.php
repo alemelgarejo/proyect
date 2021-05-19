@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Estate;
 use App\Models\Image;
+use App\Models\Message;
 use Cloudinary\Cloudinary;
 use Cloudinary\Api\Upload\UploadApi;
 use Illuminate\Http\Request;
@@ -22,7 +23,8 @@ class ImageController extends Controller
     {
         return view('images.index', [
             'estate' => $estate,
-            'images' => Image::where('images.estate_id', '=', $estate->id)->get()
+            'images' => Image::where('images.estate_id', '=', $estate->id)->get(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
         ]);
     }
 
@@ -31,7 +33,8 @@ class ImageController extends Controller
     {
         return view('images.create', [
             'estate' => $estate,
-            'images' => Image::all()
+            'images' => Image::all(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
         ]);
     }
 

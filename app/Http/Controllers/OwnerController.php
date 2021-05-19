@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOwnerRequest;
 use App\Http\Requests\UpdateOwnerRequest;
+use App\Models\Message;
 use App\Models\Owner;
 use App\Models\User;
 use Carbon\Carbon;
@@ -23,7 +24,10 @@ class OwnerController extends Controller
     public function index(Owner $owners, Request $request)
     {
         if ($request['search'] == null) {
-            return view('owners.index', ['owners' => $owners->orderBy('status', 'DESC')->paginate(5)]);
+            return view('owners.index', [
+                'owners' => $owners->orderBy('status', 'DESC')->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+            ]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
             return view('owners.index', [
@@ -32,7 +36,8 @@ class OwnerController extends Controller
                     ->orWhere('owners.email', 'LIKE', "%$search%")
                     ->orWhere('owners.dni', 'LIKE', "%$search%")
                     ->orWhere('owners.phone', 'LIKE', "%$search%")
-                    ->paginate(5)
+                    ->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         }
     }
@@ -45,6 +50,7 @@ class OwnerController extends Controller
                     ->orderBy('status', 'DESC')
                     ->select('owners.*')
                     ->paginate(5),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
@@ -64,6 +70,7 @@ class OwnerController extends Controller
 
             return view('my-owners.index', [
                 'owners' => $owners,
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         }
     }
@@ -93,7 +100,11 @@ class OwnerController extends Controller
     //Mostrar vista crear propietarios
     public function create()
     {
-        return view('owners.create', ['owner' => new Owner(), 'users' => User::all()]);
+        return view('owners.create', [
+            'owner' => new Owner(),
+            'users' => User::all(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
     //Crear propietarios
     public function store(StoreOwnerRequest $request)
@@ -119,7 +130,11 @@ class OwnerController extends Controller
     //Mostrar vista editar propietarios
     public function edit(Owner $owner)
     {
-        return view('owners.edit', ['owner' => $owner, 'users' => User::all()]);
+        return view('owners.edit', [
+            'owner' => $owner,
+            'users' => User::all(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
     //Editar propietario
     public function update(UpdateOwnerRequest $request, Owner $owner)

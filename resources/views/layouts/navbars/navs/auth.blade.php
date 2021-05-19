@@ -48,6 +48,51 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
+                        <i class="now-ui-icons ui-1_bell-53"></i>
+
+                        @if (empty($messages))
+                            <span class="badge" style="background-color: #0AC700; width:20px; height:20px;">
+                                <p style="color:white; font-size:9px;">
+                                    0
+                                </p>
+                            </span>
+                        @elseif(!empty(($messages)))
+                            <span class="badge" style="background-color: #FF3636; width:20px; height:20px;">
+                                <p style="color:white; font-size:9px;">
+                                    {{ count($messages) }}
+                                </p>
+                            </span>
+                        @endif
+                        </p>
+                        </span>
+                        <p>
+                            <span class="d-lg-none d-md-block">{{ __('Notifications') }}</span>
+                        </p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink"
+                        style="min-width:300px; max-width:300px;">
+                        @foreach ($messages as $message)
+                            <div style=" margin-left:15px; ">
+                                <a href="" style="color: black;font-size:12px;">{{ $message->message }}
+                                </a>
+                            </div>
+                            <br>
+                            <a class="dropdown-item" href=""
+                                style="margin-top: -8.5px">{{ __($message->user->first_name) }}
+                                {{ __($message->user->last_name) }}</a>
+                            <a class="dropdown-item" href=""
+                                style="margin-top: -8.5px">{{ __($message->created_at->diffForHumans()) }}</a>
+                            <a class="dropdown-item" href=""
+                                style="margin-top: -8.5px">{{ __($message->user->email) }}</a>
+                            <a class="dropdown-item" href=""
+                                style="margin-top: -8.5px">{{ __($message->user->phone) }}</a>
+                            <hr>
+                        @endforeach
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         <i class="now-ui-icons users_single-02"></i>
                         <p>
                             <span class="d-lg-none d-md-block">{{ __('Account') }}</span>

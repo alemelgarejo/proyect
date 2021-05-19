@@ -19,6 +19,7 @@ class CreateMessagesTable extends Migration
             $table->integer('to_user_id', false, true, 5)->nullable();
             $table->integer('estate_id', false, true, 5)->nullable();
             $table->text('message')->nullable();
+            $table->enum('readed', ['yes', 'no'])->default('no');
             $table->timestamps();
         });
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\Message;
 use App\Models\Role;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -23,7 +24,10 @@ class UserController extends Controller
     public function index(User $users, Request $request)
     {
         if ($request['search'] == null) {
-            return view('users.index', ['users' => $users->paginate(6)]);
+            return view('users.index', [
+                'users' => $users->paginate(6),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+            ]);
         } elseif ($request['search'] != null) {
             $search = $request->input('search');
             return view('users.index', [
@@ -32,7 +36,8 @@ class UserController extends Controller
                     ->orWhere('users.email', 'LIKE', "%$search%")
                     ->orWhere('users.dni', 'LIKE', "%$search%")
                     ->orWhere('users.phone', 'LIKE', "%$search%")
-                    ->paginate(6)
+                    ->paginate(6),
+                'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
             ]);
         }
     }
@@ -55,7 +60,11 @@ class UserController extends Controller
     //Mostrar vista crear usuario
     public function create()
     {
-        return view('users.create', ['user' => new User(), 'roles' => Role::all()]);
+        return view('users.create', [
+            'user' => new User(),
+            'roles' => Role::all(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
     //Crear usuario
     public function store(StoreUserRequest $request)
@@ -79,7 +88,11 @@ class UserController extends Controller
     //Mostrar vista editar usuario
     public function edit(User $user)
     {
-        return view('users.edit', ['user' => $user, 'roles' => Role::all()]);
+        return view('users.edit', [
+            'user' => $user,
+            'roles' => Role::all(),
+            'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+        ]);
     }
     //Editar usuario
     public function update(User $user, UpdateUserRequest $request)
