@@ -15,10 +15,10 @@
                 <div class="card">
                     <div class="card-header">
                         <a class="btn btn-info btn-round text-white pull-right btn-sm"
-                            href="{{ route('owners.create') }}">{{ __('Add owner') }}</a>
+                            href="{{ route('owners.create') }}">{{ __('messages.Add owner') }}</a>
                         <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('owners.pdfOwners') }}">{{ __('PDF') }}</a>
-                        <h4 class="card-title">{{ __('Owners') }}</h4>
+                        <h4 class="card-title">{{ __('messages.Owners') }}</h4>
 
                         @include('alerts.success')
                         <div class="col-12 mt-2">
@@ -31,13 +31,13 @@
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr style="font-size: smaller">
-                                    <th>Name</th>
-                                    <th>Surname</th>
-                                    <th>Email</th>
-                                    <th>DNI</th>
-                                    <th>Phone</th>
-                                    <th>Real Estate</th>
-                                    <th class="disabled-sorting text-right">Actions</th>
+                                    <th>{{ __('messages.Name') }}</th>
+                                    <th>{{ __('messages.Surname') }}</th>
+                                    <th>{{ __('Email') }}</th>
+                                    <th>{{ __('DNI') }}</th>
+                                    <th>{{ __('messages.Phone') }}</th>
+                                    <th>{{ __('messages.Real Estate') }}</th>
+                                    <th class="disabled-sorting text-right">{{ __('messages.Actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,10 +52,10 @@
                                         <td class="text-right">
                                             @if ($owner->status == 1)
                                                 <span
-                                                    class="badge badge-success pull-left mt-2">{{ __('Active') }}</span>
+                                                    class="badge badge-success pull-left mt-2">{{ __('messages.Active') }}</span>
                                             @elseif($owner->status == 0)
                                                 <span
-                                                    class="badge badge-danger pull-left mt-2">{{ __('Inactive') }}</span>
+                                                    class="badge badge-danger pull-left mt-2">{{ __('messages.Inactive') }}</span>
                                             @endif
                                             <a type="button" href="{{ route('owners.pdfOwner', $owner->id) }}"
                                                 rel="tooltip" class="btn btn-danger btn-icon btn-sm " data-original-title=""

@@ -7,17 +7,17 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">{{ __('We Manage your Properties for the better.') }}</h1>
+                        <h1 class="title-single">{{ __('messages.We Manage your Properties for the better.') }}</h1>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{ route('web.index') }}">{{ __('Home') }}</a>
+                                <a href="{{ route('web.index') }}">{{ __('messages.Home') }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                {{ __('About') }}
+                                {{ __('messages.About') }}
                             </li>
                         </ol>
                     </nav>
@@ -38,9 +38,9 @@
                     <div class="sinse-box">
                         <h3 class="sinse-title">{{ __('Inmodata') }}
                             <span></span>
-                            <br> {{ __('Since 2021') }}
+                            <br> {{ __('messages.Since 2021') }}
                         </h3>
-                        <p>{{ __('Real Estate Management') }}</p>
+                        <p>{{ __('messages.Real Estate Management') }}</p>
                     </div>
                 </div>
                 <div class="col-md-12 section-t8">
@@ -55,12 +55,12 @@
                         </div>
                         <div class="col-md-6 col-lg-5 section-md-t3">
                             <div class="title-box-d">
-                                <h3 class="title-d">{{ __('About') }}
-                                    <span class="color-d">{{ __('Us') }}</span>.
+                                <h3 class="title-d">{{ __('messages.About') }}
+                                    <span class="color-d">{{ __('messages.Us') }}</span>.
                                 </h3>
                             </div>
                             <p class="color-text-a">
-                                {{ __('Hey we are Inmodata, a real estate management company here at Calle Dr. Barraquer, 6, 35500 Arrecife, Las Palmas.') }}
+                                {{ __('messages.Hey we are Inmodata, a real estate management company here at Calle Dr. Barraquer, 6, 35500 Arrecife, Las Palmas.') }}
                             </p>
                             <p class="color-text-a">
 
@@ -80,7 +80,7 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">{{ __('Meet Our Team') }}</h2>
+                            <h2 class="title-a">{{ __('messages.Meet Our Team') }}</h2>
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                                     </p>
                                     <div class="info-agents color-a">
                                         <p>
-                                            <strong>{{ __('Phone') }}: </strong> +34 {{ $agent->phone }}
+                                            <strong>{{ __('messages.Phone') }}: </strong> +34 {{ $agent->phone }}
                                         </p>
                                         <p>
                                             <strong>{{ __('Email') }}: </strong> {{ $agent->email }}

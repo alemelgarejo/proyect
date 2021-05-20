@@ -19,7 +19,8 @@
                             <a class="btn btn-success btn-round text-white pull-right btn-sm"
                                 href="{{ route('web.agent', $user->id) }}" target="__blank">{{ __('Web View') }}</a>
                         @endif
-                        <h5 class="title">{{ __('Edit User') }} {{ $user->first_name }} {{ $user->last_name }}</h5>
+                        <h5 class="title">{{ __('messages.Edit User') }} {{ $user->first_name }}
+                            {{ $user->last_name }}</h5>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('user.update', $user->id) }}" autocomplete="off"
@@ -32,7 +33,7 @@
                             <div class="row">
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' First Name') }}</label>
+                                        <label>{{ __('messages.First Name') }}</label>
                                         <input type="text" name="first_name" class="form-control" placeholder="First Name"
                                             value="{{ old('first_name', $user->first_name) }}">
                                         @include('alerts.feedback', ['field' => 'first_name'])
@@ -40,7 +41,7 @@
                                 </div>
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' Last Name') }}</label>
+                                        <label>{{ __('messages.Last Name') }}</label>
                                         <input type="text" name="last_name" class="form-control" placeholder="Last Name"
                                             value="{{ old('last_name', $user->last_name) }}">
                                         @include('alerts.feedback', ['field' => 'last_name'])
@@ -48,7 +49,7 @@
                                 </div>
                                 <div class="col-md-4 pr-4">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">{{ __(' Email address') }}</label>
+                                        <label for="exampleInputEmail1">{{ __('messages.Email address') }}</label>
                                         <input type="email" name="email" class="form-control" placeholder="Email"
                                             value="{{ old('email', $user->email) }}">
                                         @include('alerts.feedback', ['field' => 'email'])
@@ -58,7 +59,7 @@
                             <div class="row">
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Role') }}</label>
+                                        <label>{{ __('messages.Role') }}</label>
                                         <select name="role_id" id="role_id" class="form-control">
                                             <option value="1" {{ $user->role_id == 1 ? 'selected' : '' }}>Super Admin
                                             </option>
@@ -80,7 +81,7 @@
                                 </div>
                                 <div class="col-md-4 pr-4">
                                     <div class="form-group">
-                                        <label>{{ __('Comertial') }}</label>
+                                        <label>{{ __('messages.Comertial') }}</label>
                                         <input type="text" name="comertial" class="form-control" placeholder="Comertial"
                                             value="{{ old('comertial', $user->comertial) }}">
                                         @include('alerts.feedback', ['field' => 'comertial'])
@@ -90,7 +91,7 @@
                             <div class="row">
                                 <div class="col-md-6 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Phone') }}</label>
+                                        <label>{{ __('messages.Phone') }}</label>
                                         <input type="text" name="phone" class="form-control" placeholder="Phone"
                                             value="{{ old('phone', $user->phone) }}">
                                         @include('alerts.feedback', ['field' => 'phone'])
@@ -98,7 +99,7 @@
                                 </div>
                                 <div class="col-md-6 pr-4">
                                     <div class="form-group">
-                                        <label>{{ __('Birthdate') }}</label>
+                                        <label>{{ __('messages.Birthdate') }}</label>
                                         <input type="date" name="birthdate" class="form-control" placeholder="Birthdate"
                                             value="{{ old('birthdate', $user->birthdate) }}">
                                         @include('alerts.feedback', ['field' => 'birthdate'])
@@ -109,7 +110,7 @@
                             <div class="row">
                                 <div class="col-md-12 pr-4">
                                     <div class="form-group">
-                                        <label>{{ __('Description') }}</label>
+                                        <label>{{ __('messages.Description') }}</label>
                                         <textarea name="description" id="description" class="form-control"
                                             value="">{{ old('description', $user->description) }}</textarea>
                                         @include('alerts.feedback', ['field' => 'description'])
@@ -172,16 +173,18 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Update') }}</button>
+                                <button type="submit"
+                                    class="btn btn-info btn-round btn-sm">{{ __('messages.Update') }}</button>
                                 <button id="delete" data-userid="{{ $user->id }}" type="button"
-                                    class="btn btn-danger btn-round pull-right mr-4  btn-sm" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('Delete') }}</button>
+                                    class="btn btn-danger btn-round pull-right mr-4  btn-sm" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('messages.Delete') }}</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="title">{{ $user->first_name }} {{ $user->last_name }}´s {{ __('Customers') }}
+                        <h5 class="title">{{ $user->first_name }} {{ $user->last_name }}´s
+                            {{ __('messages.Customers') }}
                         </h5>
                     </div>
                     <div class="card-body">
@@ -191,12 +194,12 @@
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Surname</th>
-                                    <th>Email</th>
+                                    <th>{{ __('messages.Name') }}</th>
+                                    <th>{{ __('messages.Surname') }}</th>
+                                    <th>{{ __('messages.Email address') }}</th>
                                     <th>DNI</th>
-                                    <th>Phone</th>
-                                    <th class="disabled-sorting text-right">Actions</th>
+                                    <th>{{ __('messages.Phone') }}</th>
+                                    <th class="disabled-sorting text-right">{{ __('messages.Actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -223,7 +226,8 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="title">{{ $user->first_name }} {{ $user->last_name }}´s {{ __('Owners') }} </h5>
+                        <h5 class="title">{{ $user->first_name }} {{ $user->last_name }}´s
+                            {{ __('messages.Owners') }} </h5>
                     </div>
                     <div class="card-body table-responsive">
                         <div class="toolbar">
@@ -232,12 +236,12 @@
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Surname</th>
-                                    <th>Email</th>
+                                    <th>{{ __('messages.Name') }}</th>
+                                    <th>{{ __('messages.Surname') }}</th>
+                                    <th>{{ __('messages.Email address') }}</th>
                                     <th>DNI</th>
-                                    <th>Phone</th>
-                                    <th class="disabled-sorting text-right">Actions</th>
+                                    <th>{{ __('messages.Phone') }}</th>
+                                    <th class="disabled-sorting text-right">{{ __('messages.Actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -277,14 +281,14 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <div class="modal-body">
-                        <h4>{{ __('Dou you want to delete this User?') }}</h4>
+                        <h4>{{ __('messages.Dou you want to delete this User?') }}</h4>
                         <input type="hidden" , name="id" id="user_id">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default waves-effect btn-round btn-sm"
-                            data-dismiss="modal">Close</button>
+                            data-dismiss="modal">{{ __('messages.Close') }}</button>
                         <button type="submit"
-                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round btn-sm">Delete</button>
+                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round btn-sm">{{ __('messages.Delete') }}</button>
                     </div>
 
                 </form>

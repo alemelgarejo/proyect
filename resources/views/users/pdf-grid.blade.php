@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <strong>{{ __('Users') }}:</strong>
+            <strong>{{ __('messages.Users') }}:</strong>
         </div>
     </div>
     <br>
@@ -22,7 +22,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Email Address') }}</strong>
+                            <strong>{{ __('messages.Email Address') }}</strong>
                         </h6>
                         <span>{{ $user->email }}</span>
                     </td>
@@ -30,7 +30,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Phone') }}</strong>
+                            <strong>{{ __('messages.Phone') }}</strong>
                         </h6>
                         <span>{{ $user->phone }}</span>
                     </td>
@@ -46,7 +46,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Comertial') }}</strong>
+                            <strong>{{ __('messages.Comertial') }}</strong>
                         </h6>
                         <span>{{ $user->comertial }}</span>
                     </td>
@@ -54,7 +54,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Birthdate') }}</strong>
+                            <strong>{{ __('messages.Birthdate') }}</strong>
                         </h6>
                         <span>{{ $user->birthdate }}</span>
                     </td>
@@ -62,7 +62,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Role') }}</strong>
+                            <strong>{{ __('messages.Role') }}</strong>
                         </h6>
                         <span>{{ $user->role->name }}</span>
                     </td>

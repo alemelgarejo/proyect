@@ -16,11 +16,10 @@
                 <div class="card">
                     <div class="card-header">
                         <a class="btn btn-info btn-round text-white pull-right btn-sm"
-                            href="{{ route('user.create') }}">{{ __('Add
-                            user') }}</a>
+                            href="{{ route('user.create') }}">{{ __('messages.Add user') }}</a>
                         <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('user.pdfUsers') }}">{{ __('PDF') }}</a>
-                        <h4 class="card-title">{{ __('Users') }}</h4>
+                        <h4 class="card-title">{{ __('messages.Users') }}</h4>
 
                         @include('alerts.success')
                         <div class="col-12 mt-2">
@@ -33,13 +32,13 @@
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr style="font-size: smaller">
-                                    <th>{{ __('Name') }}</th>
-                                    <th>{{ __('Surname') }}</th>
+                                    <th>{{ __('messages.Name') }}</th>
+                                    <th>{{ __('messages.Surname') }}</th>
                                     <th>{{ __('Email') }}</th>
                                     <th>{{ __('DNI') }}</th>
-                                    <th>{{ __('Phone') }}</th>
-                                    <th>{{ __('Role') }}</th>
-                                    <th class="disabled-sorting text-right">{{ __('Actions') }}</th>
+                                    <th>{{ __('messages.Phone') }}</th>
+                                    <th>{{ __('messages.Role') }}</th>
+                                    <th class="disabled-sorting text-right">{{ __('messages.Actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>

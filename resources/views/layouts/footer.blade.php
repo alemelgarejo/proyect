@@ -9,7 +9,7 @@
                 </li>
                 <li>
                     <a href="{{ route('web.about') }}" target="_blank">
-                        {{ __(' About Us') }}
+                        {{ __('messages.About Us') }}
                     </a>
                 </li>
                 <li>

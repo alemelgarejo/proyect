@@ -7,18 +7,18 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">Our Amazing Agents</h1>
-                        <span class="color-text-a">Grid Properties</span>
+                        <h1 class="title-single">{{ __('messages.Our Amazing Agents') }}</h1>
+                        <span class="color-text-a">{{ __('messages.Agents') }}</span>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="#">Home</a>
+                                <a href="#">{{ __('messages.Home') }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Agents Grid
+                                {{ __('messages.Agents') }}
                             </li>
                         </ol>
                     </nav>
@@ -55,7 +55,7 @@
                                     </p>
                                     <div class="info-agents color-a">
                                         <p>
-                                            <strong>{{ __('Phone') }}: </strong> +34 {{ $agent->phone }}
+                                            <strong>{{ __('messages.Phone') }}: </strong> +34 {{ $agent->phone }}
                                         </p>
                                         <p>
                                             <strong>{{ __('Email') }}: </strong> {{ $agent->email }}

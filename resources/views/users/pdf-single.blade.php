@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <strong>{{ __('User') }}: {{ $user->first_name }} {{ $user->last_name }}</strong>
+            <strong>{{ __('messages.User') }}: {{ $user->first_name }} {{ $user->last_name }}</strong>
         </div>
     </div>
     <br>
@@ -14,7 +14,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Email Address') }}</strong>
+                        <strong>{{ __('messages.Email Address') }}</strong>
                     </h6>
                     <span>{{ $user->email }}</span>
                 </td>
@@ -22,7 +22,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Phone') }}</strong>
+                        <strong>{{ __('messages.Phone') }}</strong>
                     </h6>
                     <span>{{ $user->phone }}</span>
                 </td>
@@ -38,7 +38,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Comertial') }}</strong>
+                        <strong>{{ __('messages.Comertial') }}</strong>
                     </h6>
                     <span>{{ $user->comertial }}</span>
                 </td>
@@ -46,7 +46,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Birthdate') }}</strong>
+                        <strong>{{ __('messages.Birthdate') }}</strong>
                     </h6>
                     <span>{{ $user->birthdate }}</span>
                 </td>
@@ -54,7 +54,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Role') }}</strong>
+                        <strong>{{ __('messages.Role') }}</strong>
                     </h6>
                     <span>{{ $user->role->name }}</span>
                 </td>
@@ -66,19 +66,19 @@
     </table>
     <hr>
     <h6>
-        <strong>{{ __('Customers') }}</strong>
+        <strong>{{ __('messages.Customers') }}</strong>
     </h6>
     <table class="table table-bordered table-condensed">
         <tbody>
             @foreach ($user->customers as $customer)
                 <tr>
                     <td>
-                        <strong>{{ __('Full Name') }}: </strong><span>{{ $customer->first_name }}
+                        <strong>{{ __('messages.Full Name') }}: </strong><span>{{ $customer->first_name }}
                             {{ $customer->last_name }}</span><br>
                         <strong>{{ __('DNI') }}: </strong><span>{{ $customer->dni }}</span><br>
                         <strong>{{ __('Email') }}: </strong><span>{{ $customer->email }}</span><br>
-                        <strong>{{ __('Phone') }}: </strong><span>{{ $customer->phone }}</span><br>
-                        <strong>{{ __('Birthdate') }}:
+                        <strong>{{ __('messages.Phone') }}: </strong><span>{{ $customer->phone }}</span><br>
+                        <strong>{{ __('messages.Birthdate') }}:
                         </strong><span>{{ \Carbon\Carbon::parse($customer->birthdate)->format('d/m/Y') }}</span>
                         <hr>
                     </td>

@@ -103,11 +103,13 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ route('set_language', 'es') }}"><img
-                                style="width: 40px;  height:28px; " src="{{ asset('img/espanita.png') }}"
+                                style="width: 40px;  height:28px; "
+                                src="https://res.cloudinary.com/alemelgarejo/image/upload/v1621524586/idiomas/espanita_wvcutz.png"
                                 alt="espanita">&nbsp;&nbsp;&nbsp;&nbsp;{{ __('messages.Español') }}
                         </a>
                         <a class="dropdown-item" href="{{ route('set_language', 'en') }}"><img
-                                style="width: 40px; height:28px; " src="{{ asset('img/reinounido.png') }}"
+                                style="width: 40px; height:28px; "
+                                src="https://res.cloudinary.com/alemelgarejo/image/upload/v1621524589/idiomas/reinounido_wokjfz.png"
                                 alt="reinounido">&nbsp;&nbsp;&nbsp;&nbsp;{{ __('messages.Inglés') }}</a>
 
                     </div>

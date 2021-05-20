@@ -8,17 +8,17 @@
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
                         <h1 class="title-single">{{ $agent->first_name }} {{ $agent->last_name }}</h1>
-                        <span class="color-text-a">{{ __('Real Estate Agent') }}</span>
+                        <span class="color-text-a">{{ __('messages.Real Estate Agent') }}</span>
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-4">
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{ route('web.index') }}">{{ __('Home') }}</a>
+                                <a href="{{ route('web.index') }}">{{ __('messages.Home') }}</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="#">{{ __('Agents') }}</a>
+                                <a href="#">{{ __('messages.Agents') }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 {{ $agent->first_name }} {{ $agent->last_name }}
@@ -57,7 +57,7 @@
                                     </p>
                                     <div class="info-agents color-a">
                                         <p>
-                                            <strong>{{ __('Phone') }}: </strong>
+                                            <strong>{{ __('messages.Phone') }}: </strong>
                                             <span class="color-text-a"> +34 {{ $agent->phone }} </span>
                                         </p>
                                         <p>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-md-12 section-t8">
                     <div class="title-box-d">
-                        <h3 class="title-d">{{ __('My Properties') }}</h3>
+                        <h3 class="title-d">{{ __('messages.My Estates') }}</h3>
                     </div>
                 </div>
                 <div class="row property-grid grid">
@@ -132,28 +132,28 @@
                                                     {{ $estate->value }} €</span>
                                             </div>
                                             <a href="{{ route('web.estate', $estate->id) }}"
-                                                class="link-a">{{ __('Click here to view') }}
+                                                class="link-a">{{ __('messages.Click here to view') }}
                                                 <span class="ion-ios-arrow-forward"></span>
                                             </a>
                                         </div>
                                         <div class="card-footer-a">
                                             <ul class="card-info d-flex justify-content-around">
                                                 <li>
-                                                    <h4 class="card-info-title">{{ __('Surface') }}</h4>
+                                                    <h4 class="card-info-title">{{ __('messages.Surface') }}</h4>
                                                     <span>{{ $estate->surface }} m
                                                         <sup>2</sup>
                                                     </span>
                                                 </li>
                                                 <li>
-                                                    <h4 class="card-info-title">{{ __('Rooms') }}</h4>
+                                                    <h4 class="card-info-title">{{ __('messages.Rooms') }}</h4>
                                                     <span>{{ $estate->rooms }}</span>
                                                 </li>
                                                 <li>
-                                                    <h4 class="card-info-title">{{ __('Baths') }}</h4>
+                                                    <h4 class="card-info-title">{{ __('messages.Baths') }}</h4>
                                                     <span>{{ $estate->baths }}</span>
                                                 </li>
                                                 <li>
-                                                    <h4 class="card-info-title">{{ __('Furnished') }}</h4>
+                                                    <h4 class="card-info-title">{{ __('messages.Furnished') }}</h4>
                                                     <span>{{ ucwords($estate->furnished) }}</span>
                                                 </li>
                                             </ul>

@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <strong>{{ __('Orders') }}:</strong>
+            <strong>{{ __('messages.Orders') }}:</strong>
         </div>
     </div>
     <br>
@@ -23,7 +23,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Type') }}</strong>
+                            <strong>{{ __('messages.Type') }}</strong>
                         </h6>
                         <span>{{ $order->type }}</span>
                     </td>
@@ -31,7 +31,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('City') }}</strong>
+                            <strong>{{ __('messages.City') }}</strong>
                         </h6>
                         <span>{{ $order->city }}</span>
                     </td>
@@ -39,15 +39,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Estate Type') }}</strong>
-                        </h6>
-                        <span>{{ $order->estate_type }}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h6>
-                            <strong>{{ __('Max Value') }}</strong>
+                            <strong>{{ __('messages.Max Value') }}</strong>
                         </h6>
                         <span>{{ $order->max_value }} €</span>
                     </td>
@@ -55,7 +47,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Min Surface') }}</strong>
+                            <strong>{{ __('messages.Min Surface') }}</strong>
                         </h6>
                         <span>{{ $order->min_surface }} m<sup>2</sup></span>
                     </td>
@@ -63,7 +55,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Min Rooms') }}</strong>
+                            <strong>{{ __('messages.Min Rooms') }}</strong>
                         </h6>
                         <span>{{ $order->min_rooms }}</span>
                     </td>
@@ -71,7 +63,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Furnished') }}</strong>
+                            <strong>{{ __('messages.Furnished') }}</strong>
                         </h6>
                         <span>{{ ucwords($order->furnished) }}</span>
                     </td>
@@ -79,7 +71,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Garage') }}</strong>
+                            <strong>{{ __('messages.Garage') }}</strong>
                         </h6>
                         <span>{{ ucwords($order->garage) }}</span>
                     </td>
@@ -87,7 +79,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Situation') }}</strong>
+                            <strong>{{ __('messages.Situation') }}</strong>
                         </h6>
                         <span>{{ $order->situation }}</span>
                     </td>
@@ -95,7 +87,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Conservation State') }}</strong>
+                            <strong>{{ __('messages.Conservation') }}</strong>
                         </h6>
                         <span>{{ $order->conservation_state }}</span>
                     </td>
@@ -103,7 +95,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Observations') }}</strong>
+                            <strong>{{ __('messages.Observations') }}</strong>
                         </h6>
                         <span>{{ $order->observations }}</span>
                     </td>

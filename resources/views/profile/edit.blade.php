@@ -13,7 +13,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="title">{{ __(' Edit Profile') }}</h5>
+                        <h5 class="title">{{ __('messages.Edit Profile') }}</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('profile.update') }}" autocomplete="off"
@@ -26,7 +26,7 @@
                             <div class="row">
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' First Name') }}</label>
+                                        <label>{{ __('messages.First Name') }}</label>
                                         <input type="text" name="first_name" class="form-control"
                                             value="{{ old('first_name', auth()->user()->first_name) }}">
                                         @include('alerts.feedback', ['field' => 'first_name'])
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' Last Name') }}</label>
+                                        <label>{{ __('messages.Last Name') }}</label>
                                         <input type="text" name="last_name" class="form-control"
                                             value="{{ old('last_name', auth()->user()->last_name) }}">
                                         @include('alerts.feedback', ['field' => 'last_name'])
@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="col-md-2 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' Phone') }}</label>
+                                        <label>{{ __('messages.Phone') }}</label>
                                         <input type="text" name="phone" class="form-control"
                                             value="{{ old('phone', auth()->user()->phone) }}">
                                         @include('alerts.feedback', ['field' => 'phone'])
@@ -60,7 +60,7 @@
                             <div class="row">
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' Birthdate') }}</label>
+                                        <label>{{ __('messages.Birthdate') }}</label>
                                         <input type="text" name="birthdate" class="form-control"
                                             value="{{ old('birthdate', auth()->user()->birthdate) }}">
                                         @include('alerts.feedback', ['field' => 'birthdate'])
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">{{ __(' Email address') }}</label>
+                                        <label for="exampleInputEmail1">{{ __('messages.Email address') }}</label>
                                         <input type="email" name="email" class="form-control" placeholder="Email"
                                             value="{{ old('email', auth()->user()->email) }}">
                                         @include('alerts.feedback', ['field' => 'email'])
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' Comertial') }}</label>
+                                        <label>{{ __('messages.Comertial') }}</label>
                                         <input type="text" name="comertial" class="form-control"
                                             value="{{ old('comertial', auth()->user()->comertial) }}">
                                         @include('alerts.feedback', ['field' => 'comertial'])
@@ -86,7 +86,7 @@
                             <div class="row">
                                 <div class="col-md-12 pr-4">
                                     <div class="form-group">
-                                        <label>{{ __(' Description') }}</label>
+                                        <label>{{ __('messages.Description') }}</label>
                                         <textarea type="text" name="description" class="form-control"
                                             value="">{{ old('description', auth()->user()->description) }}</textarea>
                                         @include('alerts.feedback', ['field' => 'description'])
@@ -94,13 +94,14 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Save') }}</button>
+                                <button type="submit"
+                                    class="btn btn-info btn-round btn-sm">{{ __('messages.Save') }}</button>
                             </div>
                             <hr class="half-rule" />
                         </form>
                     </div>
                     <div class="card-header">
-                        <h5 class="title">{{ __('Profile Image') }}</h5>
+                        <h5 class="title">{{ __('messages.Profile Image') }}</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('profile.updateProfileImage') }}" autocomplete="off"
@@ -118,7 +119,8 @@
                             </div>
                             <br>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Save') }}</button>
+                                <button type="submit"
+                                    class="btn btn-info btn-round btn-sm">{{ __('messages.Save') }}</button>
                             </div>
                             <hr class="half-rule" />
                         </form>
@@ -135,7 +137,7 @@
                             <div class="row">
                                 <div class="col-md-7 pr-1">
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
-                                        <label>{{ __(' Current Password') }}</label>
+                                        <label>{{ __('messages.Current Password') }}</label>
                                         <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
                                             name="old_password" placeholder="{{ __('Current Password') }}"
                                             type="password" required>
@@ -146,7 +148,7 @@
                             <div class="row">
                                 <div class="col-md-7 pr-1">
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
-                                        <label>{{ __(' New password') }}</label>
+                                        <label>{{ __('messages.New password') }}</label>
                                         <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
                                             placeholder="{{ __('New Password') }}" type="password" name="password"
                                             required>
@@ -157,48 +159,48 @@
                             <div class="row">
                                 <div class="col-md-7 pr-1">
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
-                                        <label>{{ __(' Confirm New Password') }}</label>
+                                        <label>{{ __('messages.Confirm New Password') }}</label>
                                         <input class="form-control" placeholder="{{ __('Confirm New Password') }}"
                                             type="password" name="password_confirmation" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-info btn-round btn-sm "">{{ __('Change Password') }}</button>
-                                    </div>
-                                </form>
+                                <button type="submit"
+                                    class="btn btn-info btn-round btn-sm ">{{ __('messages.Change Password') }}</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                    <div class=" col-md-4">
-                                    <div class="card card-user">
-                                        <div class="image">
-                                            <img src="{{ asset('assets') }}/img/bg5.jpg" alt="...">
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="author">
-                                                <a href="{{ route('profile.edit') }}">
-                                                    <img class="avatar" src="{{ asset(auth()->user()->photo) }}"
-                                                        alt="...">
-                                                    <h5 class="title">{{ auth()->user()->name }}</h5>
-                                                </a>
-                                                <p class="description">
-                                                    {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
-                                                </p>
-                                                <p class="description">
-                                                    {{ auth()->user()->email }}
-                                                </p>
-                                                <p class="description">
-                                                    {{ auth()->user()->phone }}
-                                                </p>
-                                                <p class="description">
-                                                    {{ auth()->user()->dni }}
-                                                </p>
-                                                <p class="description">
-                                                    {{ auth()->user()->comertial }}
-                                                </p>
-                                            </div>
-                                        </div>{{-- <hr>
+                </div>
+            </div>
+            <div class=" col-md-4">
+                <div class="card card-user">
+                    <div class="image">
+                        <img src="{{ asset('assets') }}/img/bg5.jpg" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <div class="author">
+                            <a href="{{ route('profile.edit') }}">
+                                <img class="avatar" src="{{ asset(auth()->user()->photo) }}" alt="...">
+                                <h5 class="title">{{ auth()->user()->name }}</h5>
+                            </a>
+                            <p class="description">
+                                {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
+                            </p>
+                            <p class="description">
+                                {{ auth()->user()->email }}
+                            </p>
+                            <p class="description">
+                                {{ auth()->user()->phone }}
+                            </p>
+                            <p class="description">
+                                {{ auth()->user()->dni }}
+                            </p>
+                            <p class="description">
+                                {{ auth()->user()->comertial }}
+                            </p>
+                        </div>
+                    </div>{{-- <hr>
           <div class="button-container">
             <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
               <i class="fab fa-facebook-square"></i>
@@ -210,8 +212,8 @@
               <i class="fab fa-google-plus-square"></i>
             </button>
           </div> --}}
-                                    </div>
-                            </div>
-                    </div>
                 </div>
-            @endsection
+            </div>
+        </div>
+    </div>
+@endsection

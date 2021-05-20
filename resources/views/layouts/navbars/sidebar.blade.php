@@ -15,7 +15,7 @@
             <li class="@if ($activePage=='home' ) active @endif">
                 <a href="{{ route('home') }}">
                     <i class="now-ui-icons design_app"></i>
-                    <h6 style="margin-top: 4.5%">{{ __('Dashboard') }}</h6>
+                    <h6 style="margin-top: 4.5%">{{ __('messages.Dashboard') }}</h6>
                 </a>
             </li>
 
@@ -23,7 +23,7 @@
                 <a data-toggle="collapse" href="#adminSection">
                     <i class="now-ui-icons ui-1_settings-gear-63"></i>
                     <h6 style="margin-top: 5%">
-                        {{ __('Admin Section') }}
+                        {{ __('messages.Admin Section') }}
                         <b class="caret mt-2"></b>
                     </h6>
                 </a>
@@ -33,26 +33,26 @@
                         <li class="@if ($activePage=='users' ) active @endif">
                             <a href="{{ route('user.index') }}">
                                 <i class="now-ui-icons users_single-02"></i>
-                                <h6 style="margin-top: 5%"> {{ __('User Management') }} </h6>
+                                <h6 style="margin-top: 5%"> {{ __('messages.Users') }} </h6>
                             </a>
                         </li>
 
                         <li class="@if ($activePage=='customers' ) active @endif">
                             <a href="{{ route('customers.index') }}">
                                 <i class="now-ui-icons users_circle-08"></i>
-                                <h6 style="margin-top: 4.5%"> {{ __('Customer Management') }} </h6>
+                                <h6 style="margin-top: 4.5%"> {{ __('messages.Customers') }} </h6>
                             </a>
                         </li>
                         <li class="@if ($activePage=='orders' ) active @endif">
                             <a href="{{ route('orders.index') }}">
                                 <i class="now-ui-icons files_paper"></i>
-                                <h6 style="margin-top: 5%"> {{ __('Order Management') }} </h6>
+                                <h6 style="margin-top: 5%"> {{ __('messages.Orders') }} </h6>
                             </a>
                         </li>
                         <li class="@if ($activePage=='owners' ) active @endif">
                             <a href="{{ route('owners.index') }}">
                                 <i class="now-ui-icons business_badge"></i>
-                                <h6 style="margin-top: 5.5%"> {{ __('Owner Management') }} </h6>
+                                <h6 style="margin-top: 5.5%"> {{ __('messages.Owners') }} </h6>
                             </a>
                         </li>
                     </ul>
@@ -62,31 +62,31 @@
             <li class="@if ($activePage=='my-customers' ) active @endif">
                 <a href="{{ route('customers.index2') }}">
                     <i class="now-ui-icons users_circle-08"></i>
-                    <h6 style="margin-top: 4.5%"> {{ __('My Customer Management') }} </h6>
+                    <h6 style="margin-top: 4.5%"> {{ __('messages.My Customers') }} </h6>
                 </a>
             </li>
             <li class="@if ($activePage=='my-customers-orders' ) active @endif">
                 <a href="{{ route('orders.index2') }}">
                     <i class="now-ui-icons files_paper"></i>
-                    <h6 style="margin-top: 5%"> {{ __('My Order Management') }} </h6>
+                    <h6 style="margin-top: 5%"> {{ __('messages.My Orders') }} </h6>
                 </a>
             </li>
             <li class="@if ($activePage=='my-owners' ) active @endif">
                 <a href="{{ route('owners.index2') }}">
                     <i class="now-ui-icons business_badge"></i>
-                    <h6 style="margin-top: 5.5%"> {{ __('My Owner Management') }} </h6>
+                    <h6 style="margin-top: 5.5%"> {{ __('messages.My Owners') }} </h6>
                 </a>
             </li>
             <li class="@if ($activePage=='estates' ) active @endif">
                 <a href="{{ route('estates.index') }}">
                     <i class="now-ui-icons business_bank"></i>
-                    <h6 style="margin-top: 6%"> {{ __('Estate Management') }} </h6>
+                    <h6 style="margin-top: 6%"> {{ __('messages.Estates') }} </h6>
                 </a>
             </li>
             <li class="@if ($activePage=='my-estates' ) active @endif">
                 <a href="{{ route('estates.index2') }}">
                     <i class="now-ui-icons business_bank"></i>
-                    <h6 style="margin-top: 5%"> {{ __('My Estate Management') }} </h6>
+                    <h6 style="margin-top: 5%"> {{ __('messages.My Estates') }} </h6>
                 </a>
             </li>
 

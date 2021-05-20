@@ -15,10 +15,10 @@
                 <div class="card">
                     <div class="card-header">
                         <a class="btn btn-info btn-round text-white pull-right btn-sm"
-                            href="{{ route('orders.create') }}">{{ __('Add order') }}</a>
+                            href="{{ route('orders.create') }}">{{ __('messages.Add order') }}</a>
                         <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('orders.pdfOrders') }}">{{ __('PDF') }}</a>
-                        <h4 class="card-title">{{ __('Orders') }}</h4>
+                        <h4 class="card-title">{{ __('messages.Orders') }}</h4>
 
                         @include('alerts.success')
                         <div class="col-12 mt-2">
@@ -31,14 +31,14 @@
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr style="font-size: smaller">
-                                    <th>{{ __('Customer') }}</th>
-                                    <th>{{ __('Type') }}</th>
-                                    <th>{{ __('City') }}</th>
-                                    <th>{{ __('Max Value') }}</th>
-                                    <th>{{ __('Min Surface') }}</th>
-                                    <th>{{ __('Min Rooms') }}</th>
-                                    <th>{{ __('Furnished') }}</th>
-                                    <th class="disabled-sorting text-right">{{ __('Actions') }}</th>
+                                    <th>{{ __('messages.Customer') }}</th>
+                                    <th>{{ __('messages.Type') }}</th>
+                                    <th>{{ __('messages.City') }}</th>
+                                    <th>{{ __('messages.Max Value') }}</th>
+                                    <th>{{ __('messages.Min Surface') }}</th>
+                                    <th>{{ __('messages.Min Rooms') }}</th>
+                                    <th>{{ __('messages.Furnished') }}</th>
+                                    <th class="disabled-sorting text-right">{{ __('messages.Actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,8 +52,8 @@
                                         <td>{{ $order->min_rooms }}</td>
                                         <td>
                                             @if ($order->furnished == 'no')
-                                            {{ __('No') }} @elseif($order->furnished == 'yes')
-                                                {{ __('Yes') }} @endif
+                                            {{ __('messages.No') }} @elseif($order->furnished == 'yes')
+                                                {{ __('messages.Yes') }} @endif
                                         </td>
                                         <td class="text-right">
                                             <a type="button" href="{{ route('orders.pdfOrder', $order->id) }}"

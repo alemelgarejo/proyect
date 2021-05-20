@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <strong>{{ __('Owners') }}:</strong>
+            <strong>{{ __('messages.Owners') }}:</strong>
         </div>
     </div>
     <br>
@@ -23,7 +23,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Email Address') }}</strong>
+                            <strong>{{ __('messages.Email Address') }}</strong>
                         </h6>
                         <span>{{ $owner->email }}</span>
                     </td>
@@ -31,7 +31,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Phone') }}</strong>
+                            <strong>{{ __('messages.Phone') }}</strong>
                         </h6>
                         <span>{{ $owner->phone }}</span>
                     </td>
@@ -47,7 +47,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Birthdate') }}</strong>
+                            <strong>{{ __('messages.Birthdate') }}</strong>
                         </h6>
                         <span>{{ $owner->birthdate }}</span>
                     </td>
@@ -55,7 +55,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('User') }}</strong>
+                            <strong>{{ __('messages.Real Estate') }}</strong>
                         </h6>
                         <span>{{ $owner->user->first_name }} {{ $owner->user->last_name }}</span>
                     </td>
@@ -63,7 +63,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Address') }}</strong>
+                            <strong>{{ __('messages.Address') }}</strong>
                         </h6>
                         <span>{{ $owner->address }}</span>
                     </td>
@@ -71,7 +71,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('City') }}</strong>
+                            <strong>{{ __('messages.City') }}</strong>
                         </h6>
                         <span>{{ $owner->city }}</span>
                     </td>

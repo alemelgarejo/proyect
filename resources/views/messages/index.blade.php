@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{ __('Not Readed') }}</h4>
+                        <h4 class="card-title">{{ __('messages.Not Readed') }}</h4>
 
                         @include('alerts.success')
                         <div class="col-12 mt-2">
@@ -27,12 +27,12 @@
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr style="font-size: smaller">
-                                    <th>{{ __('Message') }}</th>
-                                    <th>{{ __('From') }}</th>
+                                    <th>{{ __('messages.Message') }}</th>
+                                    <th>{{ __('messages.From') }}</th>
                                     <th>{{ __('Email') }}</th>
-                                    <th>{{ __('Phone') }}</th>
-                                    <th>{{ __('Estate') }}</th>
-                                    <th class="disabled-sorting text-right">{{ __('Actions') }}</th>
+                                    <th>{{ __('messages.Phone') }}</th>
+                                    <th>{{ __('messages.Estate') }}</th>
+                                    <th class="disabled-sorting text-right">{{ __('messages.Actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,7 +73,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{ __('Readed') }}</h4>
+                        <h4 class="card-title">{{ __('messages.Readed') }}</h4>
 
                         @include('alerts.success')
                         <div class="col-12 mt-2">
@@ -86,11 +86,11 @@
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr style="font-size: smaller">
-                                    <th>{{ __('Message') }}</th>
-                                    <th>{{ __('From') }}</th>
+                                    <th>{{ __('messages.Message') }}</th>
+                                    <th>{{ __('messages.From') }}</th>
                                     <th>{{ __('Email') }}</th>
-                                    <th>{{ __('Phone') }}</th>
-                                    <th>{{ __('Estate') }}</th>
+                                    <th>{{ __('messages.Phone') }}</th>
+                                    <th>{{ __('messages.Estate') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
