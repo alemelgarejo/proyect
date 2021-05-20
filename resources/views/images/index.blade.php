@@ -35,8 +35,9 @@
                 <div class="card">
                     <div class="card-header">
                         <a class="btn btn-info btn-round text-white pull-right  btn-sm"
-                            href="{{ route('images.create2', $estate->id) }}">{{ __('Add image') }}</a>
-                        <h4 class="title">{{ $estate->address }}, {{ $estate->city }} - {{ __('Images') }}</h4>
+                            href="{{ route('images.create2', $estate->id) }}">{{ __('messages.Add image') }}</a>
+                        <h4 class="title">{{ $estate->address }}, {{ $estate->city }} - {{ __('messages.Images') }}
+                        </h4>
 
                         @include('alerts.success')
                         <div class="col-12 mt-2">
@@ -50,7 +51,7 @@
                             <div class="container">
                                 <div class="container">
                                     <h4 class="title">
-                                        {{ __('Main Image') }}</h4>
+                                        {{ __('messages.Main Image') }}</h4>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="width: 400px !important;">
                                             <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
@@ -64,7 +65,7 @@
                                 </div>
                                 <div class="container">
                                     <h4 class="title">
-                                        {{ __('All Images') }}</h4>
+                                        {{ __('messages.All Images') }}</h4>
                                     <div class="row">
                                         @foreach ($images as $image)
                                             <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="width: 400px !important;">
@@ -78,12 +79,12 @@
                                                 <button type="button" class="btn btn-success btn-round btn-sm"
                                                     data-toggle="modal"
                                                     data-target="#modal-setMain-{{ $image->id }}-{{ $estate->id }}">
-                                                    {{ __('Set Main') }}
+                                                    {{ __('messages.Set Main') }}
                                                 </button>
                                                 <!-- Button trigger modal -->
                                                 <button type="button" class="btn btn-danger btn-round btn-sm pull-right"
                                                     data-toggle="modal" data-target="#modal-delete-{{ $image->id }}">
-                                                    {{ __('Delete') }}
+                                                    {{ __('messages.Delete') }}
                                                 </button>
                                             </div>
                                             @include('images.setMain')
@@ -96,10 +97,10 @@
                                                     <div class="modal-header">
                                                         <h4 class="modal-title" {{-- id="image-gallery-title" --}}>
                                                             {{ $estate->address }}, {{ $estate->city }} -
-                                                            {{ __('Image') }}</h4>
+                                                            {{ __('messages.Image') }}</h4>
                                                         <button type="button" class="close" data-dismiss="modal"><span
                                                                 aria-hidden="true">×</span><span
-                                                                class="sr-only">Close</span>
+                                                                class="sr-only">{{ __('messages.Close') }}</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">

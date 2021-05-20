@@ -46,7 +46,7 @@
                 <div class="col-md-4 mr-auto " style="margin-top: -7%">
                     <div class="card card-signup text-center">
                         <div class="card-header ">
-                            <h4 class="card-title">{{ __('Register') }}</h4>
+                            <h4 class="card-title">{{ __('messages.Register') }}</h4>
                         </div>
                         <div class="card-body ">
                             <form method="POST" action="{{ route('register') }}">
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                     <input class="form-control {{ $errors->has('first_name') ? ' is-invalid' : '' }}"
-                                        placeholder="{{ __('First Name') }}" type="text" name="first_name"
+                                        placeholder="{{ __('messages.First Name') }}" type="text" name="first_name"
                                         value="{{ old('first_name') }}" required autofocus>
                                     @if ($errors->has('first_name'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <input class="form-control {{ $errors->has('last_name') ? ' is-invalid' : '' }}"
-                                        placeholder="{{ __('Last Name') }}" type="text" name="last_name"
+                                        placeholder="{{ __('messages.Last Name') }}" type="text" name="last_name"
                                         value="{{ old('last_name') }}" required autofocus>
                                     @if ($errors->has('last_name'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
@@ -123,7 +123,7 @@
                                         </div>
                                     </div>
                                     <input class="form-control {{ $errors->has('comertial') ? ' is-invalid' : '' }}"
-                                        placeholder="{{ __('Comertial') }}" type="text" name="comertial"
+                                        placeholder="{{ __('messages.Comertial') }}" type="text" name="comertial"
                                         value="{{ old('comertial') }}" required autofocus>
                                     @if ($errors->has('comertial'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
@@ -139,7 +139,7 @@
                                         </div>
                                     </div>
                                     <input class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}"
-                                        placeholder="{{ __('Phone') }}" type="text" name="phone"
+                                        placeholder="{{ __('messages.Phone') }}" type="text" name="phone"
                                         value="{{ old('phone') }}" required autofocus>
                                     @if ($errors->has('phone'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
@@ -155,7 +155,7 @@
                                         </div>
                                     </div>
                                     <input class="form-control {{ $errors->has('birthdate') ? ' is-invalid' : '' }}"
-                                        placeholder="{{ __('Birthdate') }}" type="date" name="birthdate"
+                                        placeholder="{{ __('messages.Birthdate') }}" type="date" name="birthdate"
                                         value="{{ old('birthdate') }}" required autofocus>
                                     @if ($errors->has('birthdate'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
@@ -192,7 +192,7 @@
                                 </div>
                                 <div class="card-footer ">
                                     <button type="submit"
-                                        class="btn btn-info btn-round btn-lg">{{ __('Get Started') }}</button>
+                                        class="btn btn-info btn-round btn-lg">{{ __('messages.Get Started') }}</button>
                                 </div>
                             </form>
                         </div>

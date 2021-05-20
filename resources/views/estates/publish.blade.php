@@ -8,18 +8,18 @@
                 @method('PUT')
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">{{ __('Unpublish Estate') }}</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">{{ __('messages.Unpublish Estate') }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        {{ __('Do you want to unpublish this estate?') }}
+                        {{ __('messages.Do you want to unpublish this estate?') }}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary  btn-round btn-sm"
-                            data-dismiss="modal">{{ __('Close') }}</button>
-                        <input type="submit" value="{{ __('Unpublish') }}"
+                            data-dismiss="modal">{{ __('messages.Close') }}</button>
+                        <input type="submit" value="{{ __('messages.Unpublish') }}"
                             class="btn btn-info float-left btn-round btn-sm">
                     </div>
                 </div>
@@ -36,18 +36,18 @@
                 @method('PUT')
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">{{ __('Publish Estate') }}</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">{{ __('messages.Publish Estate') }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        {{ __('Do you want to publish this estate?') }}
+                        {{ __('messages.Do you want to publish this estate?') }}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary  btn-round btn-sm"
-                            data-dismiss="modal">{{ __('Close') }}</button>
-                        <input type="submit" value="{{ __('Publish') }}"
+                            data-dismiss="modal">{{ __('messages.Close') }}</button>
+                        <input type="submit" value="{{ __('messages.Publish') }}"
                             class="btn btn-info float-left btn-round btn-sm">
                     </div>
                 </div>

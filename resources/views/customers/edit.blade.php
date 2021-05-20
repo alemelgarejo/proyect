@@ -15,7 +15,7 @@
                     <div class="card-header">
                         <a type="submit" class="btn btn-danger btn-round pull-right "
                             href="{{ route('customers.pdfCustomer', $customer->id) }}">{{ __('PDF') }}</a>
-                        <h5 class="title">{{ __('Edit Customer') }} {{ $customer->first_name }}
+                        <h5 class="title">{{ __('messages.Edit Customer') }} {{ $customer->first_name }}
                             {{ $customer->last_name }}
                         </h5>
                     </div>
@@ -30,7 +30,7 @@
                             <div class="row">
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' First Name') }}</label>
+                                        <label>{{ __('messages.First Name') }}</label>
                                         <input type="text" name="first_name" class="form-control" placeholder="First Name"
                                             value="{{ old('first_name', $customer->first_name) }}">
                                         @include('alerts.feedback', ['field' => 'first_name'])
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' Last Name') }}</label>
+                                        <label>{{ __('messages.Last Name') }}</label>
                                         <input type="text" name="last_name" class="form-control" placeholder="Last Name"
                                             value="{{ old('last_name', $customer->last_name) }}">
                                         @include('alerts.feedback', ['field' => 'last_name'])
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-md-4 pr-3">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">{{ __(' Email address') }}</label>
+                                        <label for="exampleInputEmail1">{{ __('messages.Email address') }}</label>
                                         <input type="email" name="email" class="form-control" placeholder="Email"
                                             value="{{ old('email', $customer->email) }}">
                                         @include('alerts.feedback', ['field' => 'email'])
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="col-md-4 pr-3">
                                     <div class="form-group">
-                                        <label>{{ __('Phone') }}</label>
+                                        <label>{{ __('messages.Phone') }}</label>
                                         <input type="text" name="phone" class="form-control" placeholder="Phone"
                                             value="{{ old('phone', $customer->phone) }}">
                                         @include('alerts.feedback', ['field' => 'phone'])
@@ -86,7 +86,7 @@
                             <div class="row">
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Birthdate') }}</label>
+                                        <label>{{ __('messages.Birthdate') }}</label>
                                         <input type="date" name="birthdate" class="form-control" placeholder="Birthdate"
                                             value="{{ old('birthdate', $customer->birthdate) }}">
                                         @include('alerts.feedback', ['field' => 'birthdate'])
@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="col-md-4 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Address') }}</label>
+                                        <label>{{ __('messages.Address') }}</label>
                                         <input type="text" name="address" class="form-control" placeholder="Address"
                                             value="{{ old('address', $customer->address) }}">
                                         @include('alerts.feedback', ['field' => 'address'])
@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="col-md-4 pr-3">
                                     <div class="form-group">
-                                        <label>{{ __('City') }}</label>
+                                        <label>{{ __('messages.City') }}</label>
                                         <input type="text" name="city" class="form-control" placeholder="City"
                                             value="{{ old('city', $customer->city) }}">
                                         @include('alerts.feedback', ['field' => 'city'])
@@ -110,11 +110,11 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-info btn-round">{{ __('Update') }}</button>
+                                <button type="submit" class="btn btn-info btn-round">{{ __('messages.Update') }}</button>
                                 <a type="submit" class="btn btn-info btn-round"
-                                    href="{{ route('orders.create2', $customer->id) }}">{{ __('Make Order') }}</a>
+                                    href="{{ route('orders.create2', $customer->id) }}">{{ __('messages.Make Order') }}</a>
                                 <button id="delete" data-customerid="{{ $customer->id }}" type="button"
-                                    class="btn btn-danger btn-round pull-right" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('Delete') }}</button>
+                                    class="btn btn-danger btn-round pull-right" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('messages.Delete') }}</button>
                             </div>
                         </form>
                     </div>
@@ -123,7 +123,8 @@
         </div>
         <div class="card">
             <div class="card-header">
-                <h5 class="title">{{ $customer->first_name }} {{ $customer->last_name }}´s {{ __('Orders') }} </h5>
+                <h5 class="title">{{ $customer->first_name }} {{ $customer->last_name }}´s
+                    {{ __('messages.Orders') }} </h5>
             </div>
             <div class="card-body table-responsive">
                 <div class="toolbar">
@@ -132,14 +133,14 @@
                 <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>{{ __('Customer') }}</th>
-                            <th>{{ __('Type') }}</th>
-                            <th>{{ __('City') }}</th>
-                            <th>{{ __('Max Value') }}</th>
-                            <th>{{ __('Min Surface') }}</th>
-                            <th>{{ __('Min Rooms') }}</th>
-                            <th>{{ __('Furnished') }}</th>
-                            <th class="disabled-sorting text-right">{{ __('Actions') }}</th>
+                            <th>{{ __('messages.Customer') }}</th>
+                            <th>{{ __('messages.Type') }}</th>
+                            <th>{{ __('messages.City') }}</th>
+                            <th>{{ __('messages.Max Value') }}</th>
+                            <th>{{ __('messages.Min Surface') }}</th>
+                            <th>{{ __('messages.Min Rooms') }}</th>
+                            <th>{{ __('messages.Furnished') }}</th>
+                            <th class="disabled-sorting text-right">{{ __('messages.Actions') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -152,8 +153,9 @@
                                 <td>{{ $order->min_surface }}</td>
                                 <td>{{ $order->min_rooms }}</td>
                                 <td>
-                                    @if ($order->furnished == 'no') {{ __('No') }}
-                                    @elseif($order->furnished == 'yes') {{ __('Yes') }} @endif
+                                    @if ($order->furnished == 'no')
+                                        {{ __('messages.No') }}
+                                    @elseif($order->furnished == 'yes') {{ __('messages.Yes') }} @endif
                                 </td>
                                 <td class="text-right">
                                     <a type="button" href="{{ route('orders.edit', $order->id) }}" rel="tooltip"
@@ -183,14 +185,14 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <div class="modal-body">
-                        <h4>{{ __('Dou you want to delete this Customer?') }}</h4>
+                        <h4>{{ __('messages.Dou you want to delete this Customer?') }}</h4>
                         <input type="hidden" , name="id" id="customer_id">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default waves-effect btn-round btn-sm"
-                            data-dismiss="modal">{{ __('Close') }}</button>
+                            data-dismiss="modal">{{ __('messages.Close') }}</button>
                         <button type="submit"
-                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round btn-sm">{{ __('Delete') }}</button>
+                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round btn-sm">{{ __('messages.Delete') }}</button>
                     </div>
 
                 </form>

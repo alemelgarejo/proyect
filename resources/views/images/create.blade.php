@@ -15,7 +15,7 @@
                 <div class="card">
                     <div class="card-header">
                         <a class="btn btn-info btn-round text-white pull-right btn-sm"
-                            href="{{ route('images.index2', $estate->id) }}">{{ __('Go to Images') }}</a>
+                            href="{{ route('images.index2', $estate->id) }}">{{ __('messages.Go to Images') }}</a>
                         <h5 class="title">{{ __('Add Image to Estate') }} - {{ $estate->address }},
                             {{ $estate->city }}</h5>
                     </div>
@@ -28,7 +28,7 @@
                                     <input type="file" name="url" class="form-control-file" id="url" accept="image/*">
                                     @include('alerts.feedback', ['field' => 'url'])
                                     <button type="submit"
-                                        class="btn btn-info btn-round pull-right btn-sm">{{ _('Add') }}</button>
+                                        class="btn btn-info btn-round pull-right btn-sm">{{ _('messages.Add') }}</button>
                                 </form>
                                 {{-- <form action="{{route('images.store2', $estate->id)}}" class="dropzone" id="my-awesome-dropzone" method="POST">
 

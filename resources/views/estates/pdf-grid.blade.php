@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <strong>{{ __('Estates') }}:</strong>
+            <strong>{{ __('messages.Estates') }}:</strong>
         </div>
     </div>
     <br>
@@ -23,7 +23,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Type') }}</strong>
+                            <strong>{{ __('messages.Type') }}</strong>
                         </h6>
                         <span>{{ $estate->type }}</span>
                     </td>
@@ -31,7 +31,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('City') }}</strong>
+                            <strong>{{ __('messages.City') }}</strong>
                         </h6>
                         <span>{{ $estate->city }}</span>
                     </td>
@@ -39,7 +39,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Address') }}</strong>
+                            <strong>{{ __('messages.Address') }}</strong>
                         </h6>
                         <span>{{ $estate->address }}</span>
                     </td>
@@ -47,15 +47,15 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Estate Type') }}</strong>
+                            <strong>{{ __('messages.Interest Type') }}</strong>
                         </h6>
-                        <span>{{ $estate->estate_type }}</span>
+                        <span>{{ $estate->interest_type }}</span>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Value') }}</strong>
+                            <strong>{{ __('messages.Value') }}</strong>
                         </h6>
                         <span>{{ $estate->value }} €</span>
                     </td>
@@ -63,7 +63,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Surface') }}</strong>
+                            <strong>{{ __('messages.Surface') }}</strong>
                         </h6>
                         <span>{{ $estate->surface }} m<sup>2</sup></span>
                     </td>
@@ -71,7 +71,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Rooms') }}</strong>
+                            <strong>{{ __('messages.Rooms') }}</strong>
                         </h6>
                         <span>{{ $estate->rooms }}</span>
                     </td>
@@ -79,7 +79,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Furnished') }}</strong>
+                            <strong>{{ __('messages.Furnished') }}</strong>
                         </h6>
                         <span>{{ ucwords($estate->furnished) }}</span>
                     </td>
@@ -87,7 +87,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Garage') }}</strong>
+                            <strong>{{ __('messages.Garage') }}</strong>
                         </h6>
                         <span>{{ ucwords($estate->garage) }}</span>
                     </td>
@@ -95,7 +95,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Situation') }}</strong>
+                            <strong>{{ __('messages.Situation') }}</strong>
                         </h6>
                         <span>{{ $estate->situation }}</span>
                     </td>
@@ -103,7 +103,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Conservation State') }}</strong>
+                            <strong>{{ __('messages.Conservation State') }}</strong>
                         </h6>
                         <span>{{ $estate->conservation_state }}</span>
                     </td>
@@ -111,7 +111,7 @@
                 <tr>
                     <td>
                         <h6>
-                            <strong>{{ __('Description') }}</strong>
+                            <strong>{{ __('messages.Description') }}</strong>
                         </h6>
                         <span>{{ $estate->description }}</span>
                     </td>

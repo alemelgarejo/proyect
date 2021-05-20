@@ -62,15 +62,15 @@
                         </p>
                         </span>
                         <p>
-                            <span class="d-lg-none d-md-block">{{ __('Notifications') }}</span>
+                            <span class="d-lg-none d-md-block">{{ __('messages.Notifications') }}</span>
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink"
                         style="min-width:300px; max-width:300px;">
                         <div class="card-title" style="margin-left: 15px; margin-top: 2.5px; margin-bottom: -5px">
-                            {{ __('Notifications') }}
+                            {{ __('messages.Notifications') }}
                             <a class="btn btn-info  btn-sm " style="margin-left:22px; font-size:10px;margin-top: 8px"
-                                href="{{ route('messages.index') }}">{{ __('All Notifications') }}</a>
+                                href="{{ route('messages.index') }}">{{ __('messages.All Notifications') }}</a>
                         </div>
                         @foreach ($messages as $message)
                             <hr>
@@ -89,8 +89,27 @@
                                 style="margin-top: -8.5px">{{ __($message->created_at->diffForHumans()) }}</a>
                             <a class="btn btn-warning  btn-sm "
                                 style="margin-left:22px; font-size:10px;margin-top: -4px"
-                                href="{{ route('messages.update2', $message->id) }}">{{ __('Mark as read') }}</a>
+                                href="{{ route('messages.update2', $message->id) }}">{{ __('messages.Mark as read') }}</a>
                         @endforeach
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="now-ui-icons location_world"></i>
+                        <p>
+                            <span class="d-lg-none d-md-block">{{ __('messages.Language') }}</span>
+                        </p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ route('set_language', 'es') }}"><img
+                                style="width: 40px;  height:28px; " src="{{ asset('img/espanita.png') }}"
+                                alt="espanita">&nbsp;&nbsp;&nbsp;&nbsp;{{ __('messages.Español') }}
+                        </a>
+                        <a class="dropdown-item" href="{{ route('set_language', 'en') }}"><img
+                                style="width: 40px; height:28px; " src="{{ asset('img/reinounido.png') }}"
+                                alt="reinounido">&nbsp;&nbsp;&nbsp;&nbsp;{{ __('messages.Inglés') }}</a>
+
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -98,11 +117,12 @@
                         aria-haspopup="true" aria-expanded="false">
                         <i class="now-ui-icons users_single-02"></i>
                         <p>
-                            <span class="d-lg-none d-md-block">{{ __('Account') }}</span>
+                            <span class="d-lg-none d-md-block">{{ __('messages.Account') }}</span>
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('My profile') }}</a>
+                        <a class="dropdown-item"
+                            href="{{ route('profile.edit') }}">{{ __('messages.My profile') }}</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

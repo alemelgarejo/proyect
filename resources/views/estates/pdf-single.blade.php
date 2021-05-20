@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <strong>{{ __('Estate') }}: {{ $estate->id }}, {{ $estate->owner->first_name }}
+            <strong>{{ __('messages.Estate') }}: {{ $estate->id }}, {{ $estate->owner->first_name }}
                 {{ $estate->owner->last_name }}</strong>
         </div>
     </div>
@@ -24,7 +24,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Status') }}</strong>
+                        <strong>{{ __('messages.tatus') }}</strong>
                     </h6>
                     <span>{{ $estate->status }}</span>
                 </td>
@@ -32,7 +32,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Type') }}</strong>
+                        <strong>{{ __('messages.Type') }}</strong>
                     </h6>
                     <span>{{ $estate->type }}</span>
                 </td>
@@ -40,7 +40,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Interest Type') }}</strong>
+                        <strong>{{ __('messages.Interest Type') }}</strong>
                     </h6>
                     <span>{{ $estate->interest_type }}</span>
                 </td>
@@ -48,7 +48,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('City') }}</strong>
+                        <strong>{{ __('messages.City') }}</strong>
                     </h6>
                     <span>{{ $estate->city }}</span>
                 </td>
@@ -56,7 +56,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Address') }}</strong>
+                        <strong>{{ __('messages.Address') }}</strong>
                     </h6>
                     <span>{{ $estate->address }}</span>
                 </td>
@@ -64,15 +64,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Estate Type') }}</strong>
-                    </h6>
-                    <span>{{ $estate->estate_type }}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <h6>
-                        <strong>{{ __('Value') }}</strong>
+                        <strong>{{ __('messages.Value') }}</strong>
                     </h6>
                     <span>{{ $estate->value }} €</span>
                 </td>
@@ -80,7 +72,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Surface') }}</strong>
+                        <strong>{{ __('messages.Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->surface }} m<sup>2</sup></span>
                 </td>
@@ -88,7 +80,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Built Surface') }}</strong>
+                        <strong>{{ __('messages.Built Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->built_surface }} m<sup>2</sup></span>
                 </td>
@@ -96,7 +88,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Rooms') }}</strong>
+                        <strong>{{ __('messages.Rooms') }}</strong>
                     </h6>
                     <span>{{ $estate->rooms }}</span>
                 </td>
@@ -104,7 +96,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Baths') }}</strong>
+                        <strong>{{ __('messages.Baths') }}</strong>
                     </h6>
                     <span>{{ $estate->baths }}</span>
                 </td>
@@ -112,7 +104,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Furnished') }}</strong>
+                        <strong>{{ __('messages.Furnished') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->furnished) }}</span>
                 </td>
@@ -120,7 +112,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Wardrobe') }}</strong>
+                        <strong>{{ __('messages.Wardrobe') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->wardrobe) }}</span>
                 </td>
@@ -128,7 +120,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Lobbies') }}</strong>
+                        <strong>{{ __('messages.Lobbies') }}</strong>
                     </h6>
                     <span>{{ $estate->lobbies }}</span>
                 </td>
@@ -136,7 +128,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Lobbies Surface') }}</strong>
+                        <strong>{{ __('messages.Lobbies Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->lobbies_surface }} m<sup>2</sup></span>
                 </td>
@@ -144,7 +136,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Separate Dining Room') }}</strong>
+                        <strong>{{ __('messages.S. Dining Room') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->separate_dining_room) }}</span>
                 </td>
@@ -152,7 +144,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Dining Room Surface') }}</strong>
+                        <strong>{{ __('messages.D. Room Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->dining_room_surface }} m<sup>2</sup></span>
                 </td>
@@ -160,7 +152,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Furnished Kitchen') }}</strong>
+                        <strong>{{ __('messages.Furnished Kitchen') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->furnished_kitchen) }}</span>
                 </td>
@@ -168,7 +160,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Kitchen Type') }}</strong>
+                        <strong>{{ __('messages.Kitchen Type') }}</strong>
                     </h6>
                     <span>{{ $estate->kitchen_type }} </span>
                 </td>
@@ -176,7 +168,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Terraces') }}</strong>
+                        <strong>{{ __('messages.Terraces') }}</strong>
                     </h6>
                     <span>{{ $estate->terraces }}</span>
                 </td>
@@ -184,7 +176,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Terraces Surface') }}</strong>
+                        <strong>{{ __('messages.Terraces Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->terraces_surface }} m<sup>2</sup></span>
                 </td>
@@ -192,7 +184,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Balcony') }}</strong>
+                        <strong>{{ __('messages.Balcony') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->balcony) }}</span>
                 </td>
@@ -200,7 +192,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Balcony Surface') }}</strong>
+                        <strong>{{ __('messages.Balcony Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->balcony_surface }} m<sup>2</sup></span>
                 </td>
@@ -208,7 +200,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Courtyard') }}</strong>
+                        <strong>{{ __('messages.Courtyard') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->courtyard) }}</span>
                 </td>
@@ -216,7 +208,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Courtyard Surface') }}</strong>
+                        <strong>{{ __('messages.Courtyard Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->courtyard_surface }} m<sup>2</sup></span>
                 </td>
@@ -224,7 +216,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Ceiling Height') }}</strong>
+                        <strong>{{ __('messages.Ceiling Height') }}</strong>
                     </h6>
                     <span>{{ $estate->ceiling_height }} m</span>
                 </td>
@@ -232,7 +224,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Garage') }}</strong>
+                        <strong>{{ __('messages.Garage') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->garage) }}</span>
                 </td>
@@ -240,7 +232,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Garage Surface') }}</strong>
+                        <strong>{{ __('messages.Garage Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->garage_surface }} m<sup>2</sup></span>
                 </td>
@@ -248,7 +240,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Storage Room') }}</strong>
+                        <strong>{{ __('messages.Storage Room') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->storage_room) }}</span>
                 </td>
@@ -256,7 +248,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Storage Room Surface') }}</strong>
+                        <strong>{{ __('messages.Storage Room Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->storage_room_surface }} m<sup>2</sup></span>
                 </td>
@@ -264,7 +256,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Basement') }}</strong>
+                        <strong>{{ __('messages.Basement') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->basement) }}</span>
                 </td>
@@ -272,7 +264,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Basement Surface') }}</strong>
+                        <strong>{{ __('messages.Basement Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->basement_surface }} m<sup>2</sup></span>
                 </td>
@@ -280,7 +272,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Heating') }}</strong>
+                        <strong>{{ __('messages.Heating') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->heating) }}</span>
                 </td>
@@ -288,7 +280,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Heating Type') }}</strong>
+                        <strong>{{ __('messages.Heating Type') }}</strong>
                     </h6>
                     <span>{{ $estate->heating_type }} </span>
                 </td>
@@ -296,7 +288,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Air Conditioning') }}</strong>
+                        <strong>{{ __('messages.Air Conditioning') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->air_conditioning) }}</span>
                 </td>
@@ -304,7 +296,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Air Conditioning Type') }}</strong>
+                        <strong>{{ __('messages.Air Conditioning Type') }}</strong>
                     </h6>
                     <span>{{ $estate->air_conditioning_type }} </span>
                 </td>
@@ -312,7 +304,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Building Type') }}</strong>
+                        <strong>{{ __('messages.Building Type') }}</strong>
                     </h6>
                     <span>{{ $estate->building_type }} </span>
                 </td>
@@ -320,7 +312,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Floors') }}</strong>
+                        <strong>{{ __('messages.Floors') }}</strong>
                     </h6>
                     <span>{{ $estate->floors }} </span>
                 </td>
@@ -328,7 +320,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Floor') }}</strong>
+                        <strong>{{ __('messages.Floor') }}</strong>
                     </h6>
                     <span>{{ $estate->floor }} </span>
                 </td>
@@ -336,7 +328,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Pool') }}</strong>
+                        <strong>{{ __('messages.Pool') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->pool) }}</span>
                 </td>
@@ -344,7 +336,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Garden') }}</strong>
+                        <strong>{{ __('messages.Garden') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->garden) }}</span>
                 </td>
@@ -352,7 +344,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Garden Surface') }}</strong>
+                        <strong>{{ __('messages.Garden Surface') }}</strong>
                     </h6>
                     <span>{{ $estate->garden_surface }} m<sup>2</sup></span>
                 </td>
@@ -360,7 +352,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Elevator') }}</strong>
+                        <strong>{{ __('messages.Elevator') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->elevator) }}</span>
                 </td>
@@ -368,7 +360,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Urbanization') }}</strong>
+                        <strong>{{ __('messages.Urbanization') }}</strong>
                     </h6>
                     <span>{{ ucwords($estate->urbanization) }}</span>
                 </td>
@@ -376,7 +368,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Situation') }}</strong>
+                        <strong>{{ __('messages.Situation') }}</strong>
                     </h6>
                     <span>{{ $estate->situation }}</span>
                 </td>
@@ -384,7 +376,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Building Date') }}</strong>
+                        <strong>{{ __('messages.Building Date') }}</strong>
                     </h6>
                     <span>{{ \Carbon\Carbon::parse($estate->building_date)->format('d / m / Y') }}</span>
                 </td>
@@ -392,7 +384,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Conservation State') }}</strong>
+                        <strong>{{ __('messages.Conservation State') }}</strong>
                     </h6>
                     <span>{{ $estate->conservation_state }}</span>
                 </td>
@@ -400,7 +392,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Latitude') }}</strong>
+                        <strong>{{ __('messages.Latitude') }}</strong>
                     </h6>
                     <span>{{ $estate->latitude }}</span>
                 </td>
@@ -408,7 +400,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Longitude') }}</strong>
+                        <strong>{{ __('messages.Longitude') }}</strong>
                     </h6>
                     <span>{{ $estate->longitude }}</span>
                 </td>
@@ -416,7 +408,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Google maps') }}</strong>
+                        <strong>{{ __('messages.Google maps') }}</strong>
                     </h6>
                     <span>{{ $estate->google_maps }}</span>
                 </td>
@@ -424,7 +416,7 @@
             <tr>
                 <td>
                     <h6>
-                        <strong>{{ __('Description') }}</strong>
+                        <strong>{{ __('messages.Description') }}</strong>
                     </h6>
                     <span>{{ $estate->description }}</span>
                 </td>

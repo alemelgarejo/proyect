@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="title">{{ __('Create Estate') }}</h5>
+                        <h5 class="title">{{ __('messages.Create Estate') }}</h5>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('estates.store') }}" autocomplete="off"
@@ -25,7 +25,7 @@
                             <div class="row">
                                 <div class="col-md-2 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Owner') }}</label>
+                                        <label>{{ __('messages.Owner') }}</label>
                                         <select name="owner_id" id="owner_id" class="form-control">
                                             @if (empty($owner->id))
                                                 @foreach ($owners as $owner)
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-md-2 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Status') }}</label>
+                                        <label>{{ __('messages.Status') }}</label>
                                         <select name="status" id="status" class="form-control">
                                             <option value="1">Activo</option>
                                             <option value="0">Inactivo</option>
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="col-md-2 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Type') }}</label>
+                                        <label>{{ __('messages.Type') }}</label>
                                         <select name="type" id="type" class="form-control">
                                             <option value="Traspaso">Traspaso</option>
                                             <option value="Compra">Compra</option>
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="col-md-2 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' City') }}</label>
+                                        <label>{{ __('messages.City') }}</label>
                                         <input type="text" name="city" class="form-control" placeholder="City"
                                             value="{{ old('city') }}">
                                         @include('alerts.feedback', ['field' => 'city'])
@@ -71,7 +71,7 @@
                                 </div>
                                 <div class="col-md-4 pr-3">
                                     <div class="form-group">
-                                        <label>{{ __(' Address') }}</label>
+                                        <label>{{ __('messages.Address') }}</label>
                                         <input type="text" name="address" class="form-control" placeholder="Address"
                                             value="{{ old('address') }}">
                                         @include('alerts.feedback', ['field' => 'address'])
@@ -82,21 +82,21 @@
                             <div class="row">
                                 <div class="col-md-2 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Interest Type') }}</label>
+                                        <label>{{ __('messages.Interest Type') }}</label>
                                         <select name="interest_type" id="interest_type" class="form-control">
                                             <option value="Traspaso">
-                                                {{ __('Transfer') }}</option>
+                                                {{ __('messages.Transfer') }}</option>
                                             <option value="Compra">
-                                                {{ __('Buy') }}</option>
+                                                {{ __('messages.Buy') }}</option>
                                             <option value="Alquiler">
-                                                {{ __('Rent') }}</option>
+                                                {{ __('messages.Rent') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'interest_type'])
                                     </div>
                                 </div>
                                 <div class="col-md-2 pr-2 pl-2">
                                     <div class="form-group">
-                                        <label>{{ __('Value') }} (€)</label>
+                                        <label>{{ __('messages.Value') }} (€)</label>
                                         <input type="text" name="value" class="form-control" placeholder="Value"
                                             value="{{ old('value') }}">
                                         @include('alerts.feedback', ['field' => 'value'])
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="col-md-2 pr-2">
                                     <div class="form-group">
-                                        <label>{{ __('Surface') }} (m<sup>2</sup>)</label>
+                                        <label>{{ __('messages.Surface') }} (m<sup>2</sup>)</label>
                                         <input type="text" name="surface" class="form-control" placeholder="Surface"
                                             value="{{ old('surface') }}">
                                         @include('alerts.feedback', ['field' => 'surface'])
@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="col-md-2 pr-2">
                                     <div class="form-group">
-                                        <label>{{ __('Rooms') }}</label>
+                                        <label>{{ __('messages.Rooms') }}</label>
                                         <input type="text" name="rooms" class="form-control" placeholder="Rooms"
                                             value="{{ old('rooms') }}">
                                         @include('alerts.feedback', ['field' => 'rooms'])
@@ -120,7 +120,7 @@
                                 </div>
                                 <div class="col-md-2 pr-2">
                                     <div class="form-group">
-                                        <label>{{ __('Baths') }}</label>
+                                        <label>{{ __('messages.Baths') }}</label>
                                         <input type="text" name="baths" class="form-control" placeholder="Baths"
                                             value="{{ old('baths') }}">
                                         @include('alerts.feedback', ['field' => 'baths'])
@@ -128,16 +128,16 @@
                                 </div>
                                 <div class="col-md-1 pr-3">
                                     <div class="form-group">
-                                        <label>{{ __('Furnished') }}</label>
+                                        <label>{{ __('messages.Furnished') }}</label>
                                         <div class="form-check">
                                             <input class="form-check-input" name="furnished" id="furnished" type="radio"
                                                 value="yes">
-                                            <label class="form-check-label">{{ __('Yes') }}</label>
+                                            <label class="form-check-label">{{ __('messages.Yes') }}</label>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" name="furnished" id="furnished" type="radio"
                                                 value="no" checked>
-                                            <label class="form-check-label">{{ __('No') }}</label>
+                                            <label class="form-check-label">{{ __('messages.No') }}</label>
                                         </div>
 
                                         @include('alerts.feedback', ['field' => 'furnished'])
@@ -148,7 +148,8 @@
 
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Save') }}</button>
+                                <button type="submit"
+                                    class="btn btn-info btn-round btn-sm">{{ __('messages.Save') }}</button>
                             </div>
                         </form>
                     </div>

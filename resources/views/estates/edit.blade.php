@@ -20,12 +20,13 @@
                         <a href="{{ route('estates.pdfEstate', $estate->id) }}"
                             class="btn btn-danger btn-round pull-right btn-sm">{{ __('PDF') }}</a>
                         <a href="{{ route('images.index2', $estate->id) }}"
-                            class="btn btn-primary btn-round btn-sm pull-right">{{ __('Images') }}</a>
+                            class="btn btn-primary btn-round btn-sm pull-right">{{ __('messages.Images') }}</a>
                         @if ($estate->published == 'yes')
                             <a class="btn btn-success btn-round text-white pull-right btn-sm"
-                                href="{{ route('web.estate', $estate->id) }}" target="__blank">{{ __('Web View') }}</a>
+                                href="{{ route('web.estate', $estate->id) }}"
+                                target="__blank">{{ __('messages.Web View') }}</a>
                         @endif
-                        <h5 class="title">{{ __('Edit Estate') }} | {{ __('Owner') }}:
+                        <h5 class="title">{{ __('messages.Edit Estate') }} | {{ __('messages.Owner') }}:
                             {{ $estate->owner->first_name }}
                             {{ $estate->owner->last_name }}</h5>
                     </div>
@@ -40,50 +41,52 @@
                             <div class="row">
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Status') }}</label>
+                                        <label>{{ __('messages.Status') }}</label>
                                         <select name="status" id="status" class="form-control">
                                             <option value="1" {{ $estate->status == 1 ? 'selected' : '' }}>
-                                                {{ __('Active') }}</option>
+                                                {{ __('messages.Active') }}</option>
                                             <option value="0" {{ $estate->status == 0 ? 'selected' : '' }}>
-                                                {{ __('Inactive') }}</option>
+                                                {{ __('messages.Inactive') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'status'])
                                     </div>
                                 </div>
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Type') }}</label>
+                                        <label>{{ __('messages.Type') }}</label>
                                         <select name="type" id="type" class="form-control">
                                             <option value="Casa" {{ $estate->type == 'Casa' ? 'selected' : '' }}>
-                                                {{ __('Casa') }}</option>
+                                                {{ __('messages.Casa') }}</option>
                                             <option value="Piso" {{ $estate->type == 'Piso' ? 'selected' : '' }}>
-                                                {{ __('Piso') }}</option>
+                                                {{ __('messages.Piso') }}</option>
                                             <option value="Edificio" {{ $estate->type == 'Edificio' ? 'selected' : '' }}>
-                                                {{ __('Edificio') }}</option>
+                                                {{ __('messages.Edificio') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'type'])
                                     </div>
                                 </div>
                                 <div class="col-md-3 ">
                                     <div class="form-group">
-                                        <label>{{ __('Situation') }}</label>
+                                        <label>{{ __('messages.Situation') }}</label>
                                         <select name="situation" id="situation" class="form-control">
                                             <option value="En la playa"
-                                                {{ $estate->situation == 'En la playa' ? 'selected' : '' }}>En la playa
+                                                {{ $estate->situation == 'En la playa' ? 'selected' : '' }}>
+                                                {{ __('messages.En la playa') }}
                                             </option>
                                             <option value="En el centro"
-                                                {{ $estate->situation == 'En el centro' ? 'selected' : '' }}>En el centro
+                                                {{ $estate->situation == 'En el centro' ? 'selected' : '' }}>
+                                                {{ __('messages.En el centro') }}
                                             </option>
                                             <option value="En las afueras"
-                                                {{ $estate->situation == 'En las afueras' ? 'selected' : '' }}>En las
-                                                afueras</option>
+                                                {{ $estate->situation == 'En las afueras' ? 'selected' : '' }}>
+                                                {{ __('messages.En las afueras') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'situation'])
                                     </div>
                                 </div>
                                 <div class="col-md-2 pl-5">
                                     <div class="form-group">
-                                        <label>{{ __('Published') }}</label>
+                                        <label>{{ __('messages.Published') }}</label>
                                         <div class="form-check">
                                             <input class="form-check-input" name="published" id="published" type="radio"
                                                 value="yes" @if ($estate->published == 'yes') checked @else @endif>
@@ -102,7 +105,7 @@
                             <div class="row">
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' City') }}</label>
+                                        <label>{{ __('messages.City') }}</label>
                                         <input type="text" name="city" class="form-control" placeholder="City"
                                             value="{{ old('city', $estate->city) }}">
                                         @include('alerts.feedback', ['field' => 'city'])
@@ -110,7 +113,7 @@
                                 </div>
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __(' Address') }}</label>
+                                        <label>{{ __('messages.Address') }}</label>
                                         <input type="text" name="address" class="form-control" placeholder="Address"
                                             value="{{ old('address', $estate->address) }}">
                                         @include('alerts.feedback', ['field' => 'address'])
@@ -118,24 +121,24 @@
                                 </div>
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('Interest Type') }}</label>
+                                        <label>{{ __('messages.Interest Type') }}</label>
                                         <select name="interest_type" id="interest_type" class="form-control">
                                             <option value="Traspaso"
                                                 {{ $estate->interest_type == 'Traspaso' ? 'selected' : '' }}>
-                                                {{ __('Transfer') }}</option>
+                                                {{ __('messages.Transfer') }}</option>
                                             <option value="Compra"
                                                 {{ $estate->interest_type == 'Compra' ? 'selected' : '' }}>
-                                                {{ __('Buy') }}</option>
+                                                {{ __('messages.Buy') }}</option>
                                             <option value="Alquiler"
                                                 {{ $estate->interest_type == 'Alquiler' ? 'selected' : '' }}>
-                                                {{ __('Rent') }}</option>
+                                                {{ __('messages.Rent') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'interest_type'])
                                     </div>
                                 </div>
                                 <div class="col-md-3 pr-3">
                                     <div class="form-group">
-                                        <label>{{ __('Value') }} (€)</label>
+                                        <label>{{ __('messages.Value') }} (€)</label>
                                         <input type="text" name="value" class="form-control" placeholder="Value"
                                             value="{{ old('value', $estate->value) }}">
                                         @include('alerts.feedback', ['field' => 'value'])
@@ -147,7 +150,7 @@
                                 <div class="row">
                                     <div class="col-md-3 pr-2">
                                         <div class="form-group">
-                                            <label>{{ __('Surface') }} (m<sup>2</sup>)</label>
+                                            <label>{{ __('messages.Surface') }} (m<sup>2</sup>)</label>
                                             <input type="text" name="surface" class="form-control" placeholder="Surface"
                                                 value="{{ old('surface', $estate->surface) }}">
                                             @include('alerts.feedback', ['field' => 'surface'])
@@ -155,7 +158,7 @@
                                     </div>
                                     <div class="col-md-3 pr-2">
                                         <div class="form-group">
-                                            <label>{{ __('Built Surface') }} (m<sup>2</sup>)</label>
+                                            <label>{{ __('messages.Built Surface') }} (m<sup>2</sup>)</label>
                                             <input type="text" name="built_surface" class="form-control"
                                                 placeholder="Built Surface"
                                                 value="{{ old('built_surface', $estate->built_surface) }}">
@@ -164,7 +167,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Rooms') }}</label>
+                                            <label>{{ __('messages.Rooms') }}</label>
                                             <input type="text" name="rooms" class="form-control" placeholder="Rooms"
                                                 value="{{ old('rooms', $estate->rooms) }}">
                                             @include('alerts.feedback', ['field' => 'rooms'])
@@ -172,7 +175,7 @@
                                     </div>
                                     <div class="col-md-3 pr-3">
                                         <div class="form-group">
-                                            <label>{{ __('Baths') }}</label>
+                                            <label>{{ __('messages.Baths') }}</label>
                                             <input type="text" name="baths" class="form-control" placeholder="Baths"
                                                 value="{{ old('baths', $estate->baths) }}">
                                             @include('alerts.feedback', ['field' => 'baths'])
@@ -182,7 +185,7 @@
                                 <div class="row">
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Lobbies') }}</label>
+                                            <label>{{ __('messages.Lobbies') }}</label>
                                             <input type="text" name="lobbies" class="form-control" placeholder="Lobbies"
                                                 value="{{ old('lobbies', $estate->lobbies) }}">
                                             @include('alerts.feedback', ['field' => 'lobbies'])
@@ -190,7 +193,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Lobbies Surface') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.Lobbies Surface') }} m<sup>2</sup></label>
                                             <input type="text" name="lobbies_surface" class="form-control"
                                                 placeholder="Lobbies Surface"
                                                 value="{{ old('lobbies_surface', $estate->lobbies_surface) }}">
@@ -199,7 +202,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('D. Room Surface') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.D. Room Surface') }} m<sup>2</sup></label>
                                             <input type="text" name="dining_room_surface" class="form-control"
                                                 placeholder="Dining Room Surface"
                                                 value="{{ old('dining_room_surface', $estate->dining_room_surface) }}">
@@ -208,7 +211,7 @@
                                     </div>
                                     <div class="col-md-3 pr-3">
                                         <div class="form-group">
-                                            <label>{{ __('Kitchen Type') }}</label>
+                                            <label>{{ __('messages.Kitchen Type') }}</label>
                                             <select name="kitchen_type" id="kitchen_type" class="form-control">
                                                 <option value="Lineal"
                                                     {{ $estate->kitchen_type == 'Lineal' ? 'selected' : '' }}>Lineal
@@ -225,7 +228,7 @@
                                 <div class="row">
                                     <div class="col-md-2 pr-1 pl-4">
                                         <div class="form-group">
-                                            <label>{{ __('Wardrobe') }}</label>
+                                            <label>{{ __('messages.Wardrobe') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="wardrobe" id="wardrobe" type="radio"
                                                     value="yes" @if ($estate->wardrobe == 'yes') checked @else @endif>
@@ -242,7 +245,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Furnished') }}</label>
+                                            <label>{{ __('messages.Furnished') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="furnished" id="furnished" type="radio"
                                                     value="yes" @if ($estate->furnished == 'yes') checked @else @endif>
@@ -259,7 +262,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Separate D. Room') }}</label>
+                                            <label>{{ __('messages.Separate D. Room') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="separate_dining_room"
                                                     id="separate_dining_room" type="radio" value="yes" @if ($estate->separate_dining_room == 'yes') checked @else @endif>
@@ -276,7 +279,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Furnished Kitchen') }}</label>
+                                            <label>{{ __('messages.Furnished Kitchen') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="furnished_kitchen"
                                                     id="furnished_kitchen" type="radio" value="yes" @if ($estate->furnished_kitchen == 'yes') checked @else @endif>
@@ -293,7 +296,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Balcony') }}</label>
+                                            <label>{{ __('messages.Balcony') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="balcony" id="balcony" type="radio"
                                                     value="yes" @if ($estate->balcony == 'yes') checked @else @endif>
@@ -310,7 +313,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1 pl-4">
                                         <div class="form-group">
-                                            <label>{{ __('Courtyard') }}</label>
+                                            <label>{{ __('messages.Courtyard') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="courtyard" id="courtyard" type="radio"
                                                     value="yes" @if ($estate->courtyard == 'yes') checked @else @endif>
@@ -330,7 +333,7 @@
                                 <div class="row">
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Balcony Surface') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.Balcony Surface') }} m<sup>2</sup></label>
                                             <input type="text" name="balcony_surface" class="form-control"
                                                 placeholder="Balcony Surface"
                                                 value="{{ old('balcony_surface', $estate->balcony_surface) }}">
@@ -339,7 +342,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Courtyard Sur.') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.Courtyard Sur.') }} m<sup>2</sup></label>
                                             <input type="text" name="courtyard_surface" class="form-control"
                                                 placeholder="Courtyard Surface"
                                                 value="{{ old('courtyard_surface', $estate->courtyard_surface) }}">
@@ -348,7 +351,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Courtyard Location') }}</label>
+                                            <label>{{ __('messages.Courtyard Location') }}</label>
                                             <input type="text" name="courtyard_location" class="form-control"
                                                 placeholder="Courtyard Location"
                                                 value="{{ old('courtyard_location', $estate->courtyard_location) }}">
@@ -358,7 +361,7 @@
 
                                     <div class="col-md-3 pr-3">
                                         <div class="form-group">
-                                            <label>{{ __('Ceiling Height') }}</label>
+                                            <label>{{ __('messages.Ceiling Height') }}</label>
                                             <select name="ceiling_height" id="ceiling_height" class="form-control">
                                                 <option value="Alto"
                                                     {{ $estate->ceiling_height == 'Alto' ? 'selected' : '' }}>Alto
@@ -382,7 +385,7 @@
 
                                     <div class="col-md-2 pr-1 pl-4">
                                         <div class="form-group">
-                                            <label>{{ __('Storage Room') }}</label>
+                                            <label>{{ __('messages.Storage Room') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="storage_room" id="storage_room"
                                                     type="radio" value="yes" @if ($estate->storage_room == 'yes') checked @else @endif>
@@ -399,7 +402,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Basement') }}</label>
+                                            <label>{{ __('messages.Basement') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="basement" id="basement" type="radio"
                                                     value="yes" @if ($estate->basement == 'yes') checked @else @endif>
@@ -416,7 +419,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Heating') }}</label>
+                                            <label>{{ __('messages.Heating') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="heating" id="heating" type="radio"
                                                     value="yes" @if ($estate->heating == 'yes') checked @else @endif>
@@ -433,7 +436,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Garage') }}</label>
+                                            <label>{{ __('messages.Garage') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="garage" id="garage" type="radio"
                                                     value="yes" @if ($estate->garage == 'yes') checked @else @endif>
@@ -450,7 +453,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Air Conditioning') }}</label>
+                                            <label>{{ __('messages.Air Conditioning') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="air_conditioning"
                                                     id="air_conditioning" type="radio" value="yes" @if ($estate->air_conditioning == 'yes') checked @else @endif>
@@ -467,7 +470,7 @@
                                     </div>
                                     <div class="col-md-2 pr-3">
                                         <div class="form-group">
-                                            <label>{{ __('Garden') }}</label>
+                                            <label>{{ __('messages.Garden') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="garden" id="garden" type="radio"
                                                     value="yes" @if ($estate->garden == 'yes') checked @else @endif>
@@ -488,7 +491,7 @@
                                 <div class="row">
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Storage R. Sur.') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.Storage R. Sur.') }} m<sup>2</sup></label>
                                             <input type="text" name="storage_room_surface" class="form-control"
                                                 placeholder="Storage Room Surface"
                                                 value="{{ old('storage_room_surface', $estate->storage_room_surface) }}">
@@ -497,7 +500,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Basement Sur.') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.Basement Sur.') }} m<sup>2</sup></label>
                                             <input type="text" name="basement_surface" class="form-control"
                                                 placeholder="Basement Surface"
                                                 value="{{ old('basement_surface', $estate->basement_surface) }}">
@@ -506,7 +509,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Heating Type') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.Heating Type') }} m<sup>2</sup></label>
                                             <input type="text" name="heating_type" class="form-control"
                                                 placeholder="Heating Type"
                                                 value="{{ old('heating_type', $estate->heating_type) }}">
@@ -515,7 +518,7 @@
                                     </div>
                                     <div class="col-md-3 pr-3">
                                         <div class="form-group">
-                                            <label>{{ __('Terraces') }}</label>
+                                            <label>{{ __('messages.Terraces') }}</label>
                                             <input type="text" name="terraces" class="form-control" placeholder="Terraces"
                                                 value="{{ old('terraces', $estate->terraces) }}">
                                             @include('alerts.feedback', ['field' => 'terraces'])
@@ -526,7 +529,7 @@
 
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Terraces Surface') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.Terraces Surface') }} m<sup>2</sup></label>
                                             <input type="text" name="terraces_surface" class="form-control"
                                                 placeholder="Terraces Surface"
                                                 value="{{ old('terraces_surface', $estate->terraces_surface) }}">
@@ -535,7 +538,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Garage Sur.') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.Garage Sur.') }} m<sup>2</sup></label>
                                             <input type="text" name="garage_surface" class="form-control"
                                                 placeholder="Garage Surface"
                                                 value="{{ old('garage_surface', $estate->garage_surface) }}">
@@ -544,7 +547,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Air Conditioning Type') }} </label>
+                                            <label>{{ __('messages.Air Conditioning Type') }} </label>
                                             <input type="text" name="air_conditioning_type" class="form-control"
                                                 placeholder="Air Conditioning Type"
                                                 value="{{ old('air_conditioning_type', $estate->air_conditioning_type) }}">
@@ -553,7 +556,7 @@
                                     </div>
                                     <div class="col-md-2 pr-3">
                                         <div class="form-group">
-                                            <label>{{ __('Garden Sur.') }} m<sup>2</sup></label>
+                                            <label>{{ __('messages.Garden Sur.') }} m<sup>2</sup></label>
                                             <input type="text" name="garden_surface" class="form-control"
                                                 placeholder="Garden Surface"
                                                 value="{{ old('garden_surface', $estate->garden_surface) }}">
@@ -565,7 +568,7 @@
                                 <div class="row">
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Floors') }}</label>
+                                            <label>{{ __('messages.Floors') }}</label>
                                             <input type="text" name="floors" class="form-control" placeholder="Floors"
                                                 value="{{ old('floors', $estate->floors) }}">
                                             @include('alerts.feedback', ['field' => 'floors'])
@@ -574,7 +577,7 @@
 
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Floor') }}</label>
+                                            <label>{{ __('messages.Floor') }}</label>
                                             <input type="text" name="floor" class="form-control" placeholder="Floor"
                                                 value="{{ old('floor', $estate->floor) }}">
                                             @include('alerts.feedback', ['field' => 'floor'])
@@ -582,7 +585,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1 pl-4">
                                         <div class="form-group">
-                                            <label>{{ __('Pool') }}</label>
+                                            <label>{{ __('messages.Pool') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="pool" id="pool" type="radio"
                                                     value="yes" @if ($estate->pool == 'yes') checked @else @endif>
@@ -599,7 +602,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Elevator') }}</label>
+                                            <label>{{ __('messages.Elevator') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="elevator" id="elevator" type="radio"
                                                     value="yes" @if ($estate->elevator == 'yes') checked @else @endif>
@@ -616,7 +619,7 @@
                                     </div>
                                     <div class="col-md-2 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Urbanization') }}</label>
+                                            <label>{{ __('messages.Urbanization') }}</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" name="urbanization" id="urbanization"
                                                     type="radio" value="yes" @if ($estate->urbanization == 'yes') checked @else @endif>
@@ -635,7 +638,7 @@
                                 <div class="row">
                                     <div class="col-md-4 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Building Type') }}</label>
+                                            <label>{{ __('messages.Building Type') }}</label>
                                             <input type="text" name="air_conditioning_type" class="form-control"
                                                 placeholder="Building Type"
                                                 value="{{ old('air_conditioning_type', $estate->air_conditioning_type) }}">
@@ -644,7 +647,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Building Date') }}</label>
+                                            <label>{{ __('messages.Building Date') }}</label>
                                             <input type="date" name="building_date" class="form-control"
                                                 placeholder="Garden Surface"
                                                 value="{{ old('building_date', $estate->building_date) }}">
@@ -653,7 +656,7 @@
                                     </div>
                                     <div class="col-md-4 pr-3">
                                         <div class="form-group">
-                                            <label>{{ __('Conservation') }}</label>
+                                            <label>{{ __('messages.Conservation') }}</label>
                                             <select name="conservation_state" id="conservation_state" class="form-control">
                                                 <option value="Bueno"
                                                     {{ $estate->conservation_state == 'Bueno' ? 'selected' : '' }}>Bueno
@@ -674,7 +677,7 @@
 
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Latitude') }}</label>
+                                            <label>{{ __('messages.Latitude') }}</label>
                                             <input type="text" name="latitude" class="form-control" placeholder="Latitude"
                                                 value="{{ old('latitude', $estate->latitude) }}">
                                             @include('alerts.feedback', ['field' => 'latitude'])
@@ -682,7 +685,7 @@
                                     </div>
                                     <div class="col-md-3 pr-1">
                                         <div class="form-group">
-                                            <label>{{ __('Longitude') }}</label>
+                                            <label>{{ __('messages.Longitude') }}</label>
                                             <input type="text" name="longitude" class="form-control" placeholder="Longitude"
                                                 value="{{ old('longitude', $estate->longitude) }}">
                                             @include('alerts.feedback', ['field' => 'longitude'])
@@ -690,7 +693,7 @@
                                     </div>
                                     <div class="col-md-6 pr-3">
                                         <div class="form-group">
-                                            <label>{{ __('Google Maps') }}</label>
+                                            <label>{{ __('messages.Google Maps') }}</label>
                                             <input type="text" name="google_maps" class="form-control"
                                                 placeholder="Google Maps"
                                                 value="{{ old('google_maps', $estate->google_maps) }}">
@@ -702,7 +705,7 @@
                                 <div class="row">
                                     <div class="col-md-12 pr-4">
                                         <div class="form-group">
-                                            <label>{{ __('Description') }}</label>
+                                            <label>{{ __('messages.Description') }}</label>
                                             <textarea name="description" class="form-control" id="description"
                                                 value="">{{ old('description', $estate->description) }}</textarea>
                                             @include('alerts.feedback', ['field' => 'description'])
@@ -711,9 +714,10 @@
                                 </div>
                             </div>
                             <div class="card-footer ">
-                                <button type="submit" class="btn btn-info btn-round btn-sm">{{ __('Update') }}</button>
+                                <button type="submit"
+                                    class="btn btn-info btn-round btn-sm">{{ __('messages.Update') }}</button>
                                 <button id="delete" data-estateid="{{ $estate->id }}" type="button"
-                                    class="btn btn-danger btn-round btn-sm" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('Delete') }}</button>
+                                    class="btn btn-danger btn-round btn-sm" @if (auth()->user()->role_id != 1 and auth()->user()->role_id != 2) disabled @endif>{{ __('messages.Delete') }}</button>
                             </div>
                         </form>
                     </div>
@@ -733,17 +737,18 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <div class="modal-body">
-                        <h4>{{ __('Dou you want to delete this Estate?') }}</h4>
-                        <p>{{ __('Address:') }} {{ $estate->address }} </p>
-                        <p>{{ __('Owner:') }} {{ $estate->owner->first_name }} {{ $estate->owner->last_name }}
+                        <h4>{{ __('messages.Dou you want to delete this Estate?') }}</h4>
+                        <p>{{ __('messages.Address') }}: {{ $estate->address }} </p>
+                        <p>{{ __('messages.Owner') }}: {{ $estate->owner->first_name }}
+                            {{ $estate->owner->last_name }}
                         </p>
                         <input type="hidden" , name="id" id="estate_id">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default waves-effect btn-round btn-sm"
-                            data-dismiss="modal">Close</button>
+                            data-dismiss="modal">{{ __('messages.Close') }}</button>
                         <button type="submit"
-                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round btn-sm">Delete</button>
+                            class="btn btn-danger waves-effect remove-data-from-delete-form btn-round btn-sm">{{ __('messages.Delete') }}</button>
                     </div>
 
                 </form>

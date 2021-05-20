@@ -15,10 +15,10 @@
                 <div class="card">
                     <div class="card-header">
                         <a class="btn btn-info btn-round text-white pull-right btn-sm"
-                            href="{{ route('estates.create') }}">{{ __('Add estate') }}</a>
+                            href="{{ route('estates.create') }}">{{ __('messages.Add estate') }}</a>
                         <a class="btn btn-danger btn-round text-white pull-right btn-sm"
                             href="{{ route('estates.pdfEstates') }}">{{ __('PDF') }}</a>
-                        <h4 class="card-title">{{ __('Estates') }}</h4>
+                        <h4 class="card-title">{{ __('messages.Estates') }}</h4>
 
                         @include('alerts.success')
                         <div class="col-12 mt-2">
@@ -31,15 +31,15 @@
                         <table id="table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr style="font-size: smaller">
-                                    <th>{{ __('Owner') }}</th>
-                                    <th>{{ __('Value') }}</th>
-                                    <th>{{ __('Address') }}</th>
-                                    <th>{{ __('City') }}</th>
-                                    <th>{{ __('Surface') }}</th>
-                                    <th>{{ __('Rooms') }}</th>
-                                    <th>{{ __('Baths') }}</th>
-                                    <th>{{ __('Published') }}</th>
-                                    <th class="disabled-sorting text-right">{{ __('Actions') }}</th>
+                                    <th>{{ __('messages.Owner') }}</th>
+                                    <th>{{ __('messages.Value') }}</th>
+                                    <th>{{ __('messages.Address') }}</th>
+                                    <th>{{ __('messages.City') }}</th>
+                                    <th>{{ __('messages.Surface') }}</th>
+                                    <th>{{ __('messages.Rooms') }}</th>
+                                    <th>{{ __('messages.Baths') }}</th>
+                                    <th>{{ __('messages.Published') }}</th>
+                                    <th class="disabled-sorting text-right">{{ __('messages.Actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,7 +56,7 @@
                                             <div style="display:flex">
                                                 @if ($estate->published == 'yes')
                                                     <span class="badge badge-success text-center">
-                                                        <div class="mt-2">{{ __('Yes') }}</div>
+                                                        <div class="mt-2">{{ __('messages.Yes') }}</div>
                                                     </span>
                                                     <!-- Button trigger modal -->
                                                     <button type="button" class="btn btn-info btn-icon btn-sm ml-2"
@@ -66,7 +66,7 @@
                                                     </button>
                                                 @elseif($estate->published == 'no')
                                                     <span class="badge badge-danger text-center">
-                                                        <div class="mt-2">{{ __('No') }}</div>
+                                                        <div class="mt-2">{{ __('messages.No') }}</div>
                                                     </span>
                                                     <!-- Button trigger modal -->
                                                     <button type="button" class="btn btn-info btn-icon btn-sm ml-2"
@@ -80,10 +80,10 @@
                                         <td class="text-right">
                                             @if ($estate->status == 1)
                                                 <span
-                                                    class="badge badge-success pull-left mt-2">{{ __('Active') }}</span>
+                                                    class="badge badge-success pull-left mt-2">{{ __('messages.Active') }}</span>
                                             @elseif($estate->status == 0)
                                                 <span
-                                                    class="badge badge-danger pull-left mt-2">{{ __('Inactive') }}</span>
+                                                    class="badge badge-danger pull-left mt-2">{{ __('messages.Inactive') }}</span>
                                             @endif
                                             <a type="button" href="{{ route('estates.pdfEstate', $estate->id) }}"
                                                 rel="tooltip" class="btn btn-danger btn-icon btn-sm " data-original-title=""
@@ -92,7 +92,7 @@
 
 
 
-                                                                         @if (auth()->user()->id !=$estate->owner->user_id)
+                                                                                   @if (auth()->user()->id !=$estate->owner->user_id)
                                                 disabled @endif
                                 @endif>
                                 <i class="now-ui-icons files_single-copy-04"></i>
@@ -103,7 +103,7 @@
 
 
 
-                                                                       @if (auth()->user()->id !=$estate->owner->user_id)
+                                                                                 @if (auth()->user()->id !=$estate->owner->user_id)
                                     disabled @endif
                                     @endif>
                                     <i class="now-ui-icons design_image"></i>
@@ -114,7 +114,7 @@
 
 
 
-                                         @if (auth()->user()->id
+                                                   @if (auth()->user()->id
                                     !=$estate->owner->user_id)
                                     disabled @endif @endif>
                                     <i class="now-ui-icons ui-2_settings-90"></i>

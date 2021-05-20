@@ -103,4 +103,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     //System
     Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
+
+    //Language
+    Route::get('/set_language/{lang}', [HomeController::class, 'set_language'])->name('set_language');
 });
