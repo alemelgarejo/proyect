@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'Create user',
+'namePage' => __('messages.Edit user'),
 'class' => 'sidebar-mini ',
 'activePage' => 'users',
+'route' => route('user.edit', $user->id),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 
@@ -19,7 +20,7 @@
                             <a class="btn btn-success btn-round text-white pull-right btn-sm"
                                 href="{{ route('web.agent', $user->id) }}" target="__blank">{{ __('Web View') }}</a>
                         @endif
-                        <h5 class="title">{{ __('messages.Edit User') }} {{ $user->first_name }}
+                        <h5 class="title">{{ __('messages.Edit user') }} {{ $user->first_name }}
                             {{ $user->last_name }}</h5>
                     </div>
                     <div class="card-body">

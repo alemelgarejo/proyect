@@ -22,10 +22,10 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{ route('web.index') }}">{{ __('Home') }}</a>
+                                <a href="{{ route('web.index') }}">{{ __('messages.Home') }}</a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="{{ route('web.estates') }}">{{ __('Properties') }}</a>
+                                <a href="{{ route('web.estates') }}">{{ __('messages.Estates') }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 {{ $property->address }}
@@ -66,45 +66,45 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="title-box-d section-t4">
-                                            <h3 class="title-d">{{ __('Quick Summary') }}</h3>
+                                            <h3 class="title-d">{{ __('messages.Quick Summary') }}</h3>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="summary-list">
                                     <ul class="list">
                                         <li class="d-flex justify-content-between">
-                                            <strong>{{ __('Property ID') }}:</strong>
+                                            <strong>{{ __('messages.Property ID') }}:</strong>
                                             <span>{{ $property->id }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
-                                            <strong>{{ __('Location') }}:</strong>
+                                            <strong>{{ __('messages.Location') }}:</strong>
                                             <span>{{ $property->city }}, <br>{{ $property->address }}</span>
 
                                         </li>
                                         <li class="d-flex justify-content-between">
-                                            <strong>{{ __('Property Type') }}:</strong>
+                                            <strong>{{ __('messages.Type') }}:</strong>
                                             <span>{{ $property->type }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
-                                            <strong>{{ __('Status') }}:</strong>
+                                            <strong>{{ __('messages.Status') }}:</strong>
                                             <span>{{ $property->interest_type }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
-                                            <strong>{{ __('Surface') }}:</strong>
+                                            <strong>{{ __('messages.Surface') }}:</strong>
                                             <span>{{ $property->surface }} m
                                                 <sup>2</sup>
                                             </span>
                                         </li>
                                         <li class="d-flex justify-content-between">
-                                            <strong>{{ __('Rooms') }}:</strong>
+                                            <strong>{{ __('messages.Rooms') }}:</strong>
                                             <span>{{ $property->rooms }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
-                                            <strong>{{ __('Baths') }}:</strong>
+                                            <strong>{{ __('messages.Baths') }}:</strong>
                                             <span>{{ $property->baths }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
-                                            <strong>{{ 'Furnished' }}:</strong>
+                                            <strong>{{ 'messages.Furnished' }}:</strong>
                                             <span>{{ ucwords($property->furnished) }}</span>
                                         </li>
                                     </ul>
@@ -115,7 +115,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="title-box-d">
-                                        <h3 class="title-d">{{ __('Property Description') }}</h3>
+                                        <h3 class="title-d">{{ __('messages.Property Description') }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                             <div class="row section-t3">
                                 <div class="col-sm-12">
                                     <div class="title-box-d">
-                                        <h3 class="title-d">{{ __('Amenities') }}</h3>
+                                        <h3 class="title-d">{{ __('messages.Amenities') }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -135,77 +135,77 @@
                                 <ul class="list-a no-margin">
                                     @if ($property->wardrobe == 'yes')
                                         <li>
-                                            {{ __('Wardrobe') }}
+                                            {{ __('messages.Wardrobe') }}
                                         </li>
                                     @endif
                                     @if ($property->furnished == 'yes')
                                         <li>
-                                            {{ __('Furnished') }}
+                                            {{ __('messages.Furnished') }}
                                         </li>
                                     @endif
                                     @if ($property->separate_dining_room == 'yes')
                                         <li>
-                                            {{ __('Separate Dining Room') }}
+                                            {{ __('messages.S. Dining Room') }}
                                         </li>
                                     @endif
                                     @if ($property->furnished_kitchen == 'yes')
                                         <li>
-                                            {{ __('FurnishedKitchen') }}
+                                            {{ __('messages.Furnished Kitchen') }}
                                         </li>
                                     @endif
                                     @if ($property->balcony == 'yes')
                                         <li>
-                                            {{ __('Balcony') }}
+                                            {{ __('messages.Balcony') }}
                                         </li>
                                     @endif
                                     @if ($property->courtyard == 'yes')
                                         <li>
-                                            {{ __('Courtyard') }}
+                                            {{ __('messages.Courtyard') }}
                                         </li>
                                     @endif
                                     @if ($property->garage == 'yes')
                                         <li>
-                                            {{ __('Garage') }}
+                                            {{ __('messages.Garage') }}
                                         </li>
                                     @endif
                                     @if ($property->storage_room == 'yes')
                                         <li>
-                                            {{ __('Storage Room') }}
+                                            {{ __('messages.Storage Room') }}
                                         </li>
                                     @endif
                                     @if ($property->basement == 'yes')
                                         <li>
-                                            {{ __('Basement') }}
+                                            {{ __('messages.Basement') }}
                                         </li>
                                     @endif
                                     @if ($property->heating == 'yes')
                                         <li>
-                                            {{ __('Heating') }}
+                                            {{ __('messages.Heating') }}
                                         </li>
                                     @endif
                                     @if ($property->air_conditioning == 'yes')
                                         <li>
-                                            {{ __('Air Conditioning') }}
+                                            {{ __('messages.Air Conditioning') }}
                                         </li>
                                     @endif
                                     @if ($property->pool == 'yes')
                                         <li>
-                                            {{ __('Pool') }}
+                                            {{ __('messages.Pool') }}
                                         </li>
                                     @endif
                                     @if ($property->elevator == 'yes')
                                         <li>
-                                            {{ __('Elevator') }}
+                                            {{ __('messages.Elevator') }}
                                         </li>
                                     @endif
                                     @if ($property->urbanization == 'yes')
                                         <li>
-                                            {{ __('Urbanization') }}
+                                            {{ __('messages.Urbanization') }}
                                         </li>
                                     @endif
                                     @if ($property->garden == 'yes')
                                         <li>
-                                            {{ __('Garden') }}
+                                            {{ __('messages.Garden') }}
                                         </li>
                                     @endif
                                 </ul>
@@ -241,7 +241,7 @@
                     <div class="row section-t3">
                         <div class="col-sm-12">
                             <div class="title-box-d">
-                                <h3 class="title-d">{{ __('Contact Agent') }}</h3>
+                                <h3 class="title-d">{{ __('messages.Contact Agent') }}</h3>
                             </div>
                         </div>
                     </div>
@@ -258,7 +258,7 @@
                                 </p>
                                 <ul class="list-unstyled">
                                     <li class="d-flex justify-content-between">
-                                        <strong>{{ __('Phone') }}:</strong>
+                                        <strong>{{ __('messages.Phone') }}:</strong>
                                         <span class="color-text-a">(+34) {{ $owner->user->phone }}</span>
                                     </li>
                                     <li class="d-flex justify-content-between">
@@ -311,14 +311,14 @@
                                         <div class="col-md-12 mb-1">
                                             <div class="form-group">
                                                 <textarea id="textMessage" class="form-control"
-                                                    placeholder="{{ __('Message') }}" name="message" cols="45" rows="8"
-                                                    required></textarea>
+                                                    placeholder="{{ __('messages.Message') }}" name="message" cols="45"
+                                                    rows="8" required></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <a onclick="event.preventDefault();
-                                                                                            document.getElementById('contact-estate-form').submit();"
-                                                class="btn btn-a">{{ __('Send Message') }}</a>
+                                                                                                            document.getElementById('contact-estate-form').submit();"
+                                                class="btn btn-a">{{ __('messages.Send Message') }}</a>
                                         </div>
                                     </div>
                                 </form>

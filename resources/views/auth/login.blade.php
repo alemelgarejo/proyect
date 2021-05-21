@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'Login page',
+'namePage' => __('messages.Login page'),
 'class' => 'login-page sidebar-mini ',
 'activePage' => 'login',
+'route' => route('login'),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 

@@ -1,6 +1,7 @@
 @extends('layouts.app', [
-'namePage' => 'Register page',
+'namePage' => __('messages.Register page'),
 'activePage' => 'register',
+'route' => route('register'),
 'backgroundImage' => asset('assets') . "/img/bg16.jpg",
 ])
 

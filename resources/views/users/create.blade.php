@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'Create user',
+'namePage' => __('messages.Create user'),
 'class' => 'sidebar-mini ',
 'activePage' => 'users',
+'route' => route('user.create'),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 
@@ -13,7 +14,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="title">{{ __('messages.Create User') }}</h5>
+                        <h5 class="title">{{ __('messages.Create user') }}</h5>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('user.store') }}" autocomplete="off"
@@ -101,17 +102,16 @@
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
                                         <label>{{ __('messages.New password') }}</label>
                                         <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                            placeholder="{{ __('New Password') }}" type="password"
-                                            name="password" required>
+                                            placeholder="{{ __('New Password') }}" type="password" name="password"
+                                            required>
                                         @include('alerts.feedback', ['field' => 'password'])
                                     </div>
                                 </div>
                                 <div class="col-md-6 pr-1">
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
                                         <label>{{ __('messages.Confirm New Password') }}</label>
-                                        <input class="form-control"
-                                            placeholder="{{ __('Confirm New Password') }}" type="password"
-                                            name="password_confirmation" required>
+                                        <input class="form-control" placeholder="{{ __('Confirm New Password') }}"
+                                            type="password" name="password_confirmation" required>
                                     </div>
                                 </div>
                             </div>

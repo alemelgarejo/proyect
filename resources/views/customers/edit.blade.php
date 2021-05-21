@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'Edit customer',
+'namePage' => __('messages.Edit customer'),
 'class' => 'sidebar-mini ',
 'activePage' => 'my-customers',
+'route' => route('customers.edit', $customer->id),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 

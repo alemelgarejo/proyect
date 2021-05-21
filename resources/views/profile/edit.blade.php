@@ -1,7 +1,8 @@
 @extends('layouts.app', [
 'class' => 'sidebar-mini ',
-'namePage' => 'User Profile',
+'namePage' => __('messages.User Profile'),
 'activePage' => 'profile',
+'route' => route('profile.edit'),
 'activeNav' => '',
 ])
 

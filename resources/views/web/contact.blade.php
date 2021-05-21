@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">{{ __('Contact US') }}</h1>
+                        <h1 class="title-single">{{ __('messages.Contact Us') }}</h1>
                         <span class="color-text-a">Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus
                             officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae
                             possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis
@@ -25,10 +25,10 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{ route('web.index') }}">{{ __('Home') }}</a>
+                                <a href="{{ route('web.index') }}">{{ __('messages.Home') }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                {{ __('Contact') }}
+                                {{ __('messages.Contact') }}
                             </li>
                         </ol>
                     </nav>
@@ -62,7 +62,8 @@
                                 <div class="row">
                                     <div class="col-md-12 mb-3">
                                         <div class="form-group">
-                                            <select class="form-control" name="to_user_id" placeholder="Message">
+                                            <select class="form-control" name="to_user_id"
+                                                placeholder="{{ __('messages.Message') }}">
                                                 @foreach ($users as $user)
                                                     <option value="{{ $user->id }}">{{ $user->first_name }}
                                                         {{ $user->last_name }}</option>
@@ -75,19 +76,19 @@
                                         <div class="form-group">
                                             <textarea name="message" class="form-control" name="message" cols="45" rows="8"
                                                 data-rule="required" data-msg="Please write something for us"
-                                                placeholder="Message"></textarea>
+                                                placeholder="{{ __('messages.Message') }}"></textarea>
                                             <div class="validation"></div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         @auth
                                             <a onclick="event.preventDefault();
-                                                                                                document.getElementById('contact-form').submit();"
-                                                class="btn btn-a" style="color: white">{{ __('Send Message') }}</a>
+                                                                                                                                        document.getElementById('contact-form').submit();"
+                                                class="btn btn-a" style="color: white">{{ __('messages.Send Message') }}</a>
                                         @endauth
                                         @guest
                                             <a href="{{ route('web.register') }}"
-                                                class="btn btn-a">{{ __('Register to send a Message') }}</a>
+                                                class="btn btn-a">{{ __('messages.Register to send a Message') }}</a>
                                         @endguest
                                     </div>
                                 </div>
@@ -100,13 +101,13 @@
                                 </div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">{{ __('Say Hello') }}</h4>
+                                        <h4 class="icon-title">{{ __('messages.Say Hello') }}</h4>
                                     </div>
                                     <div class="icon-box-content">
                                         <p class="mb-1">{{ __('Email') }}.
                                             <span class="color-a">amelgarejocontacto@gmail.com</span>
                                         </p>
-                                        <p class="mb-1">{{ __('Phone') }}.
+                                        <p class="mb-1">{{ __('messages.Phone') }}.
                                             <span class="color-a">+54 655 664 782</span>
                                         </p>
                                     </div>
@@ -118,7 +119,7 @@
                                 </div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">{{ __('Find us in') }}</h4>
+                                        <h4 class="icon-title">{{ __('messages.Find us in') }}</h4>
                                     </div>
                                     <div class="icon-box-content">
                                         <p class="mb-1">
@@ -134,7 +135,7 @@
                                 </div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">{{ __('Social networks') }}</h4>
+                                        <h4 class="icon-title">{{ __('messages.Social networks') }}</h4>
                                     </div>
                                     <div class="icon-box-content">
                                         <div class="socials-footer">

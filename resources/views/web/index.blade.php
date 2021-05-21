@@ -44,7 +44,7 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">{{ __('Our Services') }}</h2>
+                            <h2 class="title-a">{{ __('messages.Our Services') }}</h2>
                         </div>
                     </div>
                 </div>
@@ -57,16 +57,17 @@
                                 <span class="fa fa-gamepad"></span>
                             </div>
                             <div class="card-title-c align-self-center">
-                                <h2 class="title-c">{{ __('Lifestyle') }}</h2>
+                                <h2 class="title-c">{{ __('messages.Lifestyle') }}</h2>
                             </div>
                         </div>
                         <div class="card-body-c">
                             <p class="content-c">
-                                {{ __('Find the right property so that you have the lifestyle you want.') }}
+                                {{ __('messages.Find the right property so that you have the lifestyle you want.') }}
                             </p>
                         </div>
                         <div class="card-footer-c">
-                            <a href="{{ route('web.estates') }}" class="link-c link-icon">{{ __('Read more') }}
+                            <a href="{{ route('web.estates') }}"
+                                class="link-c link-icon">{{ __('messages.Read more') }}
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
@@ -79,16 +80,17 @@
                                 <span class="fa fa-usd"></span>
                             </div>
                             <div class="card-title-c align-self-center">
-                                <h2 class="title-c">{{ __('Loans') }}</h2>
+                                <h2 class="title-c">{{ __('messages.Rents') }}</h2>
                             </div>
                         </div>
                         <div class="card-body-c">
                             <p class="content-c">
-                                {{ __('Rent your property to get the most out of it.') }}
+                                {{ __('messages.Rent your property to get the most out of it.') }}
                             </p>
                         </div>
                         <div class="card-footer-c">
-                            <a href="{{ route('web.estates') }}" class="link-c link-icon">{{ __('Read more') }}
+                            <a href="{{ route('web.estates') }}"
+                                class="link-c link-icon">{{ __('messages.Read more') }}
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
@@ -101,16 +103,17 @@
                                 <span class="fa fa-home"></span>
                             </div>
                             <div class="card-title-c align-self-center">
-                                <h2 class="title-c">{{ __('Sell') }}</h2>
+                                <h2 class="title-c">{{ __('messages.Sell') }}</h2>
                             </div>
                         </div>
                         <div class="card-body-c">
                             <p class="content-c">
-                                {{ __('Find the property that interests you, we take care of the paperwork.') }}
+                                {{ __('messages.Find the property that interests you, we take care of the paperwork.') }}
                             </p>
                         </div>
                         <div class="card-footer-c">
-                            <a href="{{ route('web.estates') }}" class="link-c link-icon">{{ __('Read more') }}
+                            <a href="{{ route('web.estates') }}"
+                                class="link-c link-icon">{{ __('messages.Read more') }}
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
@@ -128,10 +131,10 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">{{ __('Latest Properties') }}</h2>
+                            <h2 class="title-a">{{ __('messages.Latest Estates') }}</h2>
                         </div>
                         <div class="title-link">
-                            <a href="{{ route('web.estates') }}">{{ __('All Property') }}
+                            <a href="{{ route('web.estates') }}">{{ __('messages.All Estates') }}
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
@@ -158,28 +161,28 @@
                                             <span class="price-a">{{ $property->interest_type }} |
                                                 {{ $property->value }} €</span>
                                         </div>
-                                        <a href="#" class="link-a">{{ __('Click here to view') }}
+                                        <a href="#" class="link-a">{{ __('messages.Click here to view') }}
                                             <span class="ion-ios-arrow-forward"></span>
                                         </a>
                                     </div>
                                     <div class="card-footer-a">
                                         <ul class="card-info d-flex justify-content-around">
                                             <li>
-                                                <h4 class="card-info-title">{{ __('Surface') }}</h4>
+                                                <h4 class="card-info-title">{{ __('messages.Surface') }}</h4>
                                                 <span>{{ $property->surface }} m
                                                     <sup>2</sup>
                                                 </span>
                                             </li>
                                             <li>
-                                                <h4 class="card-info-title">{{ __('Rooms') }}</h4>
+                                                <h4 class="card-info-title">{{ __('messages.Rooms') }}</h4>
                                                 <span>{{ $property->rooms }}</span>
                                             </li>
                                             <li>
-                                                <h4 class="card-info-title">{{ __('Baths') }}</h4>
+                                                <h4 class="card-info-title">{{ __('messages.Baths') }}</h4>
                                                 <span>{{ $property->baths }}</span>
                                             </li>
                                             <li>
-                                                <h4 class="card-info-title">{{ __('Furnished') }}</h4>
+                                                <h4 class="card-info-title">{{ __('messages.Furnished') }}</h4>
                                                 <span>{{ ucwords($property->furnished) }}</span>
                                             </li>
                                         </ul>
@@ -201,10 +204,10 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">{{ __('Our Agents') }}</h2>
+                            <h2 class="title-a">{{ __('messages.Our Agents') }}</h2>
                         </div>
                         <div class="title-link">
-                            <a href="{{ route('web.agents') }}">{{ __('All Agents') }}
+                            <a href="{{ route('web.agents') }}">{{ __('messages.All Agents') }}
                                 <span class="ion-ios-arrow-forward"></span>
                             </a>
                         </div>
@@ -234,7 +237,7 @@
                                     </p>
                                     <div class="info-agents color-a">
                                         <p>
-                                            <strong>{{ __('Phone') }}: </strong> +34 {{ $agent->phone }}
+                                            <strong>{{ __('messages.Phone') }}: </strong> +34 {{ $agent->phone }}
                                         </p>
                                         <p>
                                             <strong>{{ __('Email') }}: </strong> {{ $agent->email }}

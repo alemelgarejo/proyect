@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-'namePage' => 'Images Management',
+'namePage' => __('messages.Images Management'),
 'class' => 'sidebar-mini ',
 'activePage' => 'my-estates',
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",

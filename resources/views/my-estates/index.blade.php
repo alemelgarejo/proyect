@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'My Estates Management',
+'namePage' => __('messages.My Estates Management'),
 'class' => 'sidebar-mini ',
 'activePage' => 'my-estates',
+'route' => route('estates.index2'),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 
@@ -94,7 +95,9 @@
 
 
 
-                                                                                        @if (auth()->user()->id !=$estate->owner->user_id)
+
+                                                          @if (auth()->user()->id
+                                                !=$estate->owner->user_id)
                                                 disabled @endif
                                 @endif>
                                 <i class="now-ui-icons files_single-copy-04"></i>
@@ -105,7 +108,8 @@
 
 
 
-                                    @if (auth()->user()->id !=$estate->owner->user_id)
+                                                   @if (auth()->user()->id
+                                    !=$estate->owner->user_id)
                                     disabled @endif
                                     @endif>
                                     <i class="now-ui-icons design_image"></i>

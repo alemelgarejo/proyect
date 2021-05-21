@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'My Messages',
+'namePage' => __('messages.My Messages'),
 'class' => 'sidebar-mini ',
 'activePage' => 'messages',
+'route' => route('messages.index'),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 

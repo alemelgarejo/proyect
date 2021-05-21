@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'Owner Management',
+'namePage' => __('messages.Owner Management'),
 'class' => 'sidebar-mini ',
 'activePage' => 'owners',
+'route' => route('owners.index'),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 

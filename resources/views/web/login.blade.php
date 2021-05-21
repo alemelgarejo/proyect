@@ -17,7 +17,7 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{ route('web.index') }}">{{ __('Home') }}</a>
+                                <a href="{{ route('web.index') }}">{{ __('messages.Home') }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 {{ __('Login') }}
@@ -37,8 +37,7 @@
                 <div class="col-sm-12 section-t8">
                     <div class="row">
                         <div class="col-md-7">
-                            <form class="form-a contactForm" id="login-form" method="POST"
-                                action="{{ route('login') }}">
+                            <form class="form-a contactForm" id="login-form" method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div id="errormessage"></div>
                                 <div class="row">
@@ -56,8 +55,8 @@
                                         <div class="form-group">
                                             <input
                                                 class="form-control form-control-lg form-control-a {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                                placeholder="{{ __('Password') }}" type="password" name="password"
-                                                value="" required autofocus data-rule="minlen:4"
+                                                placeholder="{{ __('messages.Password') }}" type="password"
+                                                name="password" value="" required autofocus data-rule="minlen:4"
                                                 data-msg="Please enter at least 4 chars">
                                             <div class="validation"></div>
                                         </div>
@@ -65,7 +64,7 @@
                                     <div class="col-md-12">
                                         <a href="{{ route('login') }}" class="btn btn-a"
                                             onclick="event.preventDefault();
-                                                            document.getElementById('login-form').submit();">{{ __('Login') }}</a>
+                                                                document.getElementById('login-form').submit();">{{ __('Login') }}</a>
                                     </div>
                                 </div>
                             </form>
@@ -83,7 +82,7 @@
                                         <p class="mb-1">{{ __('Email') }}.
                                             <span class="color-a">{{ __('amelgarejocontacto@gmail.com') }}</span>
                                         </p>
-                                        <p class="mb-1">{{ __('Phone') }}.
+                                        <p class="mb-1">{{ __('messages.Phone') }}.
                                             <span class="color-a">{{ __('655 664 782') }}</span>
                                         </p>
                                     </div>
@@ -95,7 +94,7 @@
                                 </div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">{{ __('Find us in') }}</h4>
+                                        <h4 class="icon-title">{{ __('messages.Find us in') }}</h4>
                                     </div>
                                     <div class="icon-box-content">
                                         <p class="mb-1">
@@ -111,7 +110,7 @@
                                 </div>
                                 <div class="icon-box-content table-cell">
                                     <div class="icon-box-title">
-                                        <h4 class="icon-title">Social networks</h4>
+                                        <h4 class="icon-title">{{ __('messages.Social networks') }}</h4>
                                     </div>
                                     <div class="icon-box-content">
                                         <div class="socials-footer">

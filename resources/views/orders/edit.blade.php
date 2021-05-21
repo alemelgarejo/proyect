@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'Edit order',
+'namePage' => __('messages.Edit order'),
 'class' => 'sidebar-mini ',
 'activePage' => 'my-customers-orders',
+'route' => route('orders.edit', $order->id),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 

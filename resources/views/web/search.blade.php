@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <div class="title-single-box">
-                        <h1 class="title-single">{{ __('Our Amazing Properties') }}</h1>
+                        <h1 class="title-single">{{ __('messages.Our Amazing Estates') }}</h1>
                         <span class="color-text-a">{{ __('Properties') }}</span>
                     </div>
                 </div>
@@ -15,10 +15,10 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{ route('web.index') }}">{{ __('Home') }}</a>
+                                <a href="{{ route('web.index') }}">{{ __('messages.Home') }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                {{ __('Properties') }}
+                                {{ __('messages.Estates') }}
                             </li>
                         </ol>
                     </nav>
@@ -60,28 +60,28 @@
                                                     €</span>
                                             </div>
                                             <a href="{{ route('web.estate', $property->id) }}"
-                                                class="link-a">{{ __('Click here to view') }}
+                                                class="link-a">{{ __('messages.Click here to view') }}
                                                 <span class="ion-ios-arrow-forward"></span>
                                             </a>
                                         </div>
                                         <div class="card-footer-a">
                                             <ul class="card-info d-flex justify-content-around">
                                                 <li>
-                                                    <h4 class="card-info-title">{{ __('Surface') }}</h4>
+                                                    <h4 class="card-info-title">{{ __('messages.Surface') }}</h4>
                                                     <span>{{ $property->surface }} m
                                                         <sup>2</sup>
                                                     </span>
                                                 </li>
                                                 <li>
-                                                    <h4 class="card-info-title">{{ __('Rooms') }}</h4>
+                                                    <h4 class="card-info-title">{{ __('messages.Rooms') }}</h4>
                                                     <span>{{ $property->rooms }}</span>
                                                 </li>
                                                 <li>
-                                                    <h4 class="card-info-title">{{ __('Baths') }}</h4>
+                                                    <h4 class="card-info-title">{{ __('messages.Baths') }}</h4>
                                                     <span>{{ $property->baths }}</span>
                                                 </li>
                                                 <li>
-                                                    <h4 class="card-info-title">{{ __('Furnished') }}</h4>
+                                                    <h4 class="card-info-title">{{ __('messages.Furnished') }}</h4>
                                                     <span>{{ ucwords($property->furnished) }}</span>
                                                 </li>
                                             </ul>

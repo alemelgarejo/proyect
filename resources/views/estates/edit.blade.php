@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'Edit estate',
+'namePage' => __('messages.Edit estate'),
 'class' => 'sidebar-mini ',
 'activePage' => 'my-estates',
+'route' => route('estates.edit', $estate->id),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 

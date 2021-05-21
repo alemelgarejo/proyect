@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'Create estate',
+'namePage' => __('messages.Create estate'),
 'class' => 'sidebar-mini ',
 'activePage' => 'my-estates',
+'route' => route('estates.create'),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 

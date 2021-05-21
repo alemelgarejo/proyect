@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'Create customer',
+'namePage' => __('messages.Create customer'),
 'class' => 'sidebar-mini ',
 'activePage' => 'my-customers',
+'route' => route('customers.create'),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 

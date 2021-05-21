@@ -47,20 +47,20 @@
                 <div class="row">
                     <div class="col-md-12 mb-2">
                         <div class="form-group">
-                            <label for="city">{{ __('City') }}</label>
+                            <label for="city">{{ __('messages.City') }}</label>
                             <input type="text" name="city" class="form-control form-control-lg form-control-a"
                                 placeholder="City">
                         </div>
                     </div>
                     <div class="col-md-6 mb-2">
                         <div class="form-group">
-                            <label for="interest_type">{{ __('Interest Type') }}</label>
+                            <label for="interest_type">{{ __('messages.Interest Type') }}</label>
                             <select class="form-control form-control-lg form-control-a" name="interest_type"
                                 id="interest_type">
-                                <option value="">{{ 'Sin asignar' }}</option>
-                                <option value="Compra">{{ 'Compra' }}</option>
-                                <option value="Traspaso">{{ 'Traspaso' }}</option>
-                                <option value="Alquiler">{{ 'Alquiler' }}</option>
+                                <option value="">{{ __('messages.Sin asignar') }}</option>
+                                <option value="Compra">{{ __('messages.Compra') }}</option>
+                                <option value="Traspaso">{{ __('messages.Traspaso') }}</option>
+                                <option value="Alquiler">{{ __('messages.Alquiler') }}</option>
                             </select>
                         </div>
                     </div>
@@ -73,37 +73,38 @@
                     </div> --}}
                     <div class="col-md-6 mb-2">
                         <div class="form-group">
-                            <label for="rooms">{{ __('Rooms') }}</label>
+                            <label for="rooms">{{ __('messages.Rooms') }}</label>
                             <input type="text" name="rooms" class="form-control form-control-lg form-control-a"
                                 placeholder="Rooms">
                         </div>
                     </div>
                     <div class="col-md-6 mb-2">
                         <div class="form-group">
-                            <label for="bath">{{ __('Bathrooms') }}</label>
+                            <label for="bath">{{ __('messages.Bathrooms') }}</label>
                             <input type="text" name="bath" class="form-control form-control-lg form-control-a"
                                 placeholder="Bathrooms">
                         </div>
                     </div>
                     <div class="col-md-6 mb-2">
                         <div class="form-group">
-                            <label for="max_value">{{ __('Max Value') }}</label>
+                            <label for="max_value">{{ __('messages.Max Value') }}</label>
                             <select class="form-control form-control-lg form-control-a" name="max_value" id="max_value">
-                                <option value="10000000000000000000000000000000000000000000">{{ __('Sin asignar') }}
+                                <option value="10000000000000000000000000000000000000000000">
+                                    {{ __('messages.Sin asignar') }}
                                 </option>
-                                <option value="50000">{{ __('$50,000') }}</option>
-                                <option value="100000">{{ __('$100,000') }}</option>
-                                <option value="150000">{{ __('$150,000') }}</option>
-                                <option value="200000">{{ __('$200,000') }}</option>
-                                <option value="250000">{{ __('$250,000') }}</option>
-                                <option value="300000">{{ __('$300,000') }}</option>
-                                <option value="400000">{{ __('$400,000') }}</option>
-                                <option value="500000">{{ __('$500,000') }}</option>
+                                <option value="50000">{{ __('50,000 €') }}</option>
+                                <option value="100000">{{ __('100,000 €') }}</option>
+                                <option value="150000">{{ __('150,000 €') }}</option>
+                                <option value="200000">{{ __('200,000 €') }}</option>
+                                <option value="250000">{{ __('250,000 €') }}</option>
+                                <option value="300000">{{ __('300,000 €') }}</option>
+                                <option value="400000">{{ __('400,000 €') }}</option>
+                                <option value="500000">{{ __('500,000 €') }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-b">{{ __('Search') }}</button>
+                        <button type="submit" class="btn btn-b">{{ __('messages.Search') }}</button>
                     </div>
                 </div>
             </form>
@@ -130,15 +131,15 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('web.index') ? 'active' : '' }}"
-                            href="{{ route('web.index') }}">{{ __('Home') }}</a>
+                            href="{{ route('web.index') }}">{{ __('messages.Home') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('web.estates') ? 'active' : '' }} {{ request()->routeIs('web.search') ? 'active' : '' }}"
-                            href="{{ route('web.estates') }}">{{ __('Estates') }}</a>
+                            href="{{ route('web.estates') }}">{{ __('messages.Estates') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('web.agents') ? 'active' : '' }}"
-                            href="{{ route('web.agents') }}">{{ __('Agents') }}</a>
+                            href="{{ route('web.agents') }}">{{ __('messages.Agents') }}</a>
                     </li>{{-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -151,11 +152,11 @@
           </li> --}}
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('web.contact') ? 'active' : '' }}"
-                            href="{{ route('web.contact') }}">{{ __('Contact') }}</a>
+                            href="{{ route('web.contact') }}">{{ __('messages.Contact') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('web.about') ? 'active' : '' }}"
-                            href="{{ route('web.about') }}">{{ __('About') }}</a>
+                            href="{{ route('web.about') }}">{{ __('messages.About') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}"
@@ -165,7 +166,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                            document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                                                                                                                                                                                                                                                                                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         </li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -200,19 +201,19 @@
                     <nav class="nav-footer">
                         <ul class="list-inline">
                             <li class="list-inline-item">
-                                <a href="{{ route('web.index') }}">{{ __('Home') }}</a>
+                                <a href="{{ route('web.index') }}">{{ __('messages.Home') }}</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="{{ route('web.about') }}">{{ __('About') }}</a>
+                                <a href="{{ route('web.about') }}">{{ __('messages.About') }}</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="{{ route('web.estates') }}">{{ __('Estates') }}</a>
+                                <a href="{{ route('web.estates') }}">{{ __('messages.Estates') }}</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="{{ route('web.agents') }}">{{ __('Agents') }}</a>
+                                <a href="{{ route('web.agents') }}">{{ __('messages.Agents') }}</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="{{ route('web.contact') }}">{{ __('Contact') }}</a>
+                                <a href="{{ route('web.contact') }}">{{ __('messages.Contact') }}</a>
                             </li>
                         </ul>
                     </nav>
@@ -267,7 +268,8 @@
                     {{ __('messages.This is an example page, the data displayed on it is fictitious.') }}
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('messages.Close') }}</button>
+                    <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">{{ __('messages.Close') }}</button>
                 </div>
             </div>
         </div>

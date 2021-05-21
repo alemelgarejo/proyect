@@ -1,7 +1,8 @@
 @extends('layouts.app', [
-'namePage' => 'User Management',
+'namePage' => __('messages.User Management'),
 'class' => 'sidebar-mini ',
 'activePage' => 'users',
+'route' => route('user.index'),
 'backgroundImage' => asset('assets') . "/img/bg14.jpg",
 ])
 
