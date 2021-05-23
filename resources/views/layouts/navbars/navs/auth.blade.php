@@ -123,6 +123,9 @@
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <p class="dropdown-item">
+                            {{ auth()->user()->first_name }}
+                            {{ auth()->user()->last_name }}</p>
                         <a class="dropdown-item"
                             href="{{ route('profile.edit') }}">{{ __('messages.My profile') }}</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
