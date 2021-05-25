@@ -16,7 +16,7 @@
                     <div class="card-header">
                         <a href="{{ route('owners.pdfOwner', $owner->id) }}"
                             class="btn btn-danger btn-round pull-right btn-sm">{{ __('PDF') }}</a>
-                        <h5 class="title">{{ __('messages.Edit Owner') }} {{ $owner->first_name }}
+                        <h5 class="title">{{ __('messages.Edit owner') }} {{ $owner->first_name }}
                             {{ $owner->last_name }}</h5>
                     </div>
                     <div class="card-body">
@@ -150,7 +150,7 @@
                             <th>{{ __('messages.Address') }}</th>
                             <th>{{ __('messages.City') }}</th>
                             <th>{{ __('messages.Surface') }}</th>
-                            <th>{{ __('messages.ooms') }}</th>
+                            <th>{{ __('messages.Rooms') }}</th>
                             <th>{{ __('messages.Baths') }}</th>
                             <th class="disabled-sorting text-right">{{ __('messages.Actions') }}</th>
                         </tr>

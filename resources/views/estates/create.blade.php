@@ -55,9 +55,9 @@
                                     <div class="form-group">
                                         <label>{{ __('messages.Type') }}</label>
                                         <select name="type" id="type" class="form-control">
-                                            <option value="Traspaso">Traspaso</option>
-                                            <option value="Compra">Compra</option>
-                                            <option value="Alquiler">Alquiler</option>
+                                            <option value="Casa">{{ __('messages.Casa') }}</option>
+                                            <option value="Piso">{{ __('messages.Piso') }}</option>
+                                            <option value="Edificio">{{ __('messages.Edificio') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'type'])
                                     </div>

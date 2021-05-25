@@ -39,12 +39,12 @@
                                         <label>{{ __('messages.Type') }}</label>
                                         <select name="type" id="type" class="form-control">
                                             <option value="Traspaso" {{ $order->type == 'Traspaso' ? 'selected' : '' }}>
-                                                {{ __('messages.Traspaso') }}</option>
+                                                {{ __('messages.Transfer') }}</option>
                                             <option value="Compra" {{ $order->type == 'Compra' ? 'selected' : '' }}>
-                                                {{ __('messages.Compra') }}
+                                                {{ __('messages.Buy') }}
                                             </option>
                                             <option value="Alquiler" {{ $order->type == 'Alquiler' ? 'selected' : '' }}>
-                                                {{ __('messages.Alquiler') }}</option>
+                                                {{ __('messages.Rent') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'type'])
                                     </div>

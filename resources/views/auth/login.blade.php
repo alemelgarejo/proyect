@@ -31,11 +31,11 @@
                     @csrf
                     <div class="card card-login card-plain">
                         <div class="card-header ">
-                            <div class="logo-container">
-                                <img src="{{ asset('assets/img/now-logo.png') }}" alt="">
+                            <div class="logo-container" style="width: 100%">
+                                <img src="{{ asset('img/logo.png') }}" alt="">
                             </div>
                         </div>
-                        <div class="card-body ">
+                        <div class="card-body " style="margin-top: -140px">
                             <div
                                 class="input-group no-border form-control-lg {{ $errors->has('email') ? ' has-danger' : '' }}">
                                 <span class="input-group-prepend">
@@ -69,19 +69,13 @@
                                 </span>
                             @endif
                         </div>
-                        <div class="card-footer ">
+                        <div class="card-footer " style="margin-top: -30px">
                             <button type="submit"
                                 class="btn btn-info btn-round btn-lg btn-block mb-3">{{ __('messages.Get Started') }}</button>
                             <div class="pull-left">
                                 <h6>
                                     <a href="{{ route('register') }}"
                                         class="link footer-link">{{ __('messages.Create Account') }}</a>
-                                </h6>
-                            </div>
-                            <div class="pull-right">
-                                <h6>
-                                    <a href="{{ route('password.request') }}"
-                                        class="link footer-link">{{ __('messages.Forgot Password?') }}</a>
                                 </h6>
                             </div>
                         </div>

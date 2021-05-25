@@ -140,7 +140,7 @@
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
                                         <label>{{ __('messages.Current Password') }}</label>
                                         <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                            name="old_password" placeholder="{{ __('Current Password') }}"
+                                            name="old_password" placeholder="{{ __('messages.Current Password') }}"
                                             type="password" required>
                                         @include('alerts.feedback', ['field' => 'old_password'])
                                     </div>
@@ -151,8 +151,8 @@
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
                                         <label>{{ __('messages.New password') }}</label>
                                         <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                            placeholder="{{ __('New Password') }}" type="password" name="password"
-                                            required>
+                                            placeholder="{{ __('messages.New password') }}" type="password"
+                                            name="password" required>
                                         @include('alerts.feedback', ['field' => 'password'])
                                     </div>
                                 </div>
@@ -161,8 +161,9 @@
                                 <div class="col-md-7 pr-1">
                                     <div class="form-group {{ $errors->has('password') ? ' has-danger' : '' }}">
                                         <label>{{ __('messages.Confirm New Password') }}</label>
-                                        <input class="form-control" placeholder="{{ __('Confirm New Password') }}"
-                                            type="password" name="password_confirmation" required>
+                                        <input class="form-control"
+                                            placeholder="{{ __('messages.Confirm New Password') }}" type="password"
+                                            name="password_confirmation" required>
                                     </div>
                                 </div>
                             </div>

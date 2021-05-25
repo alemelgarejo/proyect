@@ -39,6 +39,7 @@ class OrderController extends Controller
                     ->orWhere('orders.min_rooms', 'LIKE', "%$search%")
                     ->paginate(5),
                 'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
+
             ]);
         }
     }

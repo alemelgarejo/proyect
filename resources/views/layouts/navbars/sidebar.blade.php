@@ -89,20 +89,19 @@
                     <h6 style="margin-top: 5%"> {{ __('messages.My Estates') }} </h6>
                 </a>
             </li>
-
-            <li class="@if ($activePage=='icons' ) active @endif">
+            {{-- <li class="@if ($activePage == 'icons') active @endif">
                 <a href="{{ route('page.index', 'icons') }}">
                     <i class="now-ui-icons education_atom"></i>
                     <h6 style="margin-top: 5%">{{ __('Icons') }}</h6>
                 </a>
             </li>
-            <li class="@if ($activePage=='maps' ) active @endif">
+            <li class="@if ($activePage == 'maps') active @endif">
                 <a href="{{ route('page.index', 'maps') }}">
                     <i class="now-ui-icons location_map-big"></i>
                     <h6 style="margin-top: 5%">{{ __('Maps') }}</h6>
                 </a>
             </li>
-            {{-- <li class = " @if ($activePage == 'notifications') active @endif">
+             <li class = " @if ($activePage == 'notifications') active @endif">
         <a href="{{ route('page.index','notifications') }}">
           <i class="now-ui-icons ui-1_bell-53"></i>
           <p>{{ __('Notifications') }}</p>

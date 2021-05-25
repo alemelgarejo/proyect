@@ -44,11 +44,17 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div id="property-single-carousel" class="owl-carousel owl-arrow gallery-property">
-                        @foreach ($property->images as $image)
+                        @if (count($property->images) == null)
                             <div class="carousel-item-b">
-                                <img src="{{ $image->url }}" alt="">
+                                <img src="{{ $property->estate_image_url }}" alt="">
                             </div>
-                        @endforeach
+                        @else
+                            @foreach ($property->images as $image)
+                                <div class="carousel-item-b">
+                                    <img src="{{ $image->url }}" alt="">
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
                     <div class="row justify-content-between">
                         <div class="col-md-5 col-lg-4">
@@ -212,8 +218,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-10 offset-md-1">
+                </div>{{-- <div class="col-md-10 offset-md-1">
                     <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="pills-video-tab" data-toggle="pill" href="#pills-video"
@@ -236,7 +241,7 @@
                                 width="100%" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-md-12">
                     <div class="row section-t3">
                         <div class="col-sm-12">
@@ -317,11 +322,13 @@
                                         </div>
                                         <div class="col-md-12">
                                             <a onclick="event.preventDefault();
-                                                                                                            document.getElementById('contact-estate-form').submit();"
-                                                class="btn btn-a">{{ __('messages.Send Message') }}</a>
+                                                                                                                                                        document.getElementById('contact-estate-form').submit();"
+                                                class="btn btn-a"
+                                                style="color: white">{{ __('messages.Send Message') }}</a>
                                         </div>
                                     </div>
                                 </form>
+                                <br>
                             </div>
                         </div>
                     </div>

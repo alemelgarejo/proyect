@@ -58,9 +58,9 @@
                             <select class="form-control form-control-lg form-control-a" name="interest_type"
                                 id="interest_type">
                                 <option value="">{{ __('messages.Sin asignar') }}</option>
-                                <option value="Compra">{{ __('messages.Compra') }}</option>
-                                <option value="Traspaso">{{ __('messages.Traspaso') }}</option>
-                                <option value="Alquiler">{{ __('messages.Alquiler') }}</option>
+                                <option value="Compra">{{ __('messages.Buy') }}</option>
+                                <option value="Traspaso">{{ __('messages.Transfer') }}</option>
+                                <option value="Alquiler">{{ __('messages.Rent') }}</option>
                             </select>
                         </div>
                     </div>
@@ -166,7 +166,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                                                                                                                                                                                                                                                                                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         </li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf

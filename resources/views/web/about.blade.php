@@ -45,8 +45,15 @@
                 </div>
                 <div class="col-md-12 section-t8">
                     <div class="row">
-                        <div class="col-md-6 col-lg-5">
-                            <img src="img/about-2.jpg" alt="" class="img-fluid">
+                        <div class="col-md-6 col-lg-5" style="margin-top: -50px">
+                            <div class="contact-map box">
+                                <div id="map" class="contact-map">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2075.5687493003325!2d-13.56173620785291!3d28.967307547535913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc46277187c67757%3A0xe1c08d4252e5ad1c!2sSecondary%20School%20Zonzamas!5e0!3m2!1sen!2ses!4v1619732690507!5m2!1sen!2ses"
+                                        width="100%" height="450" frameborder="0" style="border:0" allowfullscreen
+                                        loading="lazy"></iframe>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-2  d-none d-lg-block">
                             <div class="title-vertical d-flex justify-content-start">
@@ -66,6 +73,7 @@
 
                             </p>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -74,7 +82,7 @@
     <!--/ About End /-->
 
     <!--/ Team Star /-->
-    <section class="section-agents section-t8">
+    <section class="section-agents section-t8" style="margin-top: -40px">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

@@ -15,31 +15,31 @@
                             <i class="now-ui-icons media-2_sound-wave"></i>
                         </div>
                         <div class="description">
-                            <h5 class="info-title">{{ __('Marketing') }}</h5>
+                            <h5 class="info-title">{{ __('messages.Lifestyle') }}</h5>
                             <p class="description">
-                                {{ __("We've created the marketing campaign of the website. It was a very interesting collaboration.") }}
+                                {{ __('messages.Find the right property so that you have the lifestyle you want.') }}
                             </p>
                         </div>
                     </div>
                     <div class="info-area info-horizontal">
                         <div class="icon icon-primary">
-                            <i class="now-ui-icons media-1_button-pause"></i>
+                            <i class="now-ui-icons business_briefcase-24"></i>
                         </div>
                         <div class="description">
-                            <h5 class="info-title">{{ __('Fully Coded in HTML5') }}</h5>
+                            <h5 class="info-title">{{ __('messages.Rents') }}</h5>
                             <p class="description">
-                                {{ __("We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.") }}
+                                {{ __('messages.Rent your property to get the most out of it.') }}
                             </p>
                         </div>
                     </div>
                     <div class="info-area info-horizontal">
                         <div class="icon icon-info">
-                            <i class="now-ui-icons users_single-02"></i>
+                            <i class="now-ui-icons business_bank"></i>
                         </div>
                         <div class="description">
-                            <h5 class="info-title">{{ __('Built Audience') }}</h5>
+                            <h5 class="info-title">{{ __('messages.Sell') }}</h5>
                             <p class="description">
-                                {{ __('There is also a Fully Customizable CMS Admin Dashboard for this product.') }}
+                                {{ __('messages.Find the property that interests you, we take care of the paperwork.') }}
                             </p>
                         </div>
                     </div>
