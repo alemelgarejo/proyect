@@ -64,7 +64,7 @@
                                     <div class="col-md-12">
                                         <a href="{{ route('login') }}" class="btn btn-a"
                                             onclick="event.preventDefault();
-                                                                document.getElementById('login-form').submit();">{{ __('Login') }}</a>
+                                                                    document.getElementById('login-form').submit();">{{ __('Login') }}</a>
                                     </div>
                                 </div>
                             </form>
@@ -116,28 +116,23 @@
                                         <div class="socials-footer">
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="https://www.facebook.com/ale.melgarejo.3/" target="__blank">
                                                         <i class="fa fa-facebook" aria-hidden="true"></i>
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="https://twitter.com/melgarejoale" target="__blank">
                                                         <i class="fa fa-twitter" aria-hidden="true"></i>
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="https://www.instagram.com/alemelgarejo96/" target="__blank">
                                                         <i class="fa fa-instagram" aria-hidden="true"></i>
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="{{ route('web.index') }}" target="__blank">
                                                         <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
-                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
                                                     </a>
                                                 </li>
                                             </ul>

@@ -8,13 +8,13 @@
                 @method('PUT')
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">{{ __('messages.Unpublish Estate') }}</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">{{ __('messages.Hide Estate') }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        {{ __('messages.Do you want to unpublish this estate?') }}
+                        {{ __('messages.Do you want to hide this estate?') }}
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary  btn-round btn-sm"

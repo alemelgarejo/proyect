@@ -27,7 +27,6 @@ class StoreOrderRequest extends FormRequest
             'customer_id' => ['required'],
             'type' => ['required'],
             'city' => ['required', 'max:150', 'min:2'],
-            'estate_type' => ['required'],
             'min_value' => ['nullable', 'numeric'],
             'max_value' => ['required', 'numeric'],
             'min_surface' => ['required', 'numeric'],
@@ -43,10 +42,10 @@ class StoreOrderRequest extends FormRequest
             'air_conditioning' => ['nullable'],
             'garden' => ['nullable'],
             'pool' => ['nullable'],
-            'situation' => ['required'],
-            'conservation_state' => ['required'],
-            'need_loan' => ['required'],
-            'observations' => ['nullable', 'max:500'],
+            'situation' => ['nullable'],
+            'conservation_state' => ['nullable'],
+            'need_loan' => ['nullable'],
+            'observations' => ['nullable'],
         ];
     }
 }

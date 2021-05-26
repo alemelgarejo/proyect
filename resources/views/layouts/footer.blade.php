@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://blog.creative-tim.com" target="_blank">
+                    <a href="{{ route('web.index') }}" target="_blank">
                         {{ __(' Web') }}
                     </a>
                 </li>

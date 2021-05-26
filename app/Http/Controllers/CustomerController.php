@@ -125,7 +125,7 @@ class CustomerController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        return redirect()->route('customers.index')->with('status', 'Cliente creado con éxito.');
+        return redirect()->route('customers.index2')->with('status', 'Cliente creado con éxito.');
     }
 
     //Mostrar vista editar cliente

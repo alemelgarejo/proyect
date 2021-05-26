@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     @foreach ($estates as $estate)
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="card-box-a card-shadow">
                                 <div class="img-box-a">
                                     <img src="{{ $estate->estate_image_url }}" alt="" class="img-a img-fluid">

@@ -28,7 +28,7 @@
                                     <input type="file" name="url" class="form-control-file" id="url" accept="image/*">
                                     @include('alerts.feedback', ['field' => 'url'])
                                     <button type="submit"
-                                        class="btn btn-info btn-round pull-right btn-sm">{{ __('messages.Add') }}</button>
+                                        class="btn btn-info btn-round pull-right btn-sm">{{ __('messages.Save') }}</button>
                                 </form>
                                 {{-- <form action="{{route('images.store2', $estate->id)}}" class="dropzone" id="my-awesome-dropzone" method="POST">
 

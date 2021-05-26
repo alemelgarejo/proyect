@@ -88,7 +88,7 @@
                                             <option value="Traspaso">
                                                 {{ __('messages.Transfer') }}</option>
                                             <option value="Compra">
-                                                {{ __('messages.Buy') }}</option>
+                                                {{ __('messages.Sell') }}</option>
                                             <option value="Alquiler">
                                                 {{ __('messages.Rent') }}</option>
                                         </select>

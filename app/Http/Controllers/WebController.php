@@ -16,15 +16,14 @@ class WebController extends Controller
     {
         return view('web.index', [
             'properties' => Estate::where('estates.published', 'yes')->orderBy('created_at', 'DESC')->take(6)->get(),
-            'agents' => User::where('users.role_id', 1)->orWhere('users.role_id', 2)->orWhere('users.role_id', 3)->get()
+            'agents' => User::where('users.role_id', 2)->orWhere('users.role_id', 3)->get()
         ]);
     }
 
     public function about()
     {
         return view('web.about', [
-            'agents' => User::where('users.role_id', 1)
-                ->orWhere('users.role_id', 2)
+            'agents' => User::where('users.role_id', 2)
                 ->orWhere('users.role_id', 3)
                 ->get()
         ]);
@@ -73,8 +72,7 @@ class WebController extends Controller
     public function agents()
     {
         return view('web.agents-grid', [
-            'agents' => User::where('users.role_id', 1)
-                ->orWhere('users.role_id', 2)
+            'agents' => User::where('users.role_id', 2)
                 ->orWhere('users.role_id', 3)
                 ->paginate(6),
         ]);

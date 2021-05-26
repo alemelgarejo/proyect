@@ -33,7 +33,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($properties as $property)
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="card-box-a card-shadow">
                             <div class="img-box-a">
                                 <img src="{{ $property->estate_image_url }}" alt="" class="img-a img-fluid">

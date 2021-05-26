@@ -49,7 +49,7 @@
                         <div class="form-group">
                             <label for="city">{{ __('messages.City') }}</label>
                             <input type="text" name="city" class="form-control form-control-lg form-control-a"
-                                placeholder="City">
+                                placeholder="{{ __('messages.City') }}">
                         </div>
                     </div>
                     <div class="col-md-6 mb-2">
@@ -75,14 +75,14 @@
                         <div class="form-group">
                             <label for="rooms">{{ __('messages.Rooms') }}</label>
                             <input type="text" name="rooms" class="form-control form-control-lg form-control-a"
-                                placeholder="Rooms">
+                                placeholder="{{ __('messages.Rooms') }}">
                         </div>
                     </div>
                     <div class="col-md-6 mb-2">
                         <div class="form-group">
                             <label for="bath">{{ __('messages.Bathrooms') }}</label>
                             <input type="text" name="bath" class="form-control form-control-lg form-control-a"
-                                placeholder="Bathrooms">
+                                placeholder="{{ __('messages.Bathrooms') }}">
                         </div>
                     </div>
                     <div class="col-md-6 mb-2">
@@ -166,7 +166,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                                                                                                                                                                                                                                                                                                            document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                         </li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf

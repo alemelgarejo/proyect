@@ -17,8 +17,7 @@
                         <h5 class="title">{{ __('messages.Create Order') }}</h5>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('orders.store') }}" autocomplete="off"
-                            enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('orders.store') }}" autocomplete="off">
                             @csrf
                             @include('alerts.success')
                             <div class="row">
@@ -46,8 +45,8 @@
                                         <label>{{ __('messages.Type') }}</label>
                                         <select name="type" id="type" class="form-control">
                                             <option value="Traspaso">{{ __('messages.Transfer') }}</option>
-                                            <option value="Compra">{{ __('messages.Compra') }}</option>
-                                            <option value="Alquiler">{{ __('messages.Alquiler') }}</option>
+                                            <option value="Compra">{{ __('messages.Buy') }}</option>
+                                            <option value="Alquiler">{{ __('messages.Rent') }}</option>
                                         </select>
                                         @include('alerts.feedback', ['field' => 'type'])
                                     </div>
@@ -66,7 +65,7 @@
                                 <div class="col-md-2 pr-2 pl-3">
                                     <div class="form-group">
                                         <label>{{ __('messages.Min Value') }} (€)</label>
-                                        <input type="text" name="min_value" class="form-control" placeholder="min_value"
+                                        <input type="text" name="min_value" class="form-control" placeholder="Min Value"
                                             value="{{ old('min_value') }}">
                                         @include('alerts.feedback', ['field' => 'min_value'])
                                     </div>
@@ -116,8 +115,7 @@
                             <div class="row">
                                 <div class="col-md-3 pr-2">
                                     <div class="form-group">
-                                        <label>{{ __('messages.Situation') }}</label>
-                                        <select name="situation" id="situation" class="form-control">
+                                        <select name="situation" id="situation" class="form-control" hidden>
                                             <option value="En la playa">{{ __('messages.En la playa') }}</option>
                                             <option value="En el centro">{{ __('messages.En el centro') }}</option>
                                             <option value="En las afueras">{{ __('messages.En las afueras') }}</option>
@@ -127,8 +125,8 @@
                                 </div>
                                 <div class="col-md-3 pr-1">
                                     <div class="form-group">
-                                        <label>{{ __('messages.Conservation') }}</label>
-                                        <select name="conservation_state" id="conservation_state" class="form-control">
+                                        <select name="conservation_state" id="conservation_state" class="form-control"
+                                            hidden>
                                             <option value="Bueno">{{ __('messages.Bueno') }}</option>
                                             <option value="Muy bueno">{{ __('messages.Muy bueno') }}</option>
                                             <option value="Malo">{{ __('messages.Malo') }}</option>

@@ -68,8 +68,7 @@
                                 </div>
                                 <div class="col-md-3 ">
                                     <div class="form-group">
-                                        <label>{{ __('messages.Situation') }}</label>
-                                        <select name="situation" id="situation" class="form-control">
+                                        <select name="situation" id="situation" class="form-control" hidden>
                                             <option value="En la playa"
                                                 {{ $estate->situation == 'En la playa' ? 'selected' : '' }}>
                                                 {{ __('messages.En la playa') }}

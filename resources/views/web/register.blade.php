@@ -144,11 +144,12 @@
                                     <div class="col-md-12">
                                         <a href="{{ route('register') }}"
                                             onclick="event.preventDefault();
-                                                                            document.getElementById('register-form').submit();"
+                                                                                    document.getElementById('register-form').submit();"
                                             class="btn btn-a">{{ __('messages.Register') }}</a>
                                     </div>
                                 </div>
                             </form>
+                            <br><br>
                         </div>
                         <div class="col-md-5 section-md-t3">
                             <div class="icon-box section-b2">
@@ -197,28 +198,23 @@
                                         <div class="socials-footer">
                                             <ul class="list-inline">
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="https://www.facebook.com/ale.melgarejo.3/" target="__blank">
                                                         <i class="fa fa-facebook" aria-hidden="true"></i>
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="https://twitter.com/melgarejoale" target="__blank">
                                                         <i class="fa fa-twitter" aria-hidden="true"></i>
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="https://www.instagram.com/alemelgarejo96/" target="__blank">
                                                         <i class="fa fa-instagram" aria-hidden="true"></i>
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
+                                                    <a href="{{ route('web.index') }}" target="__blank">
                                                         <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#" class="link-one">
-                                                        <i class="fa fa-dribbble" aria-hidden="true"></i>
                                                     </a>
                                                 </li>
                                             </ul>

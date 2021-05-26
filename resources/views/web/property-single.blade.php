@@ -78,14 +78,18 @@
                                 </div>
                                 <div class="summary-list">
                                     <ul class="list">
-                                        <li class="d-flex justify-content-between">
-                                            <strong>{{ __('messages.Property ID') }}:</strong>
-                                            <span>{{ $property->id }}</span>
-                                        </li>
-                                        <li class="d-flex justify-content-between">
-                                            <strong>{{ __('messages.Location') }}:</strong>
-                                            <span>{{ $property->city }}, <br>{{ $property->address }}</span>
-
+                                        <li class="d-flex justify-content-between" style=" margin-bottom:0px; ">
+                                            <strong style="color: #40B862;">{{ __('messages.Google search') }}:</strong>
+                                            <span>
+                                                <form method="get" action="https://www.google.com/search" target="_blank">
+                                                    <input type="search" name="q"
+                                                        value="{{ $property->address }}, {{ $property->city }}"
+                                                        autofocus hidden required>
+                                                    <button type="submit" class="btn btn-outline"
+                                                        style="background-color:transparent;"><i class="fa fa-google"
+                                                            aria-hidden="true"></i></button>
+                                                </form>
+                                            </span>
                                         </li>
                                         <li class="d-flex justify-content-between">
                                             <strong>{{ __('messages.Type') }}:</strong>
@@ -110,7 +114,7 @@
                                             <span>{{ $property->baths }}</span>
                                         </li>
                                         <li class="d-flex justify-content-between">
-                                            <strong>{{ 'messages.Furnished' }}:</strong>
+                                            <strong>{{ __('messages.Furnished') }}:</strong>
                                             <span>{{ ucwords($property->furnished) }}</span>
                                         </li>
                                     </ul>
@@ -322,7 +326,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <a onclick="event.preventDefault();
-                                                                                                                                                        document.getElementById('contact-estate-form').submit();"
+                                                                                                                                                                                                                                                                                                                document.getElementById('contact-estate-form').submit();"
                                                 class="btn btn-a"
                                                 style="color: white">{{ __('messages.Send Message') }}</a>
                                         </div>

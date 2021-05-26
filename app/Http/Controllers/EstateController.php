@@ -107,7 +107,7 @@ class EstateController extends Controller
     {
         return view('estates.create', [
             'estate' => new Estate(),
-            'owners' => Owner::all(),
+            'owners' => Owner::where('owners.user_id', '=', auth()->user()->id)->get(),
             'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
         ]);
     }
@@ -148,7 +148,7 @@ class EstateController extends Controller
 
         $id = Estate::all()->count() + 1;
 
-        return redirect()->route('estates.index')->with('status', 'Propiedad creada con éxito.');
+        return redirect()->route('estates.index2')->with('status', 'Propiedad creada con éxito.');
     }
 
     public function publish(Request $request, Estate $estate)

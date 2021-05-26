@@ -124,7 +124,7 @@ class OwnerController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        return redirect()->route('owners.index')->with('status', 'Propietario creado con éxito.');
+        return redirect()->route('owners.index2')->with('status', 'Propietario creado con éxito.');
     }
 
     //Mostrar vista editar propietarios

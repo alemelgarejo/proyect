@@ -134,8 +134,8 @@
                                     </div>
                                     <div class="col-md-3 ">
                                         <div class="form-group">
-                                            <label>{{ __('Conservation') }}</label>
-                                            <select name="conservation_state" id="conservation_state" class="form-control">
+                                            <select name="conservation_state" id="conservation_state" class="form-control"
+                                                hidden>
                                                 <option value="Bueno"
                                                     {{ $order->conservation_state == 'Bueno' ? 'selected' : '' }}>
                                                     {{ __('messages.Bueno') }}
@@ -343,7 +343,7 @@
                     </div>
                 </div>
                 @foreach ($estates as $estate)
-                    <div class="card" style="width: 20rem;">
+                    <div class="card" style="width: 25rem; margin-left:90px;">
                         <div class="card-body">
                             <a href="{{ route('estates.edit', $estate->id) }}" style="background: #2CA8FF"
                                 class="list-group-item list-group-item-action active">
@@ -376,13 +376,6 @@
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     <span class="badge badge-info badge-pill">{{ __('messages.Rooms') }}</span>
                                     {{ $estate->rooms }}
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span class="badge badge-info badge-pill">{{ __('messages.Actions') }}</span>
-                                    <a type="button" href="{{ route('estates.edit', $estate->id) }}" rel="tooltip"
-                                        class="btn btn-success btn-icon btn-sm " data-original-title="" title="Edit">
-                                        <i class="now-ui-icons ui-2_settings-90"></i>
-                                    </a>
                                 </li>
                             </ul>
                             </p>

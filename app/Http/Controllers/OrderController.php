@@ -126,7 +126,7 @@ class OrderController extends Controller
         //dd(Customer::all());
         return view('orders.create', [
             'order' => new Order(),
-            'customers' => Customer::all(),
+            'customers' => Customer::where('customers.user_id', '=', auth()->user()->id)->get(),
             'messages' => Message::where('messages.to_user_id', auth()->user()->id)->where('messages.readed', 'no')->orderBy('created_at', 'DESC')->get(),
         ]);
     }
@@ -155,12 +155,10 @@ class OrderController extends Controller
 
     public function store(StoreOrderRequest $request, Order $order)
     {
-
         Order::create([
             'customer_id' => $request['customer_id'],
             'type' => $request['type'],
             'city' => $request['city'],
-            'estate_type' => $request['estate_type'],
             'min_value' => $request['min_value'],
             'max_value' => $request['max_value'],
             'min_surface' => $request['min_surface'],
@@ -183,7 +181,7 @@ class OrderController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        return redirect()->route('orders.index')->with('status', 'Órden creada con éxito.');
+        return redirect()->route('orders.index2')->with('status', 'Órden creada con éxito.');
     }
 
     /**

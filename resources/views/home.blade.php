@@ -7,12 +7,94 @@
 ])
 
 @section('content')
-    <div class="panel-header panel-header-lg">
-        <canvas id="bigDashboardChart"></canvas>
+    <div class="panel-header panel-header-lg" style="text-align: center; height:260px;">
+        {{-- <canvas id="bigDashboardChart"></canvas> --}}
+        <br>
+        <h2 style="color: white;">{{ __('messages.Bienvenido') }}, {{ auth()->user()->first_name }}
+            {{ auth()->user()->last_name }}</h2>
     </div>
     <div class="content">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-sm-2" style="margin-left: 7%">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon" style="text-align: center">
+                        <p class="card-category">{{ __('messages.Customers') }}</p>
+                        <h3 class="card-title">
+                            <small>{{ __('messages.My Customers') }}</small>
+                        </h3>
+                    </div>
+                    <div class="card-footer" style="text-align: center">
+                        <div class="stats">
+                            <a href="{{ route('customers.index2') }}">{{ __('messages.Go to My customers') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon" style="text-align: center">
+                        <p class="card-category">{{ __('messages.Orders') }}</p>
+                        <h3 class="card-title">
+                            <small>{{ __('messages.My Orders') }}</small>
+                        </h3>
+                    </div>
+                    <div class="card-footer" style="text-align: center">
+                        <div class="stats">
+                            <a href="{{ route('orders.index2') }}">{{ __('messages.Go to My orders') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon" style="text-align: center">
+                        <p class="card-category">{{ __('messages.Owners') }}</p>
+                        <h3 class="card-title">
+                            <small>{{ __('messages.My Owners') }}</small>
+                        </h3>
+                    </div>
+                    <div class="card-footer" style="text-align: center">
+                        <div class="stats">
+                            <a href="{{ route('owners.index2') }}">{{ __('messages.Go to My owners') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon" style="text-align: center">
+                        <p class="card-category">{{ __('messages.Estates') }}</p>
+                        <h3 class="card-title">
+                            <small>{{ __('messages.My Estates') }}</small>
+                        </h3>
+                    </div>
+                    <div class="card-footer" style="text-align: center">
+                        <div class="stats">
+                            <a href="{{ route('estates.index2') }}">{{ __('messages.Go to My estates') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon"
+                        style="text-align: center; margin-top:-8.5px;">
+                        <h3 class="card-title" style="color: red">{{ count($not_readed) }}
+                        </h3>
+                        <p class="card-category">{{ __('messages.Unread messages') }}</p>
+                    </div>
+                    <div class="card-footer" style="text-align: center;">
+                        <div class="stats">
+                            <a href="{{ route('messages.index') }}">{{ __('messages.Go to My messages') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="col-lg-4">
                 <div class="card card-chart">
                     <div class="card-header">
                         <h5 class="card-category">{{ __('messages.Global Sales') }}</h5>
@@ -113,7 +195,8 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <td class="text-left">Sign contract for "What are conference organizers afraid of?"
+                                        <td class="text-left">Sign contract for "What are conference organizers
+                                            afraid of?"
                                         </td>
                                         <td class="td-actions text-right">
                                             <button type="button" rel="tooltip" title=""
@@ -137,7 +220,8 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <td class="text-left">Lines From Great Russian Literature? Or E-mails From My Boss?
+                                        <td class="text-left">Lines From Great Russian Literature? Or E-mails From
+                                            My Boss?
                                         </td>
                                         <td class="td-actions text-right">
                                             <button type="button" rel="tooltip" title=""
@@ -161,7 +245,8 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <td class="text-left">Flooded: One year later, assessing what was lost and what was
+                                        <td class="text-left">Flooded: One year later, assessing what was lost and
+                                            what was
                                             found when a ravaging rain swept through metro Detroit
                                         </td>
                                         <td class="td-actions text-right">
@@ -188,101 +273,94 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
+            </div> --}}
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-category">All Persons List</h5>
-                        <h4 class="card-title"> Employees Stats</h4>
+                        <h5 class="card-category">{{ __('messages.Last information') }}</h5>
+                        <h4 class="card-title">{{ __('messages.Last customers added') }}</h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="margin-top: -20px">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
                                     <th>
-                                        Name
+                                        {{ __('messages.Full Name') }}
                                     </th>
                                     <th>
-                                        Country
+                                        {{ __('messages.Email') }}
                                     </th>
                                     <th>
-                                        City
+                                        {{ __('messages.Phone') }}
                                     </th>
-                                    <th class="text-right">
-                                        Salary
+                                    <th>
+                                        {{ __('messages.DNI') }}
+                                    </th>
+                                    <th>
+                                        {{ __('messages.Created At') }}
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td class="text-right">
-                                            $36,738
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Minerva Hooper
-                                        </td>
-                                        <td>
-                                            Curaçao
-                                        </td>
-                                        <td>
-                                            Sinaai-Waas
-                                        </td>
-                                        <td class="text-right">
-                                            $23,789
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Sage Rodriguez
-                                        </td>
-                                        <td>
-                                            Netherlands
-                                        </td>
-                                        <td>
-                                            Baileux
-                                        </td>
-                                        <td class="text-right">
-                                            $56,142
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Doris Greene
-                                        </td>
-                                        <td>
-                                            Malawi
-                                        </td>
-                                        <td>
-                                            Feldkirchen in Kärnten
-                                        </td>
-                                        <td class="text-right">
-                                            $63,542
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Mason Porter
-                                        </td>
-                                        <td>
-                                            Chile
-                                        </td>
-                                        <td>
-                                            Gloucester
-                                        </td>
-                                        <td class="text-right">
-                                            $78,615
-                                        </td>
-                                    </tr>
+                                    @foreach ($customers as $customer)
+                                        <tr>
+                                            <td>{{ $customer->first_name }} {{ $customer->last_name }}</td>
+                                            <td>{{ $customer->email }}</td>
+                                            <td>{{ $customer->phone }}</td>
+                                            <td>{{ $customer->dni }}</td>
+                                            <td>{{ $customer->created_at->diffForHumans() }}</td>
+                                            <td><a type="button" href="{{ route('customers.edit', $customer->id) }}"
+                                                    rel="tooltip" class="btn btn-success btn-icon btn-sm "
+                                                    data-original-title="" title="Edit">
+                                                    <i class="now-ui-icons ui-2_settings-90"></i>
+                                                </a></td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-header">
+                        <h4 class="card-title">{{ __('messages.Last estates added') }}</h4>
+                    </div>
+                    <div class="card-body" style="margin-top: -20px">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        {{ __('messages.Owner') }}
+                                    </th>
+                                    <th>
+                                        {{ __('messages.Address') }}
+                                    </th>
+                                    <th>
+                                        {{ __('messages.City') }}
+                                    </th>
+                                    <th>
+                                        {{ __('messages.Value') }}
+                                    </th>
+                                    <th>
+                                        {{ __('messages.Surface') }}
+                                    </th>
+                                    <th>
+                                        {{ __('messages.Created At') }}
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    @foreach ($estates as $estate)
+                                        <tr>
+                                            <td>{{ $estate->owner->first_name }} {{ $estate->owner->last_name }}</td>
+                                            <td>{{ $estate->address }}</td>
+                                            <td>{{ $estate->city }}</td>
+                                            <td>{{ $estate->value }} €</td>
+                                            <td>{{ $estate->surface }} m<sup>2</sup> </td>
+                                            <td>{{ $customer->created_at->diffForHumans() }}</td>
+                                            <td><a type="button" href="{{ route('estates.edit', $estate->id) }}"
+                                                    rel="tooltip" class="btn btn-success btn-icon btn-sm "
+                                                    data-original-title="" title="Edit">
+                                                    <i class="now-ui-icons ui-2_settings-90"></i>
+                                                </a></td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -292,6 +370,12 @@
         </div>
     </div>
 @endsection
+
+
+
+
+
+
 
 @push('js')
     <script>
